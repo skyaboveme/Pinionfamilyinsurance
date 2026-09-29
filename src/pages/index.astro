@@ -1,0 +1,1040 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const services = [
+  {
+    title: 'Auto Insurance',
+    description: 'Full coverage, liability, collision, and comprehensive auto insurance tailored to your driving needs and budget.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 16H9m5.618-5.253A3 3 0 0 0 11.882 7H7.6a.6.6 0 0 0-.6.6V11m0 0h8.5l2.014 2.072a.6.6 0 0 1 .17.467l-.456 4.083a.6.6 0 0 1-.596.538h-.744M7 11H4.6a.6.6 0 0 0-.6.6v4.8a.6.6 0 0 0 .6.6h1.382M7 11V7"/><circle cx="8.5" cy="18.5" r="1.5"/><circle cx="18.5" cy="18.5" r="1.5"/></svg>`,
+  },
+  {
+    title: 'Home Insurance',
+    description: 'Protect your most valuable asset. Comprehensive homeowners coverage for your property, belongings, and liability.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+  },
+  {
+    title: 'Life Insurance',
+    description: 'Secure your family\'s future with term or whole life policies that provide financial protection when it matters most.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  },
+  {
+    title: 'Commercial Insurance',
+    description: 'Comprehensive business coverage including general liability, commercial property, and workers compensation for your enterprise.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
+  },
+  {
+    title: 'Renters Insurance',
+    description: 'Affordable protection for your personal belongings and liability coverage, whether you rent an apartment or a house.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
+  },
+  {
+    title: 'Motorcycle Insurance',
+    description: 'Specialized coverage for motorcycle riders, including liability, collision, comprehensive, and uninsured motorist protection.',
+    icon: `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"/></svg>`,
+  },
+];
+
+const whyUsReasons = [
+  {
+    title: 'Independent Agency',
+    description: 'We work with multiple top-rated carriers to find you the best coverage at the best price - not just one company.',
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  },
+  {
+    title: 'Local & Personal',
+    description: 'We are your neighbors in Oxford, MS. When you call us, you talk to a real person who knows your name and your needs.',
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+  {
+    title: 'Claims Support',
+    description: 'We are your advocate when things go wrong. Our team guides you through every step of the claims process with care.',
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+  },
+  {
+    title: 'Competitive Rates',
+    description: 'By comparing rates from multiple carriers, we consistently find savings our clients didn\'t know were available.',
+    icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+  },
+];
+
+const testimonials = [
+  {
+    name: 'Sarah M.',
+    role: 'Homeowner',
+    text: 'Pinion Family Insurance made the whole process so easy. They found us better coverage than our previous carrier at a lower rate. Truly a family-oriented agency!',
+    rating: 5,
+  },
+  {
+    name: 'James T.',
+    role: 'Business Owner',
+    text: 'As a small business owner in Oxford, having a local insurance agent who understands my needs is invaluable. They handle everything - from my commercial policy to our fleet vehicles.',
+    rating: 5,
+  },
+  {
+    name: 'Amanda R.',
+    role: 'Family of Four',
+    text: 'When we had a claim after a storm, Pinion Family Insurance was there every step of the way. They advocated for us and made sure we were taken care of. Cannot recommend them enough.',
+    rating: 5,
+  },
+];
+
+const stats = [
+  { value: '87+', label: '5-Star Reviews' },
+  { value: '1000+', label: 'Families Protected' },
+  { value: '15+', label: 'Insurance Carriers' },
+  { value: '24/7', label: 'Claims Support' },
+];
+---
+
+<BaseLayout>
+  <Header />
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="/images/hero-family.jpg" alt="Happy family protected by Pinion Family Insurance" width="1920" height="1080" loading="eager" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content container">
+      <div class="hero-text animate-on-scroll">
+        <span class="hero-eyebrow">Trusted Insurance in Oxford, Mississippi</span>
+        <h1>Protecting What <span class="hero-highlight">Matters Most</span></h1>
+        <p class="hero-subtitle">
+          Pinion Family Insurance provides personalized auto, home, life, and commercial insurance coverage.
+          As an independent agency, we compare rates from 15+ carriers to find you the best protection at the best price.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary btn-lg">Get a Free Quote</a>
+          <a href="tel:+16626383777" class="btn btn-outline btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (662) 638-3777
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ========== STATS BAR ========== -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        {stats.map(stat => (
+          <div class="stat-item animate-on-scroll">
+            <span class="stat-value">{stat.value}</span>
+            <span class="stat-label">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SERVICES SECTION ========== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-eyebrow">Our Insurance Products</span>
+        <h2>Coverage for Every Part of Your Life</h2>
+        <p class="section-subtitle">
+          From your car to your home to your business, we have the right policy to protect what you've worked hard to build.
+        </p>
+      </div>
+      <div class="services-grid">
+        {services.map((service, i) => (
+          <div class="service-card animate-on-scroll" style={`transition-delay: ${i * 0.1}s`}>
+            <div class="service-icon" set:html={service.icon} />
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <a href="#contact" class="service-link">
+              Get a Quote
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="section section-alt" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image animate-on-scroll">
+          <img src="/images/about-office.jpg" alt="Pinion Family Insurance office in Oxford, Mississippi" width="600" height="400" loading="lazy" />
+          <div class="about-image-accent"></div>
+        </div>
+        <div class="about-content animate-on-scroll">
+          <span class="section-eyebrow">About Pinion Family Insurance</span>
+          <h2>Your <span class="highlight">Neighbor</span> in Insurance</h2>
+          <p>
+            At Pinion Family Insurance, we believe insurance should be personal. Located on W Oxford Loop in Oxford, Mississippi, we are not a call center or an anonymous online quote engine - we are your neighbors.
+          </p>
+          <p>
+            As an <strong>independent insurance agency</strong>, we are not tied to any single insurance company. That means we shop multiple top-rated carriers on your behalf to find the right coverage at the right price. Our goal is simple: protect your family, your property, and your livelihood.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-red)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Family-owned and operated</span>
+            </div>
+            <div class="about-feature">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-red)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>15+ top-rated insurance carriers</span>
+            </div>
+            <div class="about-feature">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-red)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Serving Oxford, MS and surrounding areas</span>
+            </div>
+            <div class="about-feature">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-red)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Personalized coverage reviews</span>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Talk to an Agent</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY CHOOSE US ========== -->
+  <section class="section section-dark" id="why-us">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-eyebrow">Why Choose Us</span>
+        <h2>The Pinion Family <span class="highlight">Difference</span></h2>
+        <p class="section-subtitle">
+          We are more than just an insurance agency. We are your trusted partner in protecting what matters most.
+        </p>
+      </div>
+      <div class="why-grid">
+        {whyUsReasons.map((reason, i) => (
+          <div class="why-card animate-on-scroll" style={`transition-delay: ${i * 0.1}s`}>
+            <div class="why-icon" set:html={reason.icon} />
+            <h3>{reason.title}</h3>
+            <p>{reason.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="text-center animate-on-scroll">
+        <span class="section-eyebrow">Testimonials</span>
+        <h2>What Our Clients Say</h2>
+        <p class="section-subtitle">
+          Don't just take our word for it. Hear from the families and businesses we've helped protect across Oxford, Mississippi.
+        </p>
+      </div>
+      <div class="testimonials-grid">
+        {testimonials.map((t, i) => (
+          <div class="testimonial-card animate-on-scroll" style={`transition-delay: ${i * 0.15}s`}>
+            <div class="testimonial-stars">
+              {Array.from({ length: t.rating }).map(() => (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="var(--gold)" stroke="var(--gold)" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              ))}
+            </div>
+            <p class="testimonial-text">"{t.text}"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">{t.name.charAt(0)}</div>
+              <div>
+                <span class="testimonial-name">{t.name}</span>
+                <span class="testimonial-role">{t.role}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner animate-on-scroll">
+        <div class="cta-content">
+          <h2>Ready to Save on Your Insurance?</h2>
+          <p>Get a personalized quote in minutes. No obligation, no pressure - just honest advice from your local insurance experts.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-primary btn-lg">Request a Quote</a>
+          <a href="tel:+16626383777" class="btn btn-outline btn-lg">Call (662) 638-3777</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info animate-on-scroll">
+          <span class="section-eyebrow">Get In Touch</span>
+          <h2>Let's Find Your <span class="highlight">Perfect Coverage</span></h2>
+          <p>
+            Fill out the form and one of our agents will reach out to discuss your insurance needs. Or call us directly - we're always happy to talk.
+          </p>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Visit Our Office</h4>
+                <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Call Us</h4>
+                <a href="tel:+16626383777">(662) 638-3777</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div>
+                <h4>Office Hours</h4>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM<br/>Saturday - Sunday: Closed</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Map Embed -->
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3299.123456789!2d-89.57037476683598!3d34.36385690287256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIxJzQ5LjkiTiA4OcKwMzQnMTMuMyJX!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+              width="100%"
+              height="220"
+              style="border:0; border-radius: 12px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Pinion Family Insurance location on Google Maps"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap animate-on-scroll">
+          <div class="contact-form-card">
+            <h3>Request a Free Quote</h3>
+            <p class="form-subtitle">Tell us a little about yourself and what you need covered.</p>
+            <form action="https://formspree.io/f/mnpnwvaw" method="POST" class="contact-form" id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required placeholder="John" />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required placeholder="Smith" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="(662) 555-1234" />
+              </div>
+              <div class="form-group">
+                <label for="insuranceType">Insurance Type *</label>
+                <select id="insuranceType" name="insuranceType" required>
+                  <option value="" disabled selected>Select coverage type...</option>
+                  <option value="Auto Insurance">Auto Insurance</option>
+                  <option value="Home Insurance">Home Insurance</option>
+                  <option value="Life Insurance">Life Insurance</option>
+                  <option value="Commercial Insurance">Commercial Insurance</option>
+                  <option value="Renters Insurance">Renters Insurance</option>
+                  <option value="Motorcycle Insurance">Motorcycle Insurance</option>
+                  <option value="Bundle (Multiple)">Bundle (Multiple Policies)</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Tell Us More</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any details about your coverage needs..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg form-submit" id="form-submit">
+                <span class="submit-text">Submit Quote Request</span>
+                <span class="submit-loading" style="display:none;">Sending...</span>
+              </button>
+              <p class="form-disclaimer">Your information is secure and will never be shared with third parties.</p>
+            </form>
+            <div class="form-success" id="form-success" style="display:none;">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h3>Thank You!</h3>
+              <p>Your quote request has been submitted. A member of our team will reach out shortly.</p>
+              <a href="/" class="btn btn-primary">Back to Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  @import '../styles/global.css';
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(10, 15, 26, 0.85) 0%,
+      rgba(10, 15, 26, 0.6) 50%,
+      rgba(10, 15, 26, 0.75) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-top: calc(var(--header-height) + var(--space-2xl));
+    padding-bottom: var(--space-4xl);
+    max-width: 780px;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--brand-red-light);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background: var(--brand-red);
+    border-radius: 2px;
+  }
+
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    margin-bottom: var(--space-lg);
+    animation: fadeInUp 0.6s 0.15s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-highlight {
+    background: linear-gradient(135deg, var(--brand-red-light), var(--brand-red));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    color: var(--gray-300);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+    max-width: 620px;
+    animation: fadeInUp 0.6s 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    animation: fadeInUp 0.6s 0.45s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-scroll-indicator {
+    position: absolute;
+    bottom: var(--space-2xl);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.5);
+    animation: float 2s ease-in-out infinite;
+  }
+
+  /* ===== STATS BAR ===== */
+  .stats-bar {
+    background: var(--brand-red);
+    padding: var(--space-xl) 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    text-align: center;
+  }
+
+  .stat-item {
+    color: var(--white);
+  }
+
+  .stat-value {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== SERVICES ===== */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-3xl);
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--brand-red);
+    transform: scaleX(0);
+    transition: transform var(--transition);
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba(235, 29, 36, 0.08), rgba(235, 29, 36, 0.04));
+    border-radius: var(--border-radius);
+    color: var(--brand-red);
+    margin-bottom: var(--space-lg);
+    transition: all var(--transition);
+  }
+
+  .service-card:hover .service-icon {
+    background: var(--brand-red);
+    color: var(--white);
+    transform: scale(1.05);
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-card p {
+    font-size: 0.92rem;
+    color: var(--gray-500);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--brand-red);
+    transition: gap var(--transition);
+  }
+
+  .service-link:hover {
+    gap: 12px;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+
+  .about-image {
+    position: relative;
+  }
+
+  .about-image img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    height: auto;
+  }
+
+  .about-image-accent {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+    border-radius: var(--border-radius-lg);
+    z-index: -1;
+    opacity: 0.15;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-lg);
+    line-height: 1.8;
+  }
+
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .about-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--gray-700);
+  }
+
+  /* ===== WHY CHOOSE US ===== */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-3xl);
+  }
+
+  .why-card {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+    border-radius: var(--border-radius);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all var(--transition);
+  }
+
+  .why-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+    border-color: rgba(235, 29, 36, 0.3);
+  }
+
+  .why-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+    border-radius: 16px;
+    color: var(--white);
+    margin-bottom: var(--space-lg);
+  }
+
+  .why-card h3 {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .why-card p {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+  }
+
+  /* ===== TESTIMONIALS ===== */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin-top: var(--space-3xl);
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--gray-100);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    transition: all var(--transition);
+  }
+
+  .testimonial-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    border-color: transparent;
+  }
+
+  .testimonial-stars {
+    display: flex;
+    gap: 2px;
+    margin-bottom: var(--space-md);
+  }
+
+  .testimonial-text {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: var(--space-xl);
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .testimonial-name {
+    display: block;
+    font-weight: 600;
+    color: var(--gray-900);
+    font-size: 0.95rem;
+  }
+
+  .testimonial-role {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--gray-400);
+  }
+
+  /* ===== CTA BANNER ===== */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    padding: var(--space-4xl) 0;
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2xl);
+  }
+
+  .cta-content h2 {
+    color: var(--white);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-content p {
+    color: var(--gray-300);
+    font-size: 1rem;
+    max-width: 520px;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-shrink: 0;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--space-4xl);
+    align-items: start;
+  }
+
+  .contact-info h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .contact-info > p {
+    color: var(--gray-500);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .contact-detail {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(235, 29, 36, 0.08), rgba(235, 29, 36, 0.04));
+    color: var(--brand-red);
+    flex-shrink: 0;
+  }
+
+  .contact-detail h4 {
+    font-size: 0.95rem;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+  }
+
+  .contact-detail p,
+  .contact-detail a {
+    font-size: 0.9rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  .contact-detail a:hover { color: var(--brand-red); }
+
+  .map-embed {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .contact-form-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-2xl) var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .contact-form-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .form-subtitle {
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .form-group {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-primary);
+    font-size: 0.92rem;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--border-radius-sm);
+    background: var(--white);
+    color: var(--gray-800);
+    transition: all var(--transition);
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--brand-red);
+    box-shadow: 0 0 0 3px rgba(235, 29, 36, 0.1);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--gray-300);
+  }
+
+  .form-submit {
+    width: 100%;
+    margin-top: var(--space-sm);
+  }
+
+  .form-disclaimer {
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--gray-400);
+    margin-top: var(--space-md);
+  }
+
+  .form-success {
+    text-align: center;
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  .form-success svg {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-success h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--gray-900);
+  }
+
+  .form-success p {
+    color: var(--gray-500);
+    margin-bottom: var(--space-xl);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .cta-actions { justify-content: center; }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+    .form-row { grid-template-columns: 1fr; }
+    .cta-actions { flex-direction: column; width: 100%; }
+    .cta-actions .btn { width: 100%; justify-content: center; }
+    .stat-value { font-size: 1.8rem; }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('form-submit');
+      const submitText = submitBtn?.querySelector('.submit-text');
+      const submitLoading = submitBtn?.querySelector('.submit-loading');
+
+      if (submitText) submitText.style.display = 'none';
+      if (submitLoading) submitLoading.style.display = 'inline';
+      if (submitBtn) submitBtn.disabled = true;
+
+      try {
+        const formData = new FormData(form);
+        await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        form.style.display = 'none';
+        if (success) success.style.display = 'block';
+      } catch (err) {
+        if (submitText) submitText.style.display = 'inline';
+        if (submitLoading) submitLoading.style.display = 'none';
+        if (submitBtn) submitBtn.disabled = false;
+        alert('Something went wrong. Please call us at (662) 638-3777.');
+      }
+    });
+  });
+</script>

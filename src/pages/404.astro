@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout
+  title="Page Not Found - Pinion Family Insurance"
+  description="The page you are looking for could not be found. Return to the Pinion Family Insurance homepage."
+>
+  <Header />
+
+  <section class="not-found">
+    <div class="container text-center">
+      <span class="nf-code">404</span>
+      <h1>Page Not Found</h1>
+      <p>Sorry, the page you're looking for doesn't exist or has been moved.</p>
+      <div class="nf-actions">
+        <a href="/" class="btn btn-primary btn-lg">Return Home</a>
+        <a href="/#contact" class="btn btn-ghost btn-lg">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  @import '../styles/global.css';
+
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-50);
+    padding-top: var(--header-height);
+  }
+
+  .nf-code {
+    display: block;
+    font-size: clamp(6rem, 15vw, 12rem);
+    font-weight: 900;
+    color: var(--gray-100);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.15;
+  }
+
+  .not-found h1 {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .not-found p {
+    color: var(--gray-500);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-2xl);
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nf-actions {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

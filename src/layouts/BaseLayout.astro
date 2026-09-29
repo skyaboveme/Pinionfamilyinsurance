@@ -1,0 +1,201 @@
+---
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  schema?: object | object[];
+  keywords?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Pinion Family Insurance - Auto, Home, Life & Commercial Insurance | Oxford, MS",
+  description = "Pinion Family Insurance provides trusted auto, home, life, and commercial insurance in Oxford, Mississippi. Family-owned, personalized service since day one. Call (662) 638-3777.",
+  image = "/images/PFI-logo-small.webp",
+  schema,
+  keywords = "insurance, auto insurance, home insurance, life insurance, commercial insurance, Oxford MS, Mississippi insurance agent, Pinion Family Insurance",
+  canonical,
+} = Astro.props;
+
+const socialImageURL = new URL(image, Astro.site).toString();
+const canonicalURL = canonical ? new URL(canonical, Astro.site).toString() : new URL(Astro.url.pathname, Astro.site).toString();
+
+// Default InsuranceAgency schema
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "@id": "https://pinionfamilyinsurance.com/#organization",
+  "name": "Pinion Family Insurance",
+  "alternateName": "PFI",
+  "description": "Family-owned independent insurance agency providing auto, home, life, and commercial insurance in Oxford, Mississippi and surrounding areas.",
+  "url": "https://pinionfamilyinsurance.com",
+  "logo": "https://pinionfamilyinsurance.com/images/PFI-logo-small.webp",
+  "image": "https://pinionfamilyinsurance.com/images/PFI-logo-small.webp",
+  "telephone": "+16626383777",
+  "email": "info@pinionfamilyinsurance.com",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2621A W Oxford Loop",
+    "addressLocality": "Oxford",
+    "addressRegion": "MS",
+    "postalCode": "38655",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "34.36385690287256",
+    "longitude": "-89.57037476683598"
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Oxford", "containedInPlace": { "@type": "State", "name": "Mississippi" } },
+    { "@type": "City", "name": "Water Valley" },
+    { "@type": "City", "name": "Batesville" },
+    { "@type": "City", "name": "Holly Springs" },
+    { "@type": "City", "name": "Pontotoc" }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/pinionfamilyinsurance/",
+    "https://www.linkedin.com/in/melanee-pinion-252a10166/"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Insurance Products",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Auto Insurance", "description": "Comprehensive car insurance coverage including liability, collision, and full coverage options." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Insurance", "description": "Homeowners insurance protecting your property, belongings, and liability." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Life Insurance", "description": "Term and whole life insurance policies to protect your family's financial future." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Insurance", "description": "Business insurance solutions including general liability, property, and workers compensation." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renters Insurance", "description": "Affordable renters insurance to protect your belongings and personal liability." } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Motorcycle Insurance", "description": "Specialized motorcycle coverage for riders in Mississippi." } }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1",
+    "ratingCount": "87"
+  }
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Pinion Family Insurance",
+  "alternateName": "PFI - Pinion Family Insurance Oxford MS",
+  "url": "https://pinionfamilyinsurance.com",
+  "description": "Auto, Home, Life, and Commercial Insurance in Oxford, Mississippi",
+  "publisher": { "@id": "https://pinionfamilyinsurance.com/#organization" },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://pinionfamilyinsurance.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" }
+  ]
+};
+
+const allSchemas = [defaultSchema, websiteSchema, breadcrumbSchema];
+if (schema) {
+  if (Array.isArray(schema)) {
+    allSchemas.push(...schema);
+  } else {
+    allSchemas.push(schema);
+  }
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eb1d24" />
+
+  <!-- Primary SEO -->
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href={canonicalURL} />
+  <meta name="author" content="Pinion Family Insurance" />
+  <meta name="geo.region" content="US-MS" />
+  <meta name="geo.placename" content="Oxford, Mississippi" />
+  <meta name="geo.position" content="34.36385690287256;-89.57037476683598" />
+  <meta name="ICBM" content="34.36385690287256, -89.57037476683598" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={socialImageURL} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Pinion Family Insurance" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={socialImageURL} />
+
+  <!-- Dublin Core -->
+  <meta name="dc.title" content={title} />
+  <meta name="dc.description" content={description} />
+  <meta name="dc.relation" content="https://pinionfamilyinsurance.com/" />
+  <meta name="dc.source" content="https://pinionfamilyinsurance.com/" />
+  <meta name="dc.language" content="en_US" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="/images/PFI-logo-small.webp" />
+  <link rel="apple-touch-icon" href="/images/PFI-logo-small.webp" />
+
+  <!-- Schema / JSON-LD -->
+  {allSchemas.map(s => (
+    <script type="application/ld+json" set:html={JSON.stringify(s)} />
+  ))}
+
+  <!-- View Transitions -->
+  <ClientRouter />
+
+  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+  </style>
+</head>
+<body>
+  <slot />
+
+  <!-- Scroll Animation Observer -->
+  <script is:inline>
+    document.addEventListener('astro:page-load', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
