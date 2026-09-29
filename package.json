@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "deploy": "npm run build && wrangler deploy",
     "generate-types": "wrangler types"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "wrangler": "^4.143.1"
   },
   "allowScripts": {
-    "esbuild": true
+    "esbuild": true,
+    "workerd": true
   }
 }
