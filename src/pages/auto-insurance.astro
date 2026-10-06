@@ -1,0 +1,430 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CarrierStrip from '../components/CarrierStrip.astro';
+import FAQ from '../components/FAQ.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import '../styles/global.css';
+
+const autoFAQs = [
+  {
+    question: "What auto insurance coverage is required in Mississippi?",
+    answer: "Mississippi state law requires minimum liability coverage of 25/50/25: $25,000 for bodily injury per person, $50,000 for bodily injury per accident, and $25,000 for property damage. However, state minimums often leave drivers vulnerable to out-of-pocket costs, which is why we recommend higher liability limits plus collision and comprehensive coverage."
+  },
+  {
+    question: "How can I lower my car insurance rates in Oxford, MS?",
+    answer: "You can reduce your premiums by bundling auto with homeowners or renters insurance, maintaining a clean driving record, selecting higher deductibles, taking advantage of good student discounts (especially for Ole Miss students and high schoolers), and letting Pinion Family Insurance shop multiple carriers annually."
+  },
+  {
+    question: "What is the difference between Collision and Comprehensive auto insurance?",
+    answer: "Collision covers damage to your vehicle when you hit another car or object (like a guardrail or tree), regardless of fault. Comprehensive covers non-collision events, including weather damage (hail, tornadoes), theft, vandalism, windshield damage, or animal collisions (such as hitting a deer in North Mississippi)."
+  },
+  {
+    question: "Does Pinion Family Insurance offer coverage for teen or college drivers?",
+    answer: "Yes! Adding a young driver can be costly, but as an independent agency, we find the carriers with the best student discounts, defensive driving credits, and telematics programs to keep your rates manageable."
+  }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Auto Insurance in Oxford, MS",
+    "serviceType": "Auto Insurance",
+    "provider": {
+      "@type": "InsuranceAgency",
+      "name": "Pinion Family Insurance",
+      "telephone": "+16626383777",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2621A W Oxford Loop",
+        "addressLocality": "Oxford",
+        "addressRegion": "MS",
+        "postalCode": "38655"
+      }
+    },
+    "description": "Comprehensive auto insurance in Oxford, Mississippi. Compare rates from Progressive, Safeco, Travelers, and more.",
+    "areaServed": ["Oxford", "Water Valley", "Batesville", "Holly Springs", "Lafayette County", "Mississippi"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Auto Insurance", "item": "https://pinionfamilyinsurance.com/auto-insurance" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Auto Insurance Oxford MS | Pinion Family Insurance"
+  description="Affordable, comprehensive auto insurance in Oxford, MS. We compare 15+ top carriers like Progressive, Safeco, and Travelers to find your best rate. Get a free quote today!"
+  canonical="https://pinionfamilyinsurance.com/auto-insurance"
+  schema={schema}
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">Auto Insurance</span>
+      </div>
+      <span class="hero-eyebrow">Personalized Auto Protection</span>
+      <h1>Auto Insurance in <span class="highlight-text">Oxford, MS</span></h1>
+      <p class="hero-desc">
+        Drive with complete peace of mind. We shop top-rated national carriers to give Mississippi drivers maximum protection at the most competitive rates.
+      </p>
+      <div class="hero-btn-group">
+        <a href="#quote-section" class="btn btn-primary btn-lg">Get Free Auto Quotes</a>
+        <a href="tel:+16626383777" class="btn btn-outline btn-lg">Call (662) 638-3777</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content & Quote Form Grid -->
+  <section class="section" id="quote-section">
+    <div class="container">
+      <div class="service-layout-grid">
+        <!-- Left details -->
+        <div class="service-details">
+          <span class="section-eyebrow">Complete Vehicle Protection</span>
+          <h2>Tailored Coverage for Every Mississippi Driver</h2>
+          <p class="lead-text">
+            Whether you commute along Highway 6, navigate campus traffic at Ole Miss, or take weekend road trips across the South, your auto policy should fit your specific driving habits and family budget.
+          </p>
+          
+          <div class="coverage-features-box">
+            <h3>Key Auto Coverage Options We Offer:</h3>
+            <ul class="coverage-list">
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Bodily Injury & Property Damage Liability:</strong>
+                  <p>Shields your assets if you are legally responsible for injuries or property damage in an accident.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Collision Coverage:</strong>
+                  <p>Covers repair or replacement costs for your vehicle after a collision with another vehicle or stationary object.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Comprehensive Coverage:</strong>
+                  <p>Protects against non-collision losses including hail, storm flooding, theft, vandalism, and wildlife strikes.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Uninsured & Underinsured Motorist:</strong>
+                  <p>Critical in Mississippi to protect you if you are hit by a driver who lacks sufficient insurance coverage.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Roadside Assistance & Rental Reimbursement:</strong>
+                  <p>Emergency towing, jump starts, lockout service, and rental car coverage while your vehicle is repaired.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="discounts-callout">
+            <h3>Discounts You May Qualify For:</h3>
+            <div class="discount-tags">
+              <span class="tag">Multi-Policy (Auto + Home)</span>
+              <span class="tag">Good Student Discount</span>
+              <span class="tag">Multi-Car Policy</span>
+              <span class="tag">Safe Driver / Clean Record</span>
+              <span class="tag">Telematics / Low Mileage</span>
+              <span class="tag">Paperless & Auto-Pay</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Intake Form -->
+        <div class="service-sidebar">
+          <QuoteForm defaultInsuranceType="Auto Insurance" formTitle="Get an Auto Insurance Quote" />
+          
+          <div class="local-trust-card">
+            <h4>Why Choose Pinion Family Insurance?</h4>
+            <ul class="trust-points">
+              <li>🏆 <strong>Local Advocates:</strong> Based on W Oxford Loop in Oxford, MS.</li>
+              <li>🔍 <strong>15+ Carriers:</strong> We compare multiple rates so you don't have to.</li>
+              <li>🤝 <strong>Claims Assistance:</strong> We guide you through claims step-by-step.</li>
+              <li>⭐ <strong>5-Star Service:</strong> Family-owned personalized attention.</li>
+            </ul>
+            <div class="call-direct">
+              <span>Prefer to talk directly?</span>
+              <a href="tel:+16626383777" class="direct-phone-btn">📞 (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrier Strip -->
+  <CarrierStrip />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Auto Insurance FAQs"
+    subtitle="Common questions about auto coverage, rates, and claims in Mississippi."
+    items={autoFAQs}
+    idPrefix="auto"
+  />
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-4xl);
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 840px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumbs a {
+    color: var(--gray-300);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--white);
+  }
+
+  .breadcrumbs .current {
+    color: var(--brand-red-light);
+    font-weight: 600;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--brand-red-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: var(--space-md);
+  }
+
+  .highlight-text {
+    color: var(--brand-red-light);
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-btn-group {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .service-layout-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .service-details h2 {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .coverage-features-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .coverage-features-box h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--space-lg);
+    color: var(--navy);
+  }
+
+  .coverage-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .coverage-list li {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .check-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(235, 29, 36, 0.1);
+    color: var(--brand-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .coverage-list strong {
+    display: block;
+    color: var(--gray-900);
+    font-size: 1.05rem;
+    margin-bottom: 3px;
+  }
+
+  .coverage-list p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .discounts-callout {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .discounts-callout h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .discount-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .discount-tags .tag {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .service-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    position: sticky;
+    top: calc(var(--header-height) + 20px);
+  }
+
+  .local-trust-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .local-trust-card h4 {
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: var(--space-md);
+  }
+
+  .trust-points {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .call-direct {
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--space-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .call-direct span {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+  }
+
+  .direct-phone-btn {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--brand-red);
+  }
+
+  .direct-phone-btn:hover {
+    color: var(--brand-red-dark);
+  }
+
+  @media (max-width: 992px) {
+    .service-layout-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-sidebar {
+      position: static;
+    }
+  }
+</style>

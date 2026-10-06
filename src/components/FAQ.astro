@@ -1,0 +1,191 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  items?: FAQItem[];
+  idPrefix?: string;
+}
+
+const defaultItems: FAQItem[] = [
+  {
+    question: "Why should I use an independent insurance agent instead of a single company?",
+    answer: "As an independent agency, Pinion Family Insurance represents 15+ top-rated national carriers (like Progressive, Safeco, Travelers, and Nationwide) rather than just one. This means we compare rates and policy options on your behalf to find the best balance of comprehensive protection and competitive pricing, saving you time and money."
+  },
+  {
+    question: "How do I get a free insurance quote in Oxford, MS?",
+    answer: "You can request a free quote online through our quick quote form, call our local Oxford office directly at (662) 638-3777, or visit us at 2621A W Oxford Loop. We'll review your current coverage, ask a few questions about your needs, and provide tailored policy options."
+  },
+  {
+    question: "Can I save money by bundling my auto and home insurance?",
+    answer: "Yes! Multi-policy discounts are among the highest savings available in insurance. When you bundle your auto and home (or renters/motorcycle) insurance with the same carrier through Pinion Family Insurance, you can often save up to 15% to 25% on your combined annual premiums."
+  },
+  {
+    question: "What is the difference between liability coverage and full coverage auto insurance?",
+    answer: "Liability insurance is required by Mississippi state law and pays for bodily injury and property damage you cause to others in an accident. 'Full coverage' typically adds Comprehensive (damage from theft, hail, storms, vandalism, or animals) and Collision (damage from vehicular accidents) to protect your own vehicle."
+  },
+  {
+    question: "What should I do if I need to file a claim?",
+    answer: "When an incident happens, call our Oxford office at (662) 638-3777 or contact your specific carrier's 24/7 claims hotline. Because we are an independent local agency, we act as your personal advocate throughout the claim process to ensure you are treated fairly and your claim is resolved promptly."
+  },
+  {
+    question: "Does Pinion Family Insurance serve areas outside of Oxford?",
+    answer: "Yes! While our office is located on W Oxford Loop in Oxford, MS, we are fully licensed to insure individuals, families, and businesses throughout Lafayette County and across the entire State of Mississippi, including Water Valley, Batesville, Holly Springs, Pontotoc, and Tupelo."
+  }
+];
+
+const {
+  title = "Frequently Asked Questions",
+  subtitle = "Have questions about insurance in Mississippi? Here are answers to some of the most common questions we receive.",
+  items = defaultItems,
+  idPrefix = "faq"
+} = Astro.props;
+---
+
+<section class="faq-section section" id="faq">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <span class="section-eyebrow">Got Questions?</span>
+      <h2>{title}</h2>
+      {subtitle && <p class="section-subtitle">{subtitle}</p>}
+    </div>
+
+    <div class="faq-container">
+      {items.map((item, index) => (
+        <details class="faq-item animate-on-scroll" name={`faq-accordion-${idPrefix}`}>
+          <summary class="faq-question">
+            <span>{item.question}</span>
+            <span class="faq-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </span>
+          </summary>
+          <div class="faq-answer">
+            <p>{item.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <div class="faq-footer animate-on-scroll">
+      <p>Have a question not listed here? Our local agents are ready to assist you.</p>
+      <div class="faq-cta-buttons">
+        <a href="tel:+16626383777" class="btn btn-primary btn-sm">Call (662) 638-3777</a>
+        <a href="/contact" class="btn btn-ghost btn-sm">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    background-color: var(--white);
+  }
+
+  .faq-container {
+    max-width: 820px;
+    margin: var(--space-3xl) auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    background: var(--gray-50);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+
+  .faq-item[open] {
+    background: var(--white);
+    border-color: var(--brand-red-light);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  .faq-question {
+    padding: var(--space-lg) var(--space-xl);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--brand-red);
+    flex-shrink: 0;
+    border: 1px solid var(--gray-200);
+    transition: transform var(--transition), background var(--transition), color var(--transition);
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+    background: var(--brand-red);
+    color: var(--white);
+    border-color: var(--brand-red);
+  }
+
+  .faq-answer {
+    padding: 0 var(--space-xl) var(--space-lg);
+    color: var(--gray-600);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .faq-footer {
+    text-align: center;
+    margin-top: var(--space-3xl);
+    padding: var(--space-xl);
+    background: var(--gray-50);
+    border-radius: var(--border-radius);
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-footer p {
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: var(--space-md);
+  }
+
+  .faq-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 640px) {
+    .faq-question {
+      padding: var(--space-md) var(--space-lg);
+      font-size: 0.98rem;
+    }
+    .faq-answer {
+      padding: 0 var(--space-lg) var(--space-md);
+      font-size: 0.92rem;
+    }
+  }
+</style>

@@ -11,37 +11,42 @@
 - Service Area: Oxford, MS and surrounding North Mississippi communities including Water Valley, Batesville, Holly Springs, Pontotoc, and Lafayette County
 
 ## Value Proposition
-Pinion Family Insurance is a family-owned, independent insurance agency. Unlike captive agents who represent only one company, we compare rates and coverage from 15+ top-rated insurance carriers to find the best policy at the best price for each client. We provide personalized, face-to-face service from our Oxford, MS office.
+Pinion Family Insurance is a family-owned, independent insurance agency. Unlike captive agents who represent only one company, we compare rates and coverage from 15+ top-rated insurance carriers (such as Progressive, Safeco, Travelers, Nationwide, Liberty Mutual, The Hartford, Foremost, and Chubb) to find the best policy at the best price for each client. We provide personalized, face-to-face service from our Oxford, MS office.
 
 ## Insurance Products
-- Auto Insurance: Full coverage, liability, collision, comprehensive, uninsured motorist
-- Home Insurance: Homeowners, dwelling fire, flood, windstorm
-- Life Insurance: Term life, whole life, universal life
-- Commercial Insurance: General liability, commercial property, workers compensation, commercial auto, business owners policy (BOP)
-- Renters Insurance: Personal property, liability, loss of use
-- Motorcycle Insurance: Liability, collision, comprehensive, uninsured motorist
+- Auto Insurance: Full coverage, liability, collision, comprehensive, uninsured motorist, student discounts (https://pinionfamilyinsurance.com/auto-insurance)
+- Home Insurance: Homeowners, dwelling, personal property, wind/hail, storm damage, loss of use (https://pinionfamilyinsurance.com/home-insurance)
+- Life Insurance: Term life (10, 20, 30 yr), whole life, universal life, final expense (https://pinionfamilyinsurance.com/life-insurance)
+- Commercial Insurance: General liability, commercial property, workers compensation, commercial auto, BOP (https://pinionfamilyinsurance.com/commercial-insurance)
+- Renters Insurance: Personal property, liability, loss of use, student housing coverage (https://pinionfamilyinsurance.com/renters-insurance)
+- Motorcycle Insurance: Cruiser, sportbike, touring, ATV, UTV, and custom equipment (https://pinionfamilyinsurance.com/motorcycle-insurance)
 
 ## Key Differentiators
 - Independent agency - not tied to a single carrier
 - Access to 15+ top-rated insurance companies
 - Family-owned and operated
-- Located in Oxford, MS - we are your neighbors
-- Personalized claims advocacy
+- Located on W Oxford Loop in Oxford, MS - we are your neighbors
+- Personalized claims advocacy and guidance
 - Competitive rates through multi-carrier comparison
 - Free quotes with no obligation
 
 ## Contact
 - Address: 2621A W Oxford Loop, Oxford, MS 38655
 - Phone: (662) 638-3777
+- Email: info@pinionfamilyinsurance.com
 - Hours: Monday-Friday 8:00 AM - 5:00 PM
-- Quote Request: https://pinionfamilyinsurance.com/#contact
-
-## Social
-- Facebook: https://www.facebook.com/pinionfamilyinsurance/
-- LinkedIn: https://www.linkedin.com/in/melanee-pinion-252a10166/
+- Quote Request: https://pinionfamilyinsurance.com/contact
 
 ## Site Map
 - Home: https://pinionfamilyinsurance.com/
-- Services: https://pinionfamilyinsurance.com/#services
-- About: https://pinionfamilyinsurance.com/#about
-- Contact: https://pinionfamilyinsurance.com/#contact
+- Auto Insurance: https://pinionfamilyinsurance.com/auto-insurance
+- Home Insurance: https://pinionfamilyinsurance.com/home-insurance
+- Life Insurance: https://pinionfamilyinsurance.com/life-insurance
+- Commercial Insurance: https://pinionfamilyinsurance.com/commercial-insurance
+- Renters Insurance: https://pinionfamilyinsurance.com/renters-insurance
+- Motorcycle Insurance: https://pinionfamilyinsurance.com/motorcycle-insurance
+- About Us: https://pinionfamilyinsurance.com/about
+- FAQs: https://pinionfamilyinsurance.com/faq
+- Contact & Quote: https://pinionfamilyinsurance.com/contact
+- Privacy Policy: https://pinionfamilyinsurance.com/privacy-policy
+- Terms of Service: https://pinionfamilyinsurance.com/terms

@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import '../styles/global.css';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy - Pinion Family Insurance",
+  "description": "Privacy Policy for Pinion Family Insurance in Oxford, MS."
+};
+---
+
+<BaseLayout
+  title="Privacy Policy | Pinion Family Insurance"
+  description="Privacy Policy for Pinion Family Insurance. Learn how we protect your personal and financial information."
+  canonical="https://pinionfamilyinsurance.com/privacy-policy"
+  schema={schema}
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">Privacy Policy</span>
+      </div>
+      <h1>Privacy <span class="highlight-text">Policy</span></h1>
+      <p class="hero-desc">Last Updated: October 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal-content">
+      <h2>1. Information We Collect</h2>
+      <p>
+        Pinion Family Insurance ("we," "our," or "us") respects your privacy. When you request an insurance quote or contact our agency, we may collect personally identifiable information including:
+      </p>
+      <ul>
+        <li>Contact details: name, email address, physical address, and phone number.</li>
+        <li>Vehicle information: VIN, year, make, model, and driver's license numbers.</li>
+        <li>Property details: home construction year, square footage, security systems, and mortgage lender information.</li>
+        <li>Business information: company name, operations description, payroll, and commercial address.</li>
+      </ul>
+
+      <h2>2. How We Use Your Information</h2>
+      <p>We use your information strictly to:</p>
+      <ul>
+        <li>Shop, compare, and bind insurance policies with our partner insurance carriers.</li>
+        <li>Respond to your quote requests, claims questions, and customer service inquiries.</li>
+        <li>Process policy renewals, changes, and endorsement requests.</li>
+        <li>Comply with applicable state and federal insurance regulations.</li>
+      </ul>
+
+      <h2>3. Information Sharing & Third Parties</h2>
+      <p>
+        We do <strong>NOT</strong> sell, rent, or trade your personal information to third-party marketing companies. Your information is shared only with licensed insurance carriers and underwriting partners solely to provide rate quotes and policy issuance.
+      </p>
+
+      <h2>4. Data Security</h2>
+      <p>
+        We implement administrative, technical, and physical safeguards to protect your personal information against unauthorized access, alteration, or disclosure.
+      </p>
+
+      <h2>5. Contact Us Regarding Privacy</h2>
+      <p>
+        If you have questions about our Privacy Policy or your personal data, please contact us:
+      </p>
+      <p>
+        <strong>Pinion Family Insurance</strong><br/>
+        2621A W Oxford Loop<br/>
+        Oxford, MS 38655<br/>
+        Phone: (662) 638-3777<br/>
+        Email: info@pinionfamilyinsurance.com
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+  .breadcrumbs {
+    display: flex;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-sm);
+  }
+  .breadcrumbs a { color: var(--gray-300); }
+  .breadcrumbs .current { color: var(--brand-red-light); font-weight: 600; }
+  .page-hero h1 { font-size: 2.75rem; color: var(--white); }
+  .highlight-text { color: var(--brand-red-light); }
+  .hero-desc { color: var(--gray-400); font-size: 0.95rem; }
+
+  .legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--gray-700);
+    line-height: 1.8;
+  }
+  .legal-content h2 {
+    color: var(--navy);
+    font-size: 1.4rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-sm);
+  }
+  .legal-content p {
+    margin-bottom: var(--space-md);
+  }
+  .legal-content ul {
+    list-style: disc;
+    padding-left: var(--space-xl);
+    margin-bottom: var(--space-lg);
+  }
+  .legal-content li {
+    margin-bottom: var(--space-xs);
+  }
+</style>

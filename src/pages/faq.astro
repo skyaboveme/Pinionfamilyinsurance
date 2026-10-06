@@ -1,0 +1,199 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CarrierStrip from '../components/CarrierStrip.astro';
+import FAQ from '../components/FAQ.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import '../styles/global.css';
+
+const generalFAQs = [
+  {
+    question: "What is an independent insurance agency?",
+    answer: "An independent insurance agency represents multiple insurance companies rather than being restricted to one. This allows Pinion Family Insurance to compare policies across 15+ top carriers (such as Progressive, Safeco, Travelers, and Nationwide) to find the best balance of comprehensive coverage and affordable pricing."
+  },
+  {
+    question: "How much does it cost to use Pinion Family Insurance?",
+    answer: "Our consultation and rate shopping services are 100% free to you. You never pay higher premiums or extra broker fees for working with us. In fact, our clients almost always save money compared to buying directly because we know how to structure discounts across carriers."
+  },
+  {
+    question: "How often should I review my insurance policies?",
+    answer: "We recommend reviewing your insurance at least once a year, or whenever major life events happen—such as buying a home, getting married, having a child, purchasing a new car, or starting a business. We provide free policy checkups anytime."
+  }
+];
+
+const autoHomeFAQs = [
+  {
+    question: "How much money can I save by bundling home and auto insurance?",
+    answer: "Bundling auto and home (or renters/motorcycle) insurance with the same carrier typically yields discounts between 15% and 25% on your combined annual premiums, while simplifying your billing into a single renewal."
+  },
+  {
+    question: "What is the difference between Actual Cash Value and Replacement Cost?",
+    answer: "Actual Cash Value (ACV) pays the depreciated value of damaged property at the time of loss. Replacement Cost pays what it costs to replace or repair your property with brand new materials of like kind and quality, without subtracting for age or depreciation."
+  },
+  {
+    question: "Does Mississippi homeowners insurance cover storm and hail damage?",
+    answer: "Yes, wind and hail damage are standard covered perils in Mississippi home insurance policies. We help you choose the right wind/hail deductible to protect against severe southern weather events."
+  }
+];
+
+const claimsFAQs = [
+  {
+    question: "How do I file an insurance claim?",
+    answer: "You can call our Oxford office directly at (662) 638-3777, or contact your carrier's 24/7 emergency claim hotline. We will guide you through documenting damage, contacting adjusters, and ensuring your claim is handled quickly and fairly."
+  },
+  {
+    question: "Will my insurance rates increase if I file a claim?",
+    answer: "Not necessarily. Comprehensive claims (like weather damage or a cracked windshield) typically do not increase your rates. At-fault accidents or frequent claims may impact renewal pricing, which is why having an independent agent to review your situation is invaluable."
+  }
+];
+
+const allFAQs = [...generalFAQs, ...autoHomeFAQs, ...claimsFAQs];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": allFAQs.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://pinionfamilyinsurance.com/faq" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Insurance FAQ | Pinion Family Insurance Oxford MS"
+  description="Find answers to common questions about auto, home, life, and commercial insurance in Oxford, MS. Learn how independent agents save you money."
+  canonical="https://pinionfamilyinsurance.com/faq"
+  schema={schema}
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">FAQs</span>
+      </div>
+      <span class="hero-eyebrow">Clear Answers</span>
+      <h1>Insurance <span class="highlight-text">Frequently Asked Questions</span></h1>
+      <p class="hero-desc">
+        Insurance terminology and coverage choices shouldn't be confusing. Here are straightforward answers from our local Oxford agents.
+      </p>
+    </div>
+  </section>
+
+  <!-- Categorized FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="faq-category-block">
+        <span class="section-eyebrow">General Insurance</span>
+        <h2 class="category-heading">Working With An Independent Agency</h2>
+        <FAQ items={generalFAQs} idPrefix="gen" title="" subtitle="" />
+      </div>
+
+      <div class="faq-category-block" style="margin-top: var(--space-4xl);">
+        <span class="section-eyebrow">Auto & Home Protection</span>
+        <h2 class="category-heading">Coverage, Discounts & Bundles</h2>
+        <FAQ items={autoHomeFAQs} idPrefix="autohome" title="" subtitle="" />
+      </div>
+
+      <div class="faq-category-block" style="margin-top: var(--space-4xl);">
+        <span class="section-eyebrow">Claims & Advocacy</span>
+        <h2 class="category-heading">What Happens When You Need to File a Claim</h2>
+        <FAQ items={claimsFAQs} idPrefix="claims" title="" subtitle="" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrier Strip -->
+  <CarrierStrip />
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-4xl);
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 840px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumbs a { color: var(--gray-300); }
+  .breadcrumbs a:hover { color: var(--white); }
+  .breadcrumbs .current { color: var(--brand-red-light); font-weight: 600; }
+
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--brand-red-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: var(--space-md);
+  }
+
+  .highlight-text { color: var(--brand-red-light); }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  .faq-category-block {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .category-heading {
+    font-size: 1.8rem;
+    color: var(--navy);
+    margin-bottom: var(--space-md);
+  }
+</style>

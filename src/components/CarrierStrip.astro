@@ -1,0 +1,131 @@
+---
+const carriers = [
+  { name: 'Progressive', tagline: 'Auto & Home', icon: 'shield' },
+  { name: 'Safeco Insurance', tagline: 'A Liberty Mutual Co.', icon: 'award' },
+  { name: 'Travelers', tagline: 'Comprehensive Protection', icon: 'umbrella' },
+  { name: 'Nationwide', tagline: 'On Your Side', icon: 'heart' },
+  { name: 'Liberty Mutual', tagline: 'Customized Coverage', icon: 'landmark' },
+  { name: 'The Hartford', tagline: 'Business & Commercial', icon: 'briefcase' },
+  { name: 'Foremost', tagline: 'Specialty & Property', icon: 'home' },
+  { name: 'Chubb', tagline: 'Premium Protection', icon: 'check-circle' },
+];
+---
+
+<section class="carrier-strip">
+  <div class="container">
+    <div class="carrier-header">
+      <span class="carrier-eyebrow">Independent Choice</span>
+      <p class="carrier-title">We Compare Rates Across 15+ Top-Rated National Carriers</p>
+    </div>
+    
+    <div class="carrier-grid">
+      {carriers.map(c => (
+        <div class="carrier-card">
+          <div class="carrier-badge">
+            <span class="carrier-name">{c.name}</span>
+            <span class="carrier-sub">{c.tagline}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="carrier-note">As an independent agency in Oxford, MS, we shop the market to find you the strongest policy at the lowest premium.</p>
+  </div>
+</section>
+
+<style>
+  .carrier-strip {
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    padding: var(--space-3xl) 0;
+    border-bottom: 1px solid var(--gray-200);
+    position: relative;
+  }
+
+  .carrier-header {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+  }
+
+  .carrier-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--brand-red);
+    margin-bottom: var(--space-xs);
+  }
+
+  .carrier-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin: 0 auto;
+  }
+
+  .carrier-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    max-width: 1000px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .carrier-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-md) var(--space-lg);
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carrier-card:hover {
+    border-color: var(--brand-red-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(235, 29, 36, 0.08);
+  }
+
+  .carrier-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .carrier-name {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    letter-spacing: -0.01em;
+  }
+
+  .carrier-sub {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .carrier-note {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-top: var(--space-md);
+  }
+
+  @media (max-width: 840px) {
+    .carrier-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carrier-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

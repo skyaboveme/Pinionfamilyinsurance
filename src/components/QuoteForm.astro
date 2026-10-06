@@ -1,0 +1,251 @@
+---
+interface Props {
+  defaultInsuranceType?: string;
+  formTitle?: string;
+  formSubtitle?: string;
+}
+
+const {
+  defaultInsuranceType = '',
+  formTitle = 'Request a Free Quote',
+  formSubtitle = 'Tell us a little about your coverage needs and our local Oxford team will shop the top carriers for you.'
+} = Astro.props;
+---
+
+<div class="quote-form-card">
+  <h3>{formTitle}</h3>
+  <p class="form-subtitle">{formSubtitle}</p>
+  
+  <form action="https://formspree.io/f/mnpnwvaw" method="POST" class="quote-form" id="quote-intake-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="form-firstName">First Name *</label>
+        <input type="text" id="form-firstName" name="firstName" required placeholder="John" />
+      </div>
+      <div class="form-group">
+        <label for="form-lastName">Last Name *</label>
+        <input type="text" id="form-lastName" name="lastName" required placeholder="Smith" />
+      </div>
+    </div>
+    
+    <div class="form-row">
+      <div class="form-group">
+        <label for="form-email">Email Address *</label>
+        <input type="email" id="form-email" name="email" required placeholder="john@example.com" />
+      </div>
+      <div class="form-group">
+        <label for="form-phone">Phone Number *</label>
+        <input type="tel" id="form-phone" name="phone" required placeholder="(662) 555-1234" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="form-insuranceType">Coverage Desired *</label>
+      <select id="form-insuranceType" name="insuranceType" required>
+        <option value="" disabled selected={!defaultInsuranceType}>Select coverage type...</option>
+        <option value="Auto Insurance" selected={defaultInsuranceType === 'Auto Insurance'}>Auto Insurance</option>
+        <option value="Home Insurance" selected={defaultInsuranceType === 'Home Insurance'}>Home Insurance</option>
+        <option value="Life Insurance" selected={defaultInsuranceType === 'Life Insurance'}>Life Insurance</option>
+        <option value="Commercial Insurance" selected={defaultInsuranceType === 'Commercial Insurance'}>Commercial / Business Insurance</option>
+        <option value="Renters Insurance" selected={defaultInsuranceType === 'Renters Insurance'}>Renters Insurance</option>
+        <option value="Motorcycle Insurance" selected={defaultInsuranceType === 'Motorcycle Insurance'}>Motorcycle / Specialty Insurance</option>
+        <option value="Bundle (Auto + Home)" selected={defaultInsuranceType === 'Bundle'}>Bundle (Auto + Home / Multiple)</option>
+        <option value="Other" selected={defaultInsuranceType === 'Other'}>Other Coverage</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="form-details">Coverage Details / Specific Questions</label>
+      <textarea id="form-details" name="details" rows="3" placeholder="E.g., current carrier, number of vehicles/drivers, home square footage, etc."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg form-submit-btn" id="quote-submit-btn">
+      <span class="submit-label">Get My Free Quotes</span>
+      <span class="submit-spinner" style="display:none;">Submitting...</span>
+    </button>
+    
+    <p class="form-trust-text">
+      🔒 Fast, free, and no-obligation. We compare 15+ carriers to find your lowest rate.
+    </p>
+  </form>
+
+  <div class="form-success-message" id="quote-success-msg" style="display:none;">
+    <div class="success-icon-wrap">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    </div>
+    <h3>Quote Request Received!</h3>
+    <p>Thank you for trusting Pinion Family Insurance. An agent in our Oxford office is reviewing your request and will contact you shortly with custom rate options.</p>
+    <a href="tel:+16626383777" class="btn btn-outline-dark btn-sm">Need immediate help? Call (662) 638-3777</a>
+  </div>
+</div>
+
+<style>
+  .quote-form-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-2xl);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .quote-form-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+    color: var(--gray-900);
+  }
+
+  .form-subtitle {
+    color: var(--gray-500);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xl);
+    line-height: 1.5;
+  }
+
+  .quote-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+  }
+
+  .form-group label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--gray-800);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    color: var(--gray-900);
+    background: var(--white);
+    transition: all var(--transition);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--brand-red);
+    box-shadow: 0 0 0 3px rgba(235, 29, 36, 0.15);
+  }
+
+  .form-submit-btn {
+    width: 100%;
+    margin-top: var(--space-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .form-trust-text {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    text-align: center;
+    margin-top: var(--space-xs);
+  }
+
+  .form-success-message {
+    text-align: center;
+    padding: var(--space-xl) 0;
+  }
+
+  .success-icon-wrap {
+    margin-bottom: var(--space-md);
+  }
+
+  .form-success-message h3 {
+    color: var(--navy);
+    font-size: 1.6rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .form-success-message p {
+    color: var(--gray-600);
+    margin-bottom: var(--space-lg);
+    line-height: 1.6;
+  }
+
+  .btn-outline-dark {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid var(--gray-300);
+  }
+
+  .btn-outline-dark:hover {
+    background: var(--gray-50);
+  }
+
+  @media (max-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    .quote-form-card {
+      padding: var(--space-lg);
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const form = document.getElementById('quote-intake-form');
+    const successMsg = document.getElementById('quote-success-msg');
+    const submitBtn = document.getElementById('quote-submit-btn');
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitLabel = submitBtn?.querySelector('.submit-label');
+        const submitSpinner = submitBtn?.querySelector('.submit-spinner');
+        
+        if (submitLabel && submitSpinner) {
+          submitLabel.style.display = 'none';
+          submitSpinner.style.display = 'inline';
+        }
+
+        try {
+          const formData = new FormData(form);
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            form.style.display = 'none';
+            if (successMsg) successMsg.style.display = 'block';
+          } else {
+            alert('There was a problem submitting your request. Please call our office directly at (662) 638-3777.');
+            if (submitLabel && submitSpinner) {
+              submitLabel.style.display = 'inline';
+              submitSpinner.style.display = 'none';
+            }
+          }
+        } catch (err) {
+          alert('Submission error. Please call us directly at (662) 638-3777.');
+          if (submitLabel && submitSpinner) {
+            submitLabel.style.display = 'inline';
+            submitSpinner.style.display = 'none';
+          }
+        }
+      });
+    }
+  });
+</script>

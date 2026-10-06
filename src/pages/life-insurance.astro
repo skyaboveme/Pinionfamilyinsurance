@@ -1,0 +1,423 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CarrierStrip from '../components/CarrierStrip.astro';
+import FAQ from '../components/FAQ.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import '../styles/global.css';
+
+const lifeFAQs = [
+  {
+    question: "What is the difference between Term Life and Whole Life insurance?",
+    answer: "Term Life provides coverage for a specific period (e.g., 10, 20, or 30 years) and pays a death benefit if you pass away during that term. It is typically the most affordable option for young families and mortgage protection. Whole Life (Permanent Life) provides lifelong coverage as long as premiums are paid and builds cash value over time."
+  },
+  {
+    question: "How much life insurance coverage do I need?",
+    answer: "A common baseline is 10 to 12 times your annual income. However, your ideal coverage should account for outstanding debts (mortgage, auto loans), future college tuition for children, final expenses, and replacement income for your spouse. We provide custom needs analysis to find your exact number."
+  },
+  {
+    question: "Can I get life insurance without a medical exam?",
+    answer: "Yes! Many of our partner carriers offer 'simplified issue' and 'no-exam' life insurance policies with accelerated digital underwriting, providing fast approvals without needles or doctor visits for qualifying individuals."
+  },
+  {
+    question: "At what age should I buy life insurance in Mississippi?",
+    answer: "The earlier you buy, the lower your locked-in monthly rates will be. Purchasing life insurance in your 20s, 30s, or 40s while in good health guarantees affordable premiums for decades to come."
+  }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Life Insurance in Oxford, MS",
+    "serviceType": "Life Insurance",
+    "provider": {
+      "@type": "InsuranceAgency",
+      "name": "Pinion Family Insurance",
+      "telephone": "+16626383777",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2621A W Oxford Loop",
+        "addressLocality": "Oxford",
+        "addressRegion": "MS",
+        "postalCode": "38655"
+      }
+    },
+    "description": "Affordable term and whole life insurance policies in Oxford, Mississippi. Protect your family's future with Pinion Family Insurance.",
+    "areaServed": ["Oxford", "Water Valley", "Batesville", "Holly Springs", "Lafayette County", "Mississippi"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Life Insurance", "item": "https://pinionfamilyinsurance.com/life-insurance" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Life Insurance Oxford MS | Pinion Family Insurance"
+  description="Protect your family's financial future with affordable term and whole life insurance in Oxford, MS. Compare top life carriers. Get a personalized quote today!"
+  canonical="https://pinionfamilyinsurance.com/life-insurance"
+  schema={schema}
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">Life Insurance</span>
+      </div>
+      <span class="hero-eyebrow">Financial Security for Loved Ones</span>
+      <h1>Life Insurance in <span class="highlight-text">Oxford, MS</span></h1>
+      <p class="hero-desc">
+        The greatest gift you can give your family is certainty. We compare top life insurance carriers to secure the highest coverage at rates tailored to your budget.
+      </p>
+      <div class="hero-btn-group">
+        <a href="#quote-section" class="btn btn-primary btn-lg">Get Free Life Quotes</a>
+        <a href="tel:+16626383777" class="btn btn-outline btn-lg">Call (662) 638-3777</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <section class="section" id="quote-section">
+    <div class="container">
+      <div class="service-layout-grid">
+        <!-- Details -->
+        <div class="service-details">
+          <span class="section-eyebrow">A Shield for Tomorrow</span>
+          <h2>Clear, Compassionate Life Insurance Guidance</h2>
+          <p class="lead-text">
+            Life insurance isn't for you—it's for the people who depend on you. Whether you're newly married, buying a home in Oxford, or planning your retirement legacy, we make choosing the right policy simple and pressure-free.
+          </p>
+
+          <div class="coverage-features-box">
+            <h3>Life Insurance Options We Provide:</h3>
+            <ul class="coverage-list">
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Term Life Insurance (10, 15, 20, 30 Years):</strong>
+                  <p>Maximum death benefit protection for the lowest monthly cost. Ideal for income replacement, paying off a mortgage, and raising children through college.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Whole Life & Permanent Insurance:</strong>
+                  <p>Guaranteed lifetime death benefit that never expires as long as premiums are paid, with guaranteed cash value accumulation you can borrow against.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Universal Life Insurance:</strong>
+                  <p>Flexible permanent coverage allowing you to adjust premium payments and death benefits as your financial circumstances change.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Final Expense & Burial Insurance:</strong>
+                  <p>Affordable, easy-approval coverage designed specifically to pay funeral costs, medical bills, and estate settling expenses.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="discounts-callout">
+            <h3>What Can Life Insurance Protect?</h3>
+            <div class="discount-tags">
+              <span class="tag">Mortgage Payoff</span>
+              <span class="tag">College Tuition</span>
+              <span class="tag">Spouse Income Replacement</span>
+              <span class="tag">Debt & Loan Elimination</span>
+              <span class="tag">Estate & Business Succession</span>
+              <span class="tag">Funeral & Medical Costs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar / Quote -->
+        <div class="service-sidebar">
+          <QuoteForm defaultInsuranceType="Life Insurance" formTitle="Get a Life Insurance Quote" />
+          
+          <div class="local-trust-card">
+            <h4>The Pinion Family Promise</h4>
+            <ul class="trust-points">
+              <li>❤️ <strong>Zero-Pressure Advice:</strong> We explain your options clearly without high-pressure sales tactics.</li>
+              <li>🔍 <strong>Multi-Carrier Access:</strong> We compare multiple life underwriters to find your lowest premium.</li>
+              <li>📋 <strong>No-Exam Options:</strong> Rapid approval options available for qualifying applicants.</li>
+              <li>📍 <strong>Local Oxford Presence:</strong> Meet face-to-face or complete everything over phone and email.</li>
+            </ul>
+            <div class="call-direct">
+              <span>Have questions about life insurance?</span>
+              <a href="tel:+16626383777" class="direct-phone-btn">📞 (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrier Strip -->
+  <CarrierStrip />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Life Insurance FAQs"
+    subtitle="Common questions about life insurance policies and planning in Mississippi."
+    items={lifeFAQs}
+    idPrefix="life"
+  />
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-4xl);
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 840px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumbs a {
+    color: var(--gray-300);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--white);
+  }
+
+  .breadcrumbs .current {
+    color: var(--brand-red-light);
+    font-weight: 600;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--brand-red-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: var(--space-md);
+  }
+
+  .highlight-text {
+    color: var(--brand-red-light);
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-btn-group {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .service-layout-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .service-details h2 {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .coverage-features-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .coverage-features-box h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--space-lg);
+    color: var(--navy);
+  }
+
+  .coverage-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .coverage-list li {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .check-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(235, 29, 36, 0.1);
+    color: var(--brand-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .coverage-list strong {
+    display: block;
+    color: var(--gray-900);
+    font-size: 1.05rem;
+    margin-bottom: 3px;
+  }
+
+  .coverage-list p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .discounts-callout {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .discounts-callout h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .discount-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .discount-tags .tag {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .service-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    position: sticky;
+    top: calc(var(--header-height) + 20px);
+  }
+
+  .local-trust-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .local-trust-card h4 {
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: var(--space-md);
+  }
+
+  .trust-points {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .call-direct {
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--space-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .call-direct span {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+  }
+
+  .direct-phone-btn {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--brand-red);
+  }
+
+  .direct-phone-btn:hover {
+    color: var(--brand-red-dark);
+  }
+
+  @media (max-width: 992px) {
+    .service-layout-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-sidebar {
+      position: static;
+    }
+  }
+</style>

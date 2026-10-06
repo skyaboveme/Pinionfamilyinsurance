@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import '../styles/global.css';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Terms of Service - Pinion Family Insurance",
+  "description": "Terms of Service for Pinion Family Insurance in Oxford, MS."
+};
+---
+
+<BaseLayout
+  title="Terms of Service | Pinion Family Insurance"
+  description="Terms of Service for Pinion Family Insurance. Understanding quotes, coverage binding, and website usage."
+  canonical="https://pinionfamilyinsurance.com/terms"
+  schema={schema}
+>
+  <Header />
+
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">Terms of Service</span>
+      </div>
+      <h1>Terms of <span class="highlight-text">Service</span></h1>
+      <p class="hero-desc">Last Updated: October 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container legal-content">
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By accessing or using the website of Pinion Family Insurance (pinionfamilyinsurance.com), you agree to be bound by these Terms of Service and all applicable laws and regulations.
+      </p>
+
+      <h2>2. Insurance Quotes and Policy Binding</h2>
+      <p>
+        Quotes provided through this website, phone, or email are estimates based on the information provided and underwriting guidelines of our carrier partners. An insurance quote does not constitute a guaranteed offer or bound policy.
+      </p>
+      <p>
+        Insurance coverage cannot be bound, altered, or canceled solely by leaving a voicemail or submitting an online contact form. Coverage is only effective once confirmed directly in writing or verbally by a licensed agent of Pinion Family Insurance or the insurance carrier.
+      </p>
+
+      <h2>3. Intellectual Property</h2>
+      <p>
+        All content, branding, logos, and materials on this website are the property of Pinion Family Insurance or used with permission from our respective carrier partners.
+      </p>
+
+      <h2>4. Limitation of Liability</h2>
+      <p>
+        Pinion Family Insurance makes every effort to provide accurate, up-to-date information on this website. However, policy terms, conditions, exclusions, and limits are governed exclusively by the issued policy contracts of the respective insurance carriers.
+      </p>
+
+      <h2>5. Governing Law</h2>
+      <p>
+        These terms shall be governed and construed in accordance with the laws of the State of Mississippi, without regard to conflict of law provisions.
+      </p>
+
+      <h2>6. Contact Information</h2>
+      <p>
+        <strong>Pinion Family Insurance</strong><br/>
+        2621A W Oxford Loop, Oxford, MS 38655<br/>
+        Phone: (662) 638-3777<br/>
+        Email: info@pinionfamilyinsurance.com
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+  }
+  .breadcrumbs {
+    display: flex;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-sm);
+  }
+  .breadcrumbs a { color: var(--gray-300); }
+  .breadcrumbs .current { color: var(--brand-red-light); font-weight: 600; }
+  .page-hero h1 { font-size: 2.75rem; color: var(--white); }
+  .highlight-text { color: var(--brand-red-light); }
+  .hero-desc { color: var(--gray-400); font-size: 0.95rem; }
+
+  .legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--gray-700);
+    line-height: 1.8;
+  }
+  .legal-content h2 {
+    color: var(--navy);
+    font-size: 1.4rem;
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-sm);
+  }
+  .legal-content p {
+    margin-bottom: var(--space-md);
+  }
+</style>

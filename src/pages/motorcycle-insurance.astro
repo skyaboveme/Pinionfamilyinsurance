@@ -1,0 +1,430 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CarrierStrip from '../components/CarrierStrip.astro';
+import FAQ from '../components/FAQ.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import '../styles/global.css';
+
+const motorcycleFAQs = [
+  {
+    question: "Is motorcycle insurance mandatory in Mississippi?",
+    answer: "Yes. In Mississippi, all on-road motorcycles, scooters, and cruisers must meet the state minimum liability requirements (25/50/25). Operating without valid insurance carries heavy fines, license suspension, and potential impoundment."
+  },
+  {
+    question: "Does motorcycle insurance cover custom parts and chrome accessories?",
+    answer: "Most basic policies include a standard $1,000 to $3,000 accessory limit. However, if you've added custom paint, high-end exhaust systems, saddlebags, or chrome work, we can easily increase your Accessory & Custom Parts coverage up to $30,000+."
+  },
+  {
+    question: "Do you insure ATVs, UTVs, dirt bikes, and golf carts in Mississippi?",
+    answer: "Yes! Pinion Family Insurance offers specialized powersports coverage for off-road ATVs, side-by-sides (UTVs), golf carts, dirt bikes, and personal watercraft / boats throughout Mississippi."
+  },
+  {
+    question: "How can I get discounts on my Mississippi motorcycle policy?",
+    answer: "Carriers offer substantial discounts for completing a Motorcycle Safety Foundation (MSF) course, bundling with auto or home insurance, having a clean motorcycle driving record, and insuring multiple bikes on a single policy."
+  }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Motorcycle & Powersports Insurance in Oxford, MS",
+    "serviceType": "Motorcycle Insurance",
+    "provider": {
+      "@type": "InsuranceAgency",
+      "name": "Pinion Family Insurance",
+      "telephone": "+16626383777",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2621A W Oxford Loop",
+        "addressLocality": "Oxford",
+        "addressRegion": "MS",
+        "postalCode": "38655"
+      }
+    },
+    "description": "Custom motorcycle, cruiser, ATV, and powersports insurance in Oxford, Mississippi. Compare Progressive, Safeco, and specialty carriers.",
+    "areaServed": ["Oxford", "Water Valley", "Batesville", "Holly Springs", "Lafayette County", "Mississippi"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Motorcycle Insurance", "item": "https://pinionfamilyinsurance.com/motorcycle-insurance" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Motorcycle Insurance Oxford MS | Pinion Family Insurance"
+  description="Ride with complete freedom and confidence across Mississippi. Compare custom motorcycle and ATV insurance rates with Pinion Family Insurance in Oxford, MS."
+  canonical="https://pinionfamilyinsurance.com/motorcycle-insurance"
+  schema={schema}
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">Motorcycle Insurance</span>
+      </div>
+      <span class="hero-eyebrow">Custom Powersports & Bike Protection</span>
+      <h1>Motorcycle Insurance in <span class="highlight-text">Oxford, MS</span></h1>
+      <p class="hero-desc">
+        Hit the open Mississippi roads with total confidence. We partner with top motorcycle insurance carriers like Progressive and Safeco to give you the custom protection you need.
+      </p>
+      <div class="hero-btn-group">
+        <a href="#quote-section" class="btn btn-primary btn-lg">Get Free Motorcycle Quotes</a>
+        <a href="tel:+16626383777" class="btn btn-outline btn-lg">Call (662) 638-3777</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content & Quote Grid -->
+  <section class="section" id="quote-section">
+    <div class="container">
+      <div class="service-layout-grid">
+        <!-- Details -->
+        <div class="service-details">
+          <span class="section-eyebrow">Protection For Every Ride</span>
+          <h2>Tailored Coverage for Cruisers, Sportbikes, Touring & ATVs</h2>
+          <p class="lead-text">
+            From leisurely scenic cruises around Enid and Sardis Lakes to daily commuting in Oxford, motorcycle riders face unique road risks. We ensure your bike, gear, and liability are fully protected without breaking the bank.
+          </p>
+
+          <div class="coverage-features-box">
+            <h3>Key Motorcycle Coverage Options:</h3>
+            <ul class="coverage-list">
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Bodily Injury & Property Damage Liability:</strong>
+                  <p>Covers damage or injury caused to others while riding, plus legal defense if a lawsuit arises.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Collision & Comprehensive:</strong>
+                  <p>Pays for repairs or total replacement if your bike is damaged in a crash, stolen, vandalized, or damaged by severe weather.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Custom Parts & Equipment (CPE):</strong>
+                  <p>Covers custom chrome, aftermarket pipes, specialized fairings, sound systems, and custom paint.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Uninsured/Underinsured Motorist:</strong>
+                  <p>Essential protection if you are injured by a motorist who does not carry adequate insurance.</p>
+                </div>
+              </li>
+              <li>
+                <div class="check-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                <div>
+                  <strong>Rider Gear & Helmet Coverage:</strong>
+                  <p>Protects your helmet, leather jacket, riding boots, and specialized protective gear if damaged in a collision.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="discounts-callout">
+            <h3>Specialty Vehicles We Insure:</h3>
+            <div class="discount-tags">
+              <span class="tag">Harley-Davidson & Cruisers</span>
+              <span class="tag">Sportbikes & Dual-Sport</span>
+              <span class="tag">Touring Bikes & Trikes</span>
+              <span class="tag">ATVs & Side-by-Sides (UTVs)</span>
+              <span class="tag">Dirt Bikes & Enduros</span>
+              <span class="tag">Golf Carts & Scooters</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar / Quote -->
+        <div class="service-sidebar">
+          <QuoteForm defaultInsuranceType="Motorcycle Insurance" formTitle="Get a Motorcycle Quote" />
+          
+          <div class="local-trust-card">
+            <h4>Rider Friendly Agency</h4>
+            <ul class="trust-points">
+              <li>🏍️ <strong>Rider Discounts:</strong> MSF safety course credits, multi-bike discounts.</li>
+              <li>🔍 <strong>Top Motorcycle Carrier:</strong> Progressive #1 motorcycle insurer in America.</li>
+              <li>🛠️ <strong>Roadside & Towing:</strong> Dedicated motorcycle towing equipment included.</li>
+              <li>⭐ <strong>Direct Oxford Support:</strong> Personalized advice from your local agent.</li>
+            </ul>
+            <div class="call-direct">
+              <span>Ready for a quick quote?</span>
+              <a href="tel:+16626383777" class="direct-phone-btn">📞 (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrier Strip -->
+  <CarrierStrip />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Motorcycle Insurance FAQs"
+    subtitle="Common rider questions about bike coverage, custom parts, and discounts in Mississippi."
+    items={motorcycleFAQs}
+    idPrefix="motorcycle"
+  />
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-4xl);
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 840px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumbs a {
+    color: var(--gray-300);
+  }
+
+  .breadcrumbs a:hover {
+    color: var(--white);
+  }
+
+  .breadcrumbs .current {
+    color: var(--brand-red-light);
+    font-weight: 600;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--brand-red-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: var(--space-md);
+  }
+
+  .highlight-text {
+    color: var(--brand-red-light);
+  }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-btn-group {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .service-layout-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .service-details h2 {
+    font-size: 2.2rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .coverage-features-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .coverage-features-box h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--space-lg);
+    color: var(--navy);
+  }
+
+  .coverage-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .coverage-list li {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .check-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(235, 29, 36, 0.1);
+    color: var(--brand-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .coverage-list strong {
+    display: block;
+    color: var(--gray-900);
+    font-size: 1.05rem;
+    margin-bottom: 3px;
+  }
+
+  .coverage-list p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .discounts-callout {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+  }
+
+  .discounts-callout h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .discount-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .discount-tags .tag {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: var(--border-radius-pill);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .service-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    position: sticky;
+    top: calc(var(--header-height) + 20px);
+  }
+
+  .local-trust-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .local-trust-card h4 {
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: var(--space-md);
+  }
+
+  .trust-points {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .call-direct {
+    border-top: 1px solid var(--gray-200);
+    padding-top: var(--space-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .call-direct span {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+  }
+
+  .direct-phone-btn {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--brand-red);
+  }
+
+  .direct-phone-btn:hover {
+    color: var(--brand-red-dark);
+  }
+
+  @media (max-width: 992px) {
+    .service-layout-grid {
+      grid-template-columns: 1fr;
+    }
+    .service-sidebar {
+      position: static;
+    }
+  }
+</style>

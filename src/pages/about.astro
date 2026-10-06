@@ -1,0 +1,563 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CarrierStrip from '../components/CarrierStrip.astro';
+import FAQ from '../components/FAQ.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import '../styles/global.css';
+
+const aboutFAQs = [
+  {
+    question: "What makes an independent agency different from a captive agency?",
+    answer: "A captive insurance agent works exclusively for one carrier (like State Farm or Allstate) and can only sell that company's products—even if their rates rise or coverage options shrink. Pinion Family Insurance is an independent agency representing 15+ top national carriers. We work for YOU, not the insurance companies, comparing options to secure your best rate and strongest coverage."
+  },
+  {
+    question: "Where is Pinion Family Insurance located?",
+    answer: "Our office is located at 2621A W Oxford Loop in Oxford, Mississippi 38655. We welcome in-person visits Monday through Friday from 8:00 AM to 5:00 PM, or you can handle everything easily by phone at (662) 638-3777 or via email."
+  },
+  {
+    question: "How long has Pinion Family Insurance served the Oxford community?",
+    answer: "Pinion Family Insurance was founded to bring transparent, relationship-driven insurance to Lafayette County and North Mississippi families. We treat every client like family, offering personal reviews, annual rate checks, and tireless claim advocacy."
+  }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Pinion Family Insurance",
+    "description": "Learn about Pinion Family Insurance in Oxford, MS. Family-owned independent agency providing personalized auto, home, life, and business coverage.",
+    "url": "https://pinionfamilyinsurance.com/about"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://pinionfamilyinsurance.com/about" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="About Pinion Family Insurance | Oxford, MS Independent Insurance Agency"
+  description="Learn about Pinion Family Insurance in Oxford, MS. A family-owned, independent insurance agency dedicated to protecting Oxford & Mississippi families with personalized service."
+  canonical="https://pinionfamilyinsurance.com/about"
+  schema={schema}
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">About Us</span>
+      </div>
+      <span class="hero-eyebrow">Our Story & Mission</span>
+      <h1>Rooted in Family. Dedicated to <span class="highlight-text">Oxford, MS.</span></h1>
+      <p class="hero-desc">
+        We believe buying insurance should feel like sitting down with a trusted neighbor. At Pinion Family Insurance, we treat your family and business with the honesty, dedication, and care you deserve.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story & Vision -->
+  <section class="section">
+    <div class="container">
+      <div class="about-main-grid">
+        <div class="about-image-column animate-on-scroll">
+          <div class="image-frame">
+            <img src="/images/about-office.jpg" alt="Pinion Family Insurance office in Oxford, Mississippi" width="600" height="420" loading="lazy" />
+          </div>
+          <div class="trust-badge-card">
+            <span class="badge-num">15+</span>
+            <span class="badge-lbl">Carriers Shopped for Your Best Value</span>
+          </div>
+        </div>
+
+        <div class="about-story-column animate-on-scroll">
+          <span class="section-eyebrow">Who We Are</span>
+          <h2>Insurance Built on <span class="highlight">Relationships</span>, Not Transactions</h2>
+          <p class="lead-text">
+            In an era of automated phone menus and cold algorithmic quote generators, Pinion Family Insurance was established with a singular mission: to restore genuine human connection, integrity, and personal accountability to insurance.
+          </p>
+          <p>
+            Based on W Oxford Loop in Oxford, MS, we understand the local community—the unique weather risks of North Mississippi, the vitality of Lafayette County small businesses, and the dreams parents have for their children's financial security.
+          </p>
+          <p>
+            When you partner with us, you don't just receive an insurance policy. You gain a dedicated local advocate who is always just a quick phone call away whenever your life changes or when you need assistance filing a claim.
+          </p>
+
+          <div class="about-bullets">
+            <div class="bullet-item">
+              <div class="bullet-icon">✓</div>
+              <div>
+                <strong>Independent Choice:</strong>
+                <p>We work for you, not the insurance companies. We shop 15+ top carriers to get you unmatched value.</p>
+              </div>
+            </div>
+            <div class="bullet-item">
+              <div class="bullet-icon">✓</div>
+              <div>
+                <strong>Direct Claim Advocacy:</strong>
+                <p>When storms hit or accidents occur, our team stands by your side to help expedite your claim.</p>
+              </div>
+            </div>
+            <div class="bullet-item">
+              <div class="bullet-icon">✓</div>
+              <div>
+                <strong>Annual Policy Reviews:</strong>
+                <p>We proactively review your coverage to ensure you never overpay as your life evolves.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agency Comparison Table -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="text-center animate-on-scroll" style="margin-bottom: var(--space-3xl);">
+        <span class="section-eyebrow">The Independent Advantage</span>
+        <h2>Why Work With Pinion Family Insurance?</h2>
+        <p class="section-subtitle">
+          See how choosing a family-owned independent agency delivers greater freedom, savings, and personalized care.
+        </p>
+      </div>
+
+      <div class="comparison-card animate-on-scroll">
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature / Service</th>
+                <th class="highlight-col">Pinion Family Insurance</th>
+                <th>Captive Agency (State Farm/Allstate)</th>
+                <th>Direct 1-800 Online Site</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Number of Carriers</strong></td>
+                <td class="highlight-col"><span class="table-check">✓</span> 15+ Top Carriers</td>
+                <td><span class="table-cross">✗</span> Only 1 Company</td>
+                <td><span class="table-cross">✗</span> Only 1 Company</td>
+              </tr>
+              <tr>
+                <td><strong>Shop Rates When Prices Rise</strong></td>
+                <td class="highlight-col"><span class="table-check">✓</span> We re-shop automatically</td>
+                <td><span class="table-cross">✗</span> You must leave them</td>
+                <td><span class="table-cross">✗</span> You must do it yourself</td>
+              </tr>
+              <tr>
+                <td><strong>Personal Local Agent</strong></td>
+                <td class="highlight-col"><span class="table-check">✓</span> Dedicated Oxford agent</td>
+                <td><span class="table-check">✓</span> Local agent</td>
+                <td><span class="table-cross">✗</span> Random call center</td>
+              </tr>
+              <tr>
+                <td><strong>Claims Advocacy</strong></td>
+                <td class="highlight-col"><span class="table-check">✓</span> Personal support & guidance</td>
+                <td><span class="table-check">✓</span> Limited support</td>
+                <td><span class="table-cross">✗</span> Automated phone tree</td>
+              </tr>
+              <tr>
+                <td><strong>Bundling Across Products</strong></td>
+                <td class="highlight-col"><span class="table-check">✓</span> Custom multi-carrier packages</td>
+                <td><span class="table-cross">✗</span> Single brand only</td>
+                <td><span class="table-cross">✗</span> Single brand only</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="text-center animate-on-scroll" style="margin-bottom: var(--space-3xl);">
+        <span class="section-eyebrow">Our Foundation</span>
+        <h2>Values That Guide Every Recommendation</h2>
+        <p class="section-subtitle">
+          We don't push one-size-fits-all policies. Every recommendation is grounded in four fundamental promises.
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="value-card animate-on-scroll">
+          <div class="value-number">01</div>
+          <h3>Integrity First</h3>
+          <p>We never sell coverage you don't need or cut critical protections just to show a cheap rate.</p>
+        </div>
+
+        <div class="value-card animate-on-scroll">
+          <div class="value-number">02</div>
+          <h3>Family Focus</h3>
+          <p>We treat your home, autos, and business as if they were our own family's assets.</p>
+        </div>
+
+        <div class="value-card animate-on-scroll">
+          <div class="value-number">03</div>
+          <h3>Continuous Care</h3>
+          <p>Our relationship starts after the policy is bound. We check in, review rates, and adapt as life changes.</p>
+        </div>
+
+        <div class="value-card animate-on-scroll">
+          <div class="value-number">04</div>
+          <h3>Community Pride</h3>
+          <p>We love Oxford and Mississippi. We actively support our local businesses, neighbors, and schools.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrier Strip -->
+  <CarrierStrip />
+
+  <!-- Visit Us / Office Details -->
+  <section class="section" id="visit">
+    <div class="container">
+      <div class="visit-grid">
+        <div class="visit-content animate-on-scroll">
+          <span class="section-eyebrow">Come Say Hello</span>
+          <h2>Visit Our Oxford, MS Office</h2>
+          <p class="lead-text">
+            We'd love to meet you in person! Drop by our office on W Oxford Loop to enjoy a cup of coffee and review your insurance coverage with a licensed agent.
+          </p>
+          <div class="visit-details-box">
+            <div class="v-item">
+              <strong>📍 Address:</strong>
+              <p>2621A W Oxford Loop, Oxford, MS 38655</p>
+            </div>
+            <div class="v-item">
+              <strong>🕒 Hours:</strong>
+              <p>Monday - Friday: 8:00 AM – 5:00 PM<br/>Saturday - Sunday: Closed</p>
+            </div>
+            <div class="v-item">
+              <strong>📞 Direct Phone:</strong>
+              <p><a href="tel:+16626383777" style="color: var(--brand-red); font-weight: 700;">(662) 638-3777</a></p>
+            </div>
+          </div>
+          <a href="/contact" class="btn btn-primary btn-lg">Schedule an Appointment</a>
+        </div>
+
+        <div class="visit-map animate-on-scroll">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3299.123456789!2d-89.57037476683598!3d34.36385690287256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIxJzQ5LjkiTiA4OcKwMzQnMTMuMyJX!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+            width="100%"
+            height="380"
+            style="border:0; border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md);"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Pinion Family Insurance Location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Questions About Our Agency"
+    subtitle="Learn more about how we serve Oxford and North Mississippi families."
+    items={aboutFAQs}
+    idPrefix="about"
+  />
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-4xl);
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 840px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumbs a { color: var(--gray-300); }
+  .breadcrumbs a:hover { color: var(--white); }
+  .breadcrumbs .current { color: var(--brand-red-light); font-weight: 600; }
+
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--brand-red-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: var(--space-md);
+  }
+
+  .highlight-text { color: var(--brand-red-light); }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  .about-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-4xl);
+    align-items: center;
+  }
+
+  .about-image-column {
+    position: relative;
+  }
+
+  .image-frame img {
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .trust-badge-card {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--brand-red);
+    color: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-brand);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    max-width: 260px;
+  }
+
+  .badge-num {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .badge-lbl {
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    color: var(--gray-700);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+  }
+
+  .about-story-column p {
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .about-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .bullet-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .bullet-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(235, 29, 36, 0.1);
+    color: var(--brand-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .bullet-item strong {
+    color: var(--navy);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .bullet-item p {
+    margin-bottom: 0;
+    font-size: 0.92rem;
+  }
+
+  /* Comparison Table */
+  .comparison-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+  }
+
+  .comparison-table-wrap {
+    overflow-x: auto;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-lg) var(--space-xl);
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 0.95rem;
+  }
+
+  .comparison-table th {
+    background: var(--gray-50);
+    color: var(--gray-900);
+    font-weight: 700;
+  }
+
+  .highlight-col {
+    background: rgba(235, 29, 36, 0.03);
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .table-check {
+    color: var(--success);
+    font-weight: 800;
+    margin-right: 4px;
+  }
+
+  .table-cross {
+    color: var(--brand-red);
+    font-weight: 800;
+    margin-right: 4px;
+  }
+
+  /* Value Cards */
+  .value-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    transition: all var(--transition);
+  }
+
+  .value-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-4px);
+    border-color: var(--brand-red-light);
+  }
+
+  .value-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--brand-red-light);
+    margin-bottom: var(--space-sm);
+    line-height: 1;
+  }
+
+  .value-card h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .value-card p {
+    color: var(--gray-300);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Visit Section */
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+
+  .visit-details-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin: var(--space-xl) 0;
+    background: var(--gray-50);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--gray-200);
+  }
+
+  .v-item strong {
+    display: block;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+
+  .v-item p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  @media (max-width: 992px) {
+    .about-main-grid {
+      grid-template-columns: 1fr;
+    }
+    .trust-badge-card {
+      position: static;
+      margin-top: var(--space-md);
+      max-width: 100%;
+    }
+    .visit-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

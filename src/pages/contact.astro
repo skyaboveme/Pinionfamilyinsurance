@@ -1,0 +1,306 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CarrierStrip from '../components/CarrierStrip.astro';
+import FAQ from '../components/FAQ.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import '../styles/global.css';
+
+const contactFAQs = [
+  {
+    question: "What information do I need to get an accurate insurance quote?",
+    answer: "For auto insurance: vehicle VINs/make/model and driver license details. For home or renters insurance: property address, approximate square footage, roof age, and security details. For commercial policies: business name, operations description, payroll, and current coverage limits."
+  },
+  {
+    question: "How fast can I get insurance coverage started?",
+    answer: "In most cases, we can bind same-day coverage once we collect your information and review your customized carrier options. Proof of insurance cards and binders can be emailed or texted to you immediately."
+  },
+  {
+    question: "Can I make changes to my policy after it is active?",
+    answer: "Absolutely. You can call, email, or visit our Oxford office anytime to add vehicles, change drivers, adjust coverage limits, or update billing information."
+  }
+];
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Pinion Family Insurance",
+    "description": "Contact Pinion Family Insurance in Oxford, MS. Request a free quote or call (662) 638-3777 to speak with a licensed agent.",
+    "url": "https://pinionfamilyinsurance.com/contact"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://pinionfamilyinsurance.com/contact" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Contact Us & Get a Quote | Pinion Family Insurance Oxford MS"
+  description="Contact Pinion Family Insurance in Oxford, MS. Call (662) 638-3777 or request a free quote online. Visit our office on W Oxford Loop."
+  canonical="https://pinionfamilyinsurance.com/contact"
+  schema={schema}
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="/">Home</a> <span>/</span> <span class="current">Contact Us</span>
+      </div>
+      <span class="hero-eyebrow">We're Here For You</span>
+      <h1>Contact Pinion Family <span class="highlight-text">Insurance</span></h1>
+      <p class="hero-desc">
+        Have questions about your coverage or want to compare quotes from 15+ top carriers? Reach out today—our local Oxford team is ready to help.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact & Form Section -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-page-grid">
+        <!-- Left Column: Contact Cards -->
+        <div class="contact-info-col animate-on-scroll">
+          <span class="section-eyebrow">Direct Communication</span>
+          <h2>Let's Connect</h2>
+          <p class="lead-text">
+            Whether you prefer calling, emailing, or visiting in person, you will always speak with a friendly, knowledgeable local insurance specialist.
+          </p>
+
+          <div class="contact-cards-stack">
+            <div class="contact-card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div class="card-text">
+                <h3>Call Our Office</h3>
+                <p>Speak directly with our Oxford agents during business hours.</p>
+                <a href="tel:+16626383777" class="contact-link">(662) 638-3777</a>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="card-text">
+                <h3>Office Location</h3>
+                <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+                <span class="office-hours">Mon - Fri: 8:00 AM – 5:00 PM</span>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div class="card-text">
+                <h3>Email Us</h3>
+                <p>Send policy documents or general inquiries anytime.</p>
+                <a href="mailto:info@pinionfamilyinsurance.com" class="contact-link">info@pinionfamilyinsurance.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map Embed -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3299.123456789!2d-89.57037476683598!3d34.36385690287256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDIxJzQ5LjkiTiA4OcKwMzQnMTMuMyJX!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+              width="100%"
+              height="260"
+              style="border:0; border-radius: var(--border-radius); box-shadow: var(--shadow-sm);"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Pinion Family Insurance Oxford Location"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Quote Intake Form -->
+        <div class="contact-form-col animate-on-scroll">
+          <QuoteForm
+            formTitle="Request Your Personalized Quote"
+            formSubtitle="Fill out the details below and we will shop 15+ top carriers to find your lowest rate."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrier Strip -->
+  <CarrierStrip />
+
+  <!-- FAQ Section -->
+  <FAQ
+    title="Frequently Asked Contact Questions"
+    subtitle="Quick answers regarding quote requests, office visits, and policy changes."
+    items={contactFAQs}
+    idPrefix="contact-page"
+  />
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--navy) 0%, #0d1726 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-4xl);
+    color: var(--white);
+    overflow: hidden;
+  }
+
+  .page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(235, 29, 36, 0.15) 0%, transparent 60%);
+  }
+
+  .page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 840px;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin-bottom: var(--space-md);
+  }
+
+  .breadcrumbs a { color: var(--gray-300); }
+  .breadcrumbs a:hover { color: var(--white); }
+  .breadcrumbs .current { color: var(--brand-red-light); font-weight: 600; }
+
+  .hero-eyebrow {
+    display: inline-block;
+    color: var(--brand-red-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    color: var(--white);
+    margin-bottom: var(--space-md);
+  }
+
+  .highlight-text { color: var(--brand-red-light); }
+
+  .hero-desc {
+    font-size: 1.15rem;
+    color: var(--gray-300);
+    line-height: 1.7;
+    max-width: 720px;
+  }
+
+  .contact-page-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.2fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  .lead-text {
+    font-size: 1.05rem;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact-card {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+    padding: var(--space-lg);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    transition: all var(--transition);
+  }
+
+  .contact-card:hover {
+    background: var(--white);
+    border-color: var(--brand-red-light);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  .card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(235, 29, 36, 0.1);
+    color: var(--brand-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-text h3 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 2px;
+  }
+
+  .card-text p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-bottom: 4px;
+  }
+
+  .contact-link {
+    font-weight: 700;
+    color: var(--brand-red);
+    font-size: 1rem;
+    display: inline-block;
+  }
+
+  .contact-link:hover {
+    color: var(--brand-red-dark);
+    text-decoration: underline;
+  }
+
+  .office-hours {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gray-500);
+  }
+
+  .map-container {
+    margin-top: var(--space-lg);
+  }
+
+  @media (max-width: 992px) {
+    .contact-page-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
