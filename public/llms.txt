@@ -2,4 +2,9 @@
 
 > Independent insurance agency in Oxford, Mississippi providing auto, home, life, and commercial insurance.
 
-- [Company Overview](https://pinionfamilyinsurance.com/llm.txt): Full company details, services, and contact information.
+- [Company Overview & Full Context](https://pinionfamilyinsurance.com/llm.txt): Full company details, services, carriers, and contact information.
+- [Insurance Resource Center](https://pinionfamilyinsurance.com/resources): In-depth Mississippi insurance guides and policy cost analysis.
+- [Auto Insurance](https://pinionfamilyinsurance.com/auto-insurance): Mississippi vehicle coverage options and discounts.
+- [Home Insurance](https://pinionfamilyinsurance.com/home-insurance): Oxford MS homeowners, storm, and property protection.
+- [Commercial Insurance](https://pinionfamilyinsurance.com/commercial-insurance): Business liability, BOP, and workers compensation.
+- [Service Areas](https://pinionfamilyinsurance.com/service-areas/water-valley-ms): Coverage across Lafayette, Yalobusha, Panola, Marshall, and Pontotoc counties.

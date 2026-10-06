@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CarrierStrip from '../../components/CarrierStrip.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "Pinion Family Insurance - Water Valley MS Service Area",
+  "description": "Trusted independent insurance agency providing auto, home, life, and business insurance for Water Valley and Yalobusha County, Mississippi residents.",
+  "url": "https://pinionfamilyinsurance.com/service-areas/water-valley-ms",
+  "telephone": "+16626383777",
+  "areaServed": {
+    "@type": "City",
+    "name": "Water Valley",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Mississippi"
+    }
+  }
+};
+---
+
+<BaseLayout
+  title="Insurance Agency Serving Water Valley, MS | Pinion Family Insurance"
+  description="Affordable auto, home, life, and commercial insurance for Water Valley & Yalobusha County, MS. Independent agency comparing 15+ top carriers. Call (662) 638-3777."
+  schema={localSchema}
+>
+  <Header />
+
+  <!-- Hero -->
+  <section class="area-hero">
+    <div class="container text-center">
+      <span class="hero-eyebrow">Serving Yalobusha County & Surrounding Areas</span>
+      <h1>Water Valley, MS <span class="highlight">Insurance Agency</span></h1>
+      <p class="hero-subtitle">
+        Looking for a local independent insurance agency just a short drive up MS-7? We compare 15+ top-rated carriers to protect your Water Valley home, vehicles, land, and small business.
+      </p>
+      <div class="area-hero-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Free Water Valley Quote</a>
+        <a href="tel:+16626383777" class="btn btn-outline btn-lg">(662) 638-3777</a>
+      </div>
+    </div>
+  </section>
+
+  <CarrierStrip />
+
+  <!-- Content Section -->
+  <section class="section">
+    <div class="container">
+      <div class="area-content-grid">
+        <div class="area-main">
+          <h2>Personalized Insurance for <span class="highlight">Water Valley Residents</span></h2>
+          <p>
+            Whether you own a historic home near Main Street Water Valley, a quiet country property in Yalobusha County, or commute daily to Oxford or the University of Mississippi via Highway 7, your insurance needs deserve local attention and competitive rates.
+          </p>
+          <p>
+            Unlike captive agents who can only offer a single company's price, Pinion Family Insurance shops <strong>15+ top-rated national carriers</strong> (Progressive, Travelers, Safeco, Nationwide, and more) to deliver customized protection at the best possible price.
+          </p>
+
+          <div class="local-coverage-grid">
+            <div class="cov-item">
+              <span class="cov-icon">🚗</span>
+              <h4>Water Valley Auto Insurance</h4>
+              <p>Commuting on MS-7? Get full coverage auto policies with comprehensive protection for deer collisions, roadside assistance, and uninsured motorist coverage.</p>
+              <a href="/auto-insurance" class="cov-link">Explore Auto →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🏡</span>
+              <h4>Homeowners & Rural Property</h4>
+              <p>From historic town homes to rural acreage, we secure full replacement cost coverage, manageable storm deductibles, and water backup protection.</p>
+              <a href="/home-insurance" class="cov-link">Explore Home →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🛡️</span>
+              <h4>Life Insurance for Families</h4>
+              <p>Term and whole life policies tailored to pay off your mortgage, replace income, and secure your children's future without high-pressure sales.</p>
+              <a href="/life-insurance" class="cov-link">Explore Life →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🏢</span>
+              <h4>Commercial & Farm / Ag</h4>
+              <p>General liability, business property, commercial auto, and workers comp for Water Valley artisans, retail shops, and local contractors.</p>
+              <a href="/commercial-insurance" class="cov-link">Explore Commercial →</a>
+            </div>
+          </div>
+
+          <div class="distance-box">
+            <h3>📍 Just 20 Minutes From Water Valley</h3>
+            <p>Our office is conveniently located at <strong>2621A W Oxford Loop in Oxford, MS</strong>. We love welcoming our Yalobusha County neighbors in person, or we can handle your entire quote over phone and email.</p>
+          </div>
+        </div>
+
+        <aside class="area-sidebar">
+          <div class="sidebar-card">
+            <h3>Why Water Valley Chooses Pinion</h3>
+            <ul class="check-list">
+              <li>✓ Independent agent comparing 15+ carriers</li>
+              <li>✓ Average bundle savings of 15% - 25%</li>
+              <li>✓ Local claims advocacy when storms hit</li>
+              <li>✓ Fast, friendly same-day service</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary btn-block">Request Local Quote</a>
+          </div>
+
+          <div class="sidebar-card contact-card">
+            <h4>Office Address</h4>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <p><strong>Phone:</strong> (662) 638-3777</p>
+            <p><strong>Hours:</strong> Mon - Fri 8am - 5pm</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .area-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .area-hero h1 {
+    color: var(--white);
+    font-size: 2.75rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .area-hero .hero-subtitle {
+    color: var(--gray-300);
+    max-width: 680px;
+    margin: 0 auto var(--space-xl);
+    font-size: 1.1rem;
+  }
+
+  .area-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .area-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-3xl);
+    padding: var(--space-2xl) 0;
+  }
+
+  .area-main h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .area-main p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .local-coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .cov-item {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+  }
+
+  .cov-icon {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xs);
+    display: block;
+  }
+
+  .cov-item h4 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .cov-item p {
+    font-size: 0.92rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-md);
+  }
+
+  .cov-link {
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+
+  .distance-box {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin-top: var(--space-2xl);
+  }
+
+  .distance-box h3 {
+    color: #15803d;
+    margin-bottom: var(--space-xs);
+    font-size: 1.2rem;
+  }
+
+  .distance-box p {
+    color: #166534;
+    margin: 0;
+  }
+
+  .sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .check-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+  }
+
+  .contact-card h4 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-xs);
+  }
+
+  @media (max-width: 900px) {
+    .area-content-grid {
+      grid-template-columns: 1fr;
+    }
+    .local-coverage-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

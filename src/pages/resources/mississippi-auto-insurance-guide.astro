@@ -1,0 +1,344 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Much Auto Insurance Do You Really Need in Mississippi?",
+  "description": "A comprehensive guide to Mississippi auto insurance requirements, state minimums vs recommended limits, and why Uninsured Motorist coverage is essential in MS.",
+  "author": {
+    "@type": "Person",
+    "name": "Melanee Pinion"
+  },
+  "publisher": {
+    "@type": "InsuranceAgency",
+    "name": "Pinion Family Insurance",
+    "url": "https://pinionfamilyinsurance.com"
+  },
+  "datePublished": "2026-01-15",
+  "dateModified": "2026-10-01"
+};
+---
+
+<BaseLayout
+  title="How Much Auto Insurance Do You Really Need in Mississippi? | Pinion Family Insurance"
+  description="Learn about Mississippi auto insurance minimums (25/50/25), recommended liability limits (100/300/100), and why Uninsured Motorist coverage is vital in Oxford, MS."
+  schema={articleSchema}
+>
+  <Header />
+
+  <article class="article-detail-page">
+    <header class="article-hero">
+      <div class="container">
+        <div class="article-hero-content">
+          <a href="/resources" class="back-link">← Back to Resource Center</a>
+          <span class="article-badge">Auto Insurance Guide</span>
+          <h1>How Much Auto Insurance Do You Really Need in Mississippi?</h1>
+          <div class="article-meta-bar">
+            <span>By <strong>Melanee Pinion</strong></span>
+            <span>·</span>
+            <span>Independent Agent, Oxford MS</span>
+            <span>·</span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-container">
+      <div class="article-layout">
+        <div class="article-content">
+          <p class="lead-text">
+            If you drive in Oxford, Lafayette County, or anywhere in Mississippi, the law requires you to carry basic liability insurance. But there is a massive gap between what the state legally requires and what you actually need to protect your family's savings, home, and assets after a serious highway collision.
+          </p>
+
+          <h2>1. Mississippi State Minimum Requirements (25/50/25)</h2>
+          <p>
+            Under Mississippi law, every registered vehicle must maintain at least the following bodily injury and property damage liability limits:
+          </p>
+          <ul>
+            <li><strong>$25,000 Bodily Injury Liability</strong> per person injured in an accident you cause.</li>
+            <li><strong>$50,000 Bodily Injury Liability</strong> total per accident (regardless of how many people are hurt).</li>
+            <li><strong>$25,000 Property Damage Liability</strong> for damage to other vehicles or structures.</li>
+          </ul>
+
+          <div class="callout-box warning-box">
+            <h4>⚠️ Why 25/50/25 Leaves You at Severe Financial Risk</h4>
+            <p>
+              The average new truck or SUV in Mississippi costs over $50,000. If you accidentally rear-end a late-model vehicle and total it, a $25,000 property limit leaves a $25,000+ shortfall that you are personally responsible for paying out of pocket. Worse, if someone requires emergency trauma surgery or overnight ICU care at Baptist Memorial Hospital-North Mississippi, a $25,000 injury cap will be exhausted within hours.
+            </p>
+          </div>
+
+          <h2>2. Recommended Coverage: 100/300/100</h2>
+          <p>
+            For homeowners, working parents, and individuals with accumulated savings or real estate, standard practice among trusted independent agents is carrying:
+          </p>
+          <ul>
+            <li><strong>$100,000</strong> per person bodily injury</li>
+            <li><strong>$300,000</strong> per accident bodily injury</li>
+            <li><strong>$100,000</strong> property damage</li>
+          </ul>
+          <p>
+            Upgrading from state minimums to 100/300/100 typically costs surprisingly little — often just <strong>$15 to $30 more per month</strong> when bundled with homeowners insurance.
+          </p>
+
+          <h2>3. The Uninsured Motorist Epidemic in Mississippi</h2>
+          <p>
+            According to national insurance industry studies, Mississippi consistently ranks among the top states for uninsured drivers — with nearly <strong>29% of motorists carrying zero auto insurance</strong>.
+          </p>
+          <p>
+            <strong>Uninsured/Underinsured Motorist (UM/UIM) Coverage</strong> protects you and your passengers if you are hit by a hit-and-run driver or someone with no coverage. We strongly advise carrying UM limits equal to your primary liability limits.
+          </p>
+
+          <h2>4. Comprehensive vs. Collision Coverage</h2>
+          <p>
+            In North Mississippi, vehicle claims frequently involve non-crash hazards:
+          </p>
+          <ul>
+            <li><strong>Comprehensive:</strong> Covers deer strikes on rural Lafayette County roads, hailstorm body damage, windshield cracks, and fallen tree branches during spring thunderstorms.</li>
+            <li><strong>Collision:</strong> Covers damage when your car hits another vehicle, a ditch, or an object, regardless of fault.</li>
+          </ul>
+
+          <div class="guide-cta-box">
+            <h3>Get a Fast, Custom Quote Comparison</h3>
+            <p>At Pinion Family Insurance, we shop 15+ top carriers (Progressive, Travelers, Safeco, Nationwide, etc.) to get you maximum coverage at lower monthly rates.</p>
+            <div class="cta-actions">
+              <a href="/contact" class="btn btn-primary">Compare Auto Rates Now</a>
+              <a href="tel:+16626383777" class="btn btn-outline-dark">Call (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-widget">
+            <h4>Quick Summary</h4>
+            <ul class="summary-list">
+              <li><strong>MS State Minimum:</strong> 25/50/25</li>
+              <li><strong>Recommended:</strong> 100/300/100</li>
+              <li><strong>Uninsured Rate:</strong> ~29% in MS</li>
+              <li><strong>Must-Have Add-on:</strong> UM/UIM + Comp</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget agent-widget">
+            <img src="/images/PFI-logo-small.webp" alt="Pinion Family Insurance" width="60" height="60" />
+            <h5>Pinion Family Insurance</h5>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <a href="tel:+16626383777" class="phone-sidebar">(662) 638-3777</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .article-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover {
+    color: var(--white);
+  }
+
+  .article-badge {
+    display: inline-block;
+    background: rgba(235, 29, 36, 0.2);
+    color: var(--brand-red-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .article-hero h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    line-height: 1.25;
+    max-width: 850px;
+    margin-bottom: var(--space-md);
+  }
+
+  .article-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--gray-400);
+    font-size: 0.9rem;
+  }
+
+  .article-container {
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .lead-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--gray-800);
+    margin-bottom: var(--space-2xl);
+    font-weight: 500;
+  }
+
+  .article-content h2 {
+    font-size: 1.6rem;
+    color: var(--gray-900);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .article-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .article-content ul {
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-xl);
+  }
+
+  .article-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-xs);
+  }
+
+  .callout-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .callout-box h4 {
+    color: #92400e;
+    margin-bottom: var(--space-xs);
+    font-size: 1.1rem;
+  }
+
+  .callout-box p {
+    color: #78350f;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .guide-cta-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    margin-top: var(--space-3xl);
+    text-align: center;
+  }
+
+  .guide-cta-box h3 {
+    margin-bottom: var(--space-xs);
+    color: var(--gray-900);
+  }
+
+  .guide-cta-box p {
+    max-width: 540px;
+    margin: 0 auto var(--space-lg);
+    font-size: 0.98rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-widget h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .summary-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: var(--space-xs);
+  }
+
+  .agent-widget {
+    text-align: center;
+  }
+
+  .agent-widget img {
+    margin-bottom: var(--space-sm);
+    border-radius: 8px;
+  }
+
+  .agent-widget h5 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .agent-widget p {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-bottom: var(--space-md);
+  }
+
+  .phone-sidebar {
+    display: inline-block;
+    font-weight: 800;
+    color: var(--brand-red);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

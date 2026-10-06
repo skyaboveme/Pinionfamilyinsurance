@@ -1,0 +1,293 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const articles = [
+  {
+    title: 'How Much Auto Insurance Do You Really Need in Mississippi?',
+    slug: '/resources/mississippi-auto-insurance-guide',
+    category: 'Auto Insurance',
+    readTime: '6 min read',
+    excerpt: 'State minimums (25/50/25) leave 80% of drivers vulnerable. Learn the real numbers for liability, collision, and why Mississippi’s 29% uninsured motorist rate makes UM coverage essential.',
+    date: 'Updated for 2026',
+    icon: '🚗'
+  },
+  {
+    title: 'Oxford MS Home Insurance Guide: Storms, Roofs & Replacement Costs',
+    slug: '/resources/oxford-ms-home-insurance-guide',
+    category: 'Home Insurance',
+    readTime: '7 min read',
+    excerpt: 'Lafayette County sees severe thunderstorms, hail, and tornadoes. Discover how dwelling coverage calculations work, why water backup is critical, and how separate wind/hail deductibles apply.',
+    date: 'Updated for 2026',
+    icon: '🏡'
+  },
+  {
+    title: '5 Proven Ways to Lower Your Home & Auto Insurance Premiums in Mississippi',
+    slug: '/resources/how-to-lower-home-insurance-premium-ms',
+    category: 'Money Saving Tips',
+    readTime: '5 min read',
+    excerpt: 'From multi-policy bundling to strategic deductible scaling and security discounts, here is how Mississippi families cut 15% to 25% off their annual insurance premiums.',
+    date: 'Updated for 2026',
+    icon: '💰'
+  },
+  {
+    title: 'Term vs Whole Life Insurance: What North Mississippi Families Need to Know',
+    slug: '/resources/term-vs-whole-life-insurance-ms',
+    category: 'Life Insurance',
+    readTime: '6 min read',
+    excerpt: 'Demystifying life insurance without the sales jargon. A practical comparison of affordable term life for growing families versus permanent cash-value policies.',
+    date: 'Updated for 2026',
+    icon: '🛡️'
+  },
+  {
+    title: 'Commercial Insurance Checklist for Oxford & Lafayette County Businesses',
+    slug: '/resources/mississippi-commercial-insurance-guide',
+    category: 'Commercial Insurance',
+    readTime: '8 min read',
+    excerpt: 'Essential coverage breakdown for local retail, contractors, restaurants, and professional service firms — covering General Liability, BOP, Commercial Auto, and Workers Comp in MS.',
+    date: 'Updated for 2026',
+    icon: '🏢'
+  }
+];
+
+const resourceSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Mississippi Insurance Knowledge Hub & Guides | Pinion Family Insurance",
+  "description": "Comprehensive insurance resources, cost guides, and local advice for auto, home, life, and business insurance in Oxford, MS and surrounding Lafayette County.",
+  "url": "https://pinionfamilyinsurance.com/resources"
+};
+---
+
+<BaseLayout
+  title="Insurance Guides & Resources | Pinion Family Insurance Oxford MS"
+  description="Expert insurance advice, coverage breakdowns, and cost-saving tips for Oxford and North Mississippi families and small businesses."
+  schema={resourceSchema}
+>
+  <Header />
+
+  <!-- Hero Header -->
+  <section class="resources-hero">
+    <div class="container text-center">
+      <span class="hero-eyebrow">Local Knowledge & Insights</span>
+      <h1>Insurance <span class="highlight">Resource Center</span></h1>
+      <p class="hero-subtitle">
+        Clear, honest guidance on Mississippi insurance requirements, policy options, storm preparedness, and money-saving strategies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Guides List -->
+  <section class="section">
+    <div class="container">
+      <div class="articles-grid">
+        {articles.map((art, idx) => (
+          <article class="article-card animate-on-scroll" style={`transition-delay: ${idx * 0.08}s`}>
+            <div class="article-top">
+              <span class="art-icon">{art.icon}</span>
+              <div class="art-meta">
+                <span class="art-cat">{art.category}</span>
+                <span class="art-dot">·</span>
+                <span class="art-time">{art.readTime}</span>
+              </div>
+            </div>
+            <h2><a href={art.slug} class="art-title-link">{art.title}</a></h2>
+            <p class="art-excerpt">{art.excerpt}</p>
+            <div class="art-footer">
+              <a href={art.slug} class="art-read-btn">
+                Read Full Guide
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <span class="art-date">{art.date}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- Free Consultation Banner -->
+      <div class="consultation-banner animate-on-scroll">
+        <div class="banner-content">
+          <h3>Have Specific Questions About Your Current Policy?</h3>
+          <p>We provide complimentary coverage reviews with zero obligation. Bring us your declaration page and let us verify if you have coverage gaps or are overpaying.</p>
+        </div>
+        <div class="banner-action">
+          <a href="/contact" class="btn btn-primary btn-lg">Request Free Policy Review</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .resources-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+    color: var(--white);
+    position: relative;
+  }
+
+  .resources-hero h1 {
+    color: var(--white);
+    font-size: 2.75rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .resources-hero .hero-subtitle {
+    color: var(--gray-300);
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-4xl);
+  }
+
+  .article-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition);
+  }
+
+  .article-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(235, 29, 36, 0.3);
+  }
+
+  .article-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .art-icon {
+    font-size: 1.8rem;
+  }
+
+  .art-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+  }
+
+  .art-cat {
+    color: var(--brand-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .art-dot {
+    color: var(--gray-400);
+  }
+
+  .art-time {
+    color: var(--gray-500);
+  }
+
+  .article-card h2 {
+    font-size: 1.35rem;
+    line-height: 1.35;
+    margin-bottom: var(--space-sm);
+  }
+
+  .art-title-link {
+    color: var(--gray-900);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .art-title-link:hover {
+    color: var(--brand-red);
+  }
+
+  .art-excerpt {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--space-xl);
+    flex-grow: 1;
+  }
+
+  .art-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--gray-100);
+  }
+
+  .art-read-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--brand-red);
+    transition: gap var(--transition-fast);
+  }
+
+  .art-read-btn:hover {
+    gap: 10px;
+    color: var(--brand-red-dark);
+  }
+
+  .art-date {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+  }
+
+  .consultation-banner {
+    background: var(--gray-900);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    padding: var(--space-3xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .banner-content h3 {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .banner-content p {
+    color: var(--gray-300);
+    font-size: 0.98rem;
+    max-width: 600px;
+    margin: 0;
+  }
+
+  @media (max-width: 800px) {
+    .articles-grid {
+      grid-template-columns: 1fr;
+    }
+    .consultation-banner {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

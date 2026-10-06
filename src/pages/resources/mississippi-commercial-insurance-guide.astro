@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Commercial Insurance Checklist for Oxford & Lafayette County Businesses",
+  "description": "Essential commercial insurance guide for Mississippi business owners. Covers General Liability, BOP, Commercial Auto, and Mississippi Workers Comp requirements.",
+  "author": {
+    "@type": "Person",
+    "name": "Melanee Pinion"
+  },
+  "publisher": {
+    "@type": "InsuranceAgency",
+    "name": "Pinion Family Insurance",
+    "url": "https://pinionfamilyinsurance.com"
+  },
+  "datePublished": "2026-03-24",
+  "dateModified": "2026-10-01"
+};
+---
+
+<BaseLayout
+  title="Commercial Insurance Guide for Oxford MS Businesses | Pinion Family Insurance"
+  description="Complete small business insurance checklist for Oxford & Lafayette County MS companies. Learn about General Liability, Business Owners Policies (BOP), and Workers Comp."
+  schema={articleSchema}
+>
+  <Header />
+
+  <article class="article-detail-page">
+    <header class="article-hero">
+      <div class="container">
+        <div class="article-hero-content">
+          <a href="/resources" class="back-link">← Back to Resource Center</a>
+          <span class="article-badge">Commercial Insurance Guide</span>
+          <h1>Commercial Insurance Checklist for Oxford & Lafayette County Businesses</h1>
+          <div class="article-meta-bar">
+            <span>By <strong>Melanee Pinion</strong></span>
+            <span>·</span>
+            <span>Independent Agent, Oxford MS</span>
+            <span>·</span>
+            <span>8 min read</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-container">
+      <div class="article-layout">
+        <div class="article-content">
+          <p class="lead-text">
+            From retail storefronts on the Oxford Square and booming specialty contractors to technology consultants and hospitality venues, local business owners in North Mississippi face unique liability, property, and operational exposures every day. Here is your definitive checklist to build an airtight business defense.
+          </p>
+
+          <h2>1. Commercial General Liability (CGL)</h2>
+          <p>
+            General Liability is the cornerstone of every commercial insurance portfolio. It shields your business against third-party bodily injury, property damage, and personal advertising injury claims arising from your operations.
+          </p>
+          <ul>
+            <li><strong>Slip-and-fall incidents</strong> on your business premises or customer parking lots.</li>
+            <li><strong>Property damage caused by employees</strong> while working on a client's site.</li>
+            <li><strong>Standard Limits:</strong> Most Mississippi commercial landlords and vendors require minimum limits of <strong>$1,000,000 per occurrence / $2,000,000 aggregate</strong>.</li>
+          </ul>
+
+          <h2>2. Business Owner Policy (BOP) — The Smart Package</h2>
+          <p>
+            For small to mid-sized Mississippi businesses, bundling General Liability and Commercial Property into a single <strong>Business Owner's Policy (BOP)</strong> is far cheaper than purchasing separate standalone policies.
+          </p>
+          <p>A standard BOP includes:</p>
+          <ul>
+            <li><strong>Commercial Property & Contents:</strong> Inventory, computers, specialized tools, and furnishings.</li>
+            <li><strong>Business Interruption (Loss of Income):</strong> Replaces lost net income and ongoing payroll if a fire, tornado, or storm shuts down your physical business location during repairs.</li>
+          </ul>
+
+          <h2>3. Mississippi Workers' Compensation Requirements</h2>
+          <p>
+            Under Mississippi state law, any employer that regularly employs <strong>5 or more employees</strong> (including part-time workers and corporate officers) is legally required to carry Workers' Compensation insurance.
+          </p>
+          <div class="callout-box warning-box">
+            <h4>⚠️ Contractor & Subcontractor Caution</h4>
+            <p>
+              Even if you have fewer than 5 employees, general contractors in Mississippi routinely require proof of Workers' Comp certificates from all subcontractors before allowing them on a job site. Carrying a policy protects you from severe uninsured civil liability if a worker is hurt.
+            </p>
+          </div>
+
+          <h2>4. Commercial Auto & Hired/Non-Owned Coverage</h2>
+          <p>
+            If your business owns work trucks, delivery vans, or service fleets, they must be insured under a dedicated <strong>Commercial Auto Policy</strong>. Personal auto insurance strictly excludes accidents occurring during business delivery, hauling, or commercial use.
+          </p>
+          <p>
+            If your employees occasionally drive their own personal vehicles to pick up supplies or run business errands, adding <strong>Hired & Non-Owned Auto (HNOA)</strong> coverage protects your enterprise from secondary liability.
+          </p>
+
+          <div class="guide-cta-box">
+            <h3>Custom Commercial Insurance for Your Enterprise</h3>
+            <p>We work with leading commercial carriers (The Hartford, Travelers, Liberty Mutual, Progressive Commercial) to tailor coverage specific to your industry.</p>
+            <div class="cta-actions">
+              <a href="/contact" class="btn btn-primary">Request Commercial Quote</a>
+              <a href="tel:+16626383777" class="btn btn-outline-dark">Call (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-widget">
+            <h4>Checklist Breakdown</h4>
+            <ul class="summary-list">
+              <li><strong>General Liability:</strong> $1M/$2M standard</li>
+              <li><strong>BOP:</strong> Property + Interruption</li>
+              <li><strong>Workers Comp:</strong> Required at 5+ employees</li>
+              <li><strong>Commercial Auto:</strong> Work vehicles + HNOA</li>
+              <li><strong>Cyber Liability:</strong> Customer data protection</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget agent-widget">
+            <img src="/images/PFI-logo-small.webp" alt="Pinion Family Insurance" width="60" height="60" />
+            <h5>Pinion Family Insurance</h5>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <a href="tel:+16626383777" class="phone-sidebar">(662) 638-3777</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .article-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover { color: var(--white); }
+
+  .article-badge {
+    display: inline-block;
+    background: rgba(235, 29, 36, 0.2);
+    color: var(--brand-red-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .article-hero h1 {
+    color: var(--white);
+    font-size: 2.3rem;
+    line-height: 1.25;
+    max-width: 850px;
+    margin-bottom: var(--space-md);
+  }
+
+  .article-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--gray-400);
+    font-size: 0.9rem;
+  }
+
+  .article-container {
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .lead-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--gray-800);
+    margin-bottom: var(--space-2xl);
+    font-weight: 500;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .article-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .article-content ul {
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-xl);
+  }
+
+  .article-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-xs);
+  }
+
+  .callout-box {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .callout-box h4 {
+    color: #92400e;
+    margin-bottom: var(--space-xs);
+    font-size: 1.1rem;
+  }
+
+  .callout-box p {
+    color: #78350f;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .guide-cta-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    margin-top: var(--space-3xl);
+    text-align: center;
+  }
+
+  .guide-cta-box h3 {
+    margin-bottom: var(--space-xs);
+    color: var(--gray-900);
+  }
+
+  .guide-cta-box p {
+    max-width: 540px;
+    margin: 0 auto var(--space-lg);
+    font-size: 0.98rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-widget h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .summary-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: var(--space-xs);
+  }
+
+  .agent-widget {
+    text-align: center;
+  }
+
+  .agent-widget img {
+    margin-bottom: var(--space-sm);
+    border-radius: 8px;
+  }
+
+  .agent-widget h5 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .agent-widget p {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-bottom: var(--space-md);
+  }
+
+  .phone-sidebar {
+    display: inline-block;
+    font-weight: 800;
+    color: var(--brand-red);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

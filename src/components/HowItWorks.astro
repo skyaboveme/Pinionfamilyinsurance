@@ -1,0 +1,152 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Share Your Coverage Needs',
+    desc: 'Fill out our quick 2-minute form or call our Oxford office directly. Tell us about your vehicles, home, or business.',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`
+  },
+  {
+    number: '02',
+    title: 'We Shop 15+ Top Carriers',
+    desc: 'As an independent agency, we compare rates and coverages across Progressive, Travelers, Safeco, Nationwide, and more.',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>`
+  },
+  {
+    number: '03',
+    title: 'Choose, Save & Stay Protected',
+    desc: 'Select the optimal policy with up to 25% multi-policy discounts. We handle the paperwork and stand with you as your local advocate.',
+    icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>`
+  }
+];
+---
+
+<section class="section how-it-works-section" id="how-it-works">
+  <div class="container">
+    <div class="text-center animate-on-scroll">
+      <span class="section-eyebrow">Seamless Process</span>
+      <h2>How Insurance With Us <span class="highlight">Works</span></h2>
+      <p class="section-subtitle">
+        We make finding reliable, affordable insurance simple, transparent, and hassle-free.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+      {steps.map((s, idx) => (
+        <div class="step-card animate-on-scroll" style={`transition-delay: ${idx * 0.15}s`}>
+          <div class="step-badge">{s.number}</div>
+          <div class="step-icon-wrap" set:html={s.icon} />
+          <h3>{s.title}</h3>
+          <p>{s.desc}</p>
+          {idx < steps.length - 1 && <div class="step-arrow" aria-hidden="true">→</div>}
+        </div>
+      ))}
+    </div>
+
+    <div class="how-cta text-center animate-on-scroll">
+      <a href="/contact" class="btn btn-primary btn-lg">Start Your Free Quote Comparison</a>
+      <p class="how-subtext">No obligation · Fast turnaround · Real local agents</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @import '../styles/global.css';
+
+  .how-it-works-section {
+    background: var(--gray-50);
+    position: relative;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+    margin: var(--space-3xl) 0 var(--space-2xl);
+    position: relative;
+  }
+
+  .step-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl) var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all var(--transition);
+  }
+
+  .step-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(235, 29, 36, 0.3);
+  }
+
+  .step-badge {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--gray-200);
+    line-height: 1;
+    font-family: var(--font-heading);
+    user-select: none;
+  }
+
+  .step-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: rgba(235, 29, 36, 0.08);
+    color: var(--brand-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+    transition: all var(--transition);
+  }
+
+  .step-card:hover .step-icon-wrap {
+    background: var(--brand-red);
+    color: var(--white);
+    transform: scale(1.08);
+  }
+
+  .step-card h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--gray-900);
+    margin-bottom: var(--space-sm);
+  }
+
+  .step-card p {
+    font-size: 0.95rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+  }
+
+  .step-arrow {
+    display: none;
+  }
+
+  .how-cta {
+    margin-top: var(--space-xl);
+  }
+
+  .how-subtext {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-top: var(--space-sm);
+  }
+
+  @media (max-width: 900px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+    }
+  }
+</style>

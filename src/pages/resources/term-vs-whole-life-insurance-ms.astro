@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Term vs Whole Life Insurance: What Mississippi Families Need to Know",
+  "description": "A straightforward guide comparing affordable term life insurance with permanent cash-value policies for families in Oxford, MS and surrounding areas.",
+  "author": {
+    "@type": "Person",
+    "name": "Melanee Pinion"
+  },
+  "publisher": {
+    "@type": "InsuranceAgency",
+    "name": "Pinion Family Insurance",
+    "url": "https://pinionfamilyinsurance.com"
+  },
+  "datePublished": "2026-03-12",
+  "dateModified": "2026-10-01"
+};
+---
+
+<BaseLayout
+  title="Term vs Whole Life Insurance for Mississippi Families | Pinion Family Insurance"
+  description="Clear comparison of term vs whole life insurance in Mississippi. Learn how to calculate income replacement, protect your mortgage, and provide lasting family security."
+  schema={articleSchema}
+>
+  <Header />
+
+  <article class="article-detail-page">
+    <header class="article-hero">
+      <div class="container">
+        <div class="article-hero-content">
+          <a href="/resources" class="back-link">← Back to Resource Center</a>
+          <span class="article-badge">Life Insurance Guide</span>
+          <h1>Term vs Whole Life Insurance: What Mississippi Families Need to Know</h1>
+          <div class="article-meta-bar">
+            <span>By <strong>Melanee Pinion</strong></span>
+            <span>·</span>
+            <span>Independent Agent, Oxford MS</span>
+            <span>·</span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-container">
+      <div class="article-layout">
+        <div class="article-content">
+          <p class="lead-text">
+            Few decisions carry more emotional weight than protecting the people who rely on you most. Yet life insurance is often clouded by aggressive sales pitches and complicated terminology. Here is an honest, straightforward guide on how to choose the right policy for your family's budget and long-term goals.
+          </p>
+
+          <h2>1. Term Life Insurance: Maximum Protection for Your Dollars</h2>
+          <p>
+            <strong>Term Life Insurance</strong> is pure death benefit protection that lasts for a specific period of time (typically 10, 20, or 30 years). If you pass away during the term, your beneficiaries receive a tax-free cash payout. If the term expires and you outlive it, coverage concludes.
+          </p>
+          <h4>Why 85% of Families Choose Term:</h4>
+          <ul>
+            <li><strong>Extremely Affordable:</strong> A healthy 35-year-old non-smoker can often secure a <strong>$500,000, 20-year term policy for under $30/month</strong>.</li>
+            <li><strong>Matches Your Highest-Risk Years:</strong> It covers the exact window when you are paying off a 30-year home mortgage, raising young children, and funding college savings.</li>
+            <li><strong>Simplicity:</strong> No hidden investment management fees or market fluctuations.</li>
+          </ul>
+
+          <h2>2. Whole Life & Permanent Insurance: Lifelong Security & Cash Value</h2>
+          <p>
+            <strong>Whole Life Insurance</strong> never expires as long as premiums are paid. It pairs a guaranteed death benefit with an internal tax-deferred <strong>cash value</strong> component that grows at a guaranteed minimum interest rate.
+          </p>
+          <h4>When Whole Life Makes Sense:</h4>
+          <ul>
+            <li><strong>Final Expense & Estate Planning:</strong> Ensuring funds exist for burial, probate, and final debts regardless of how long you live.</li>
+            <li><strong>Children & Grandchildren:</strong> Locking in rock-bottom childhood rates that build equity for life.</li>
+            <li><strong>Special Needs Dependents:</strong> Providing lifetime trust funding for children with lifelong care requirements.</li>
+          </ul>
+
+          <h2>3. How Much Coverage Does a Mississippi Family Need?</h2>
+          <p>
+            A common rule of thumb is carrying <strong>10 to 12 times your annual household income</strong>, plus your outstanding mortgage balance.
+          </p>
+          <div class="callout-box">
+            <h4>📊 The "D.I.M.E." Formula for Life Insurance</h4>
+            <ul>
+              <li><strong>D - Debt:</strong> Credit cards, auto loans, personal notes.</li>
+              <li><strong>I - Income:</strong> 10 years of your annual take-home pay to support your spouse and kids.</li>
+              <li><strong>M - Mortgage:</strong> Full balance required to pay off your home.</li>
+              <li><strong>E - Education:</strong> Projected tuition and living expenses for Ole Miss or other college paths.</li>
+            </ul>
+          </div>
+
+          <div class="guide-cta-box">
+            <h3>Protect Your Family's Financial Future Today</h3>
+            <p>We work with America’s highest-rated life insurance underwriters (A.M. Best A/A+ rated) to find policies with no medical exam options available.</p>
+            <div class="cta-actions">
+              <a href="/contact" class="btn btn-primary">Get Confidential Life Quotes</a>
+              <a href="tel:+16626383777" class="btn btn-outline-dark">Call (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-widget">
+            <h4>Comparison At a Glance</h4>
+            <ul class="summary-list">
+              <li><strong>Term:</strong> High payout, low cost, 10-30 yr terms</li>
+              <li><strong>Whole:</strong> Permanent, builds cash value, higher cost</li>
+              <li><strong>Ideal Rule:</strong> 10x - 12x annual income</li>
+              <li><strong>Payout:</strong> 100% Tax-Free to beneficiaries</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget agent-widget">
+            <img src="/images/PFI-logo-small.webp" alt="Pinion Family Insurance" width="60" height="60" />
+            <h5>Pinion Family Insurance</h5>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <a href="tel:+16626383777" class="phone-sidebar">(662) 638-3777</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .article-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover { color: var(--white); }
+
+  .article-badge {
+    display: inline-block;
+    background: rgba(235, 29, 36, 0.2);
+    color: var(--brand-red-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .article-hero h1 {
+    color: var(--white);
+    font-size: 2.3rem;
+    line-height: 1.25;
+    max-width: 850px;
+    margin-bottom: var(--space-md);
+  }
+
+  .article-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--gray-400);
+    font-size: 0.9rem;
+  }
+
+  .article-container {
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .lead-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--gray-800);
+    margin-bottom: var(--space-2xl);
+    font-weight: 500;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .article-content h4 {
+    font-size: 1.15rem;
+    color: var(--gray-800);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+  }
+
+  .article-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .article-content ul {
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-xl);
+  }
+
+  .article-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-xs);
+  }
+
+  .callout-box {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .callout-box h4 {
+    color: #15803d;
+    margin-bottom: var(--space-xs);
+    font-size: 1.1rem;
+  }
+
+  .guide-cta-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    margin-top: var(--space-3xl);
+    text-align: center;
+  }
+
+  .guide-cta-box h3 {
+    margin-bottom: var(--space-xs);
+    color: var(--gray-900);
+  }
+
+  .guide-cta-box p {
+    max-width: 540px;
+    margin: 0 auto var(--space-lg);
+    font-size: 0.98rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-widget h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .summary-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: var(--space-xs);
+  }
+
+  .agent-widget {
+    text-align: center;
+  }
+
+  .agent-widget img {
+    margin-bottom: var(--space-sm);
+    border-radius: 8px;
+  }
+
+  .agent-widget h5 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .agent-widget p {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-bottom: var(--space-md);
+  }
+
+  .phone-sidebar {
+    display: inline-block;
+    font-weight: 800;
+    color: var(--brand-red);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

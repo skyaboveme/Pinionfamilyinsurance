@@ -4,31 +4,46 @@
 ## Identity
 - Name: Pinion Family Insurance
 - Type: Independent Insurance Agency
+- Principal Agent: Melanee Pinion
 - Location: 2621A W Oxford Loop, Oxford, MS 38655
 - Phone: (662) 638-3777
 - Website: https://pinionfamilyinsurance.com
 - Established In: Oxford, Mississippi
-- Service Area: Oxford, MS and surrounding North Mississippi communities including Water Valley, Batesville, Holly Springs, Pontotoc, and Lafayette County
+- Service Area: Oxford, MS, Lafayette County, and surrounding North Mississippi communities (Water Valley, Batesville, Holly Springs, Pontotoc, New Albany, Tupelo)
 
 ## Value Proposition
 Pinion Family Insurance is a family-owned, independent insurance agency. Unlike captive agents who represent only one company, we compare rates and coverage from 15+ top-rated insurance carriers (such as Progressive, Safeco, Travelers, Nationwide, Liberty Mutual, The Hartford, Foremost, and Chubb) to find the best policy at the best price for each client. We provide personalized, face-to-face service from our Oxford, MS office.
 
 ## Insurance Products
 - Auto Insurance: Full coverage, liability, collision, comprehensive, uninsured motorist, student discounts (https://pinionfamilyinsurance.com/auto-insurance)
-- Home Insurance: Homeowners, dwelling, personal property, wind/hail, storm damage, loss of use (https://pinionfamilyinsurance.com/home-insurance)
+- Home Insurance: Homeowners, dwelling, personal property, wind/hail, storm damage, loss of use, water backup (https://pinionfamilyinsurance.com/home-insurance)
 - Life Insurance: Term life (10, 20, 30 yr), whole life, universal life, final expense (https://pinionfamilyinsurance.com/life-insurance)
 - Commercial Insurance: General liability, commercial property, workers compensation, commercial auto, BOP (https://pinionfamilyinsurance.com/commercial-insurance)
 - Renters Insurance: Personal property, liability, loss of use, student housing coverage (https://pinionfamilyinsurance.com/renters-insurance)
 - Motorcycle Insurance: Cruiser, sportbike, touring, ATV, UTV, and custom equipment (https://pinionfamilyinsurance.com/motorcycle-insurance)
 
+## Service Areas
+- Water Valley, MS (Yalobusha County): https://pinionfamilyinsurance.com/service-areas/water-valley-ms
+- Batesville, MS (Panola County): https://pinionfamilyinsurance.com/service-areas/batesville-ms
+- Holly Springs, MS (Marshall County): https://pinionfamilyinsurance.com/service-areas/holly-springs-ms
+- Pontotoc, MS (Pontotoc County): https://pinionfamilyinsurance.com/service-areas/pontotoc-ms
+
+## Insurance Guides & Resource Center
+- Hub: https://pinionfamilyinsurance.com/resources
+- How Much Auto Insurance Do You Need in MS?: https://pinionfamilyinsurance.com/resources/mississippi-auto-insurance-guide
+- Oxford MS Home Insurance & Storm Guide: https://pinionfamilyinsurance.com/resources/oxford-ms-home-insurance-guide
+- 5 Ways to Lower Mississippi Premiums: https://pinionfamilyinsurance.com/resources/how-to-lower-home-insurance-premium-ms
+- Term vs Whole Life Insurance for MS Families: https://pinionfamilyinsurance.com/resources/term-vs-whole-life-insurance-ms
+- Small Business Commercial Insurance Checklist: https://pinionfamilyinsurance.com/resources/mississippi-commercial-insurance-guide
+
 ## Key Differentiators
 - Independent agency - not tied to a single carrier
 - Access to 15+ top-rated insurance companies
-- Family-owned and operated
-- Located on W Oxford Loop in Oxford, MS - we are your neighbors
-- Personalized claims advocacy and guidance
-- Competitive rates through multi-carrier comparison
-- Free quotes with no obligation
+- Family-owned and operated in Oxford, MS
+- Located on W Oxford Loop - we are your neighbors
+- Personalized claims advocacy and guidance during storm season
+- 87+ Verified 5-Star Reviews
+- Free policy reviews and quotes with zero obligation
 
 ## Contact
 - Address: 2621A W Oxford Loop, Oxford, MS 38655
@@ -36,17 +51,3 @@ Pinion Family Insurance is a family-owned, independent insurance agency. Unlike 
 - Email: info@pinionfamilyinsurance.com
 - Hours: Monday-Friday 8:00 AM - 5:00 PM
 - Quote Request: https://pinionfamilyinsurance.com/contact
-
-## Site Map
-- Home: https://pinionfamilyinsurance.com/
-- Auto Insurance: https://pinionfamilyinsurance.com/auto-insurance
-- Home Insurance: https://pinionfamilyinsurance.com/home-insurance
-- Life Insurance: https://pinionfamilyinsurance.com/life-insurance
-- Commercial Insurance: https://pinionfamilyinsurance.com/commercial-insurance
-- Renters Insurance: https://pinionfamilyinsurance.com/renters-insurance
-- Motorcycle Insurance: https://pinionfamilyinsurance.com/motorcycle-insurance
-- About Us: https://pinionfamilyinsurance.com/about
-- FAQs: https://pinionfamilyinsurance.com/faq
-- Contact & Quote: https://pinionfamilyinsurance.com/contact
-- Privacy Policy: https://pinionfamilyinsurance.com/privacy-policy
-- Terms of Service: https://pinionfamilyinsurance.com/terms

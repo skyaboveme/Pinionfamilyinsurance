@@ -1,0 +1,309 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "5 Proven Ways to Lower Your Home & Auto Insurance Premiums in Mississippi",
+  "description": "Discover how Mississippi homeowners and drivers can cut 15% to 25% off their annual premiums without sacrificing essential coverage.",
+  "author": {
+    "@type": "Person",
+    "name": "Melanee Pinion"
+  },
+  "publisher": {
+    "@type": "InsuranceAgency",
+    "name": "Pinion Family Insurance",
+    "url": "https://pinionfamilyinsurance.com"
+  },
+  "datePublished": "2026-02-28",
+  "dateModified": "2026-10-01"
+};
+---
+
+<BaseLayout
+  title="5 Ways to Lower Your Insurance Premiums in Mississippi | Pinion Family Insurance"
+  description="Actionable strategies to lower your auto and home insurance rates in Oxford, MS. Learn about multi-policy discounts, deductible scaling, and independent carrier shopping."
+  schema={articleSchema}
+>
+  <Header />
+
+  <article class="article-detail-page">
+    <header class="article-hero">
+      <div class="container">
+        <div class="article-hero-content">
+          <a href="/resources" class="back-link">← Back to Resource Center</a>
+          <span class="article-badge">Money-Saving Strategies</span>
+          <h1>5 Proven Ways to Lower Your Home & Auto Insurance Premiums in Mississippi</h1>
+          <div class="article-meta-bar">
+            <span>By <strong>Melanee Pinion</strong></span>
+            <span>·</span>
+            <span>Independent Agent, Oxford MS</span>
+            <span>·</span>
+            <span>5 min read</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-container">
+      <div class="article-layout">
+        <div class="article-content">
+          <p class="lead-text">
+            Insurance rates across Mississippi have risen over the past two years due to nationwide vehicle repair costs and regional severe weather trends. But that doesn't mean you are stuck overpaying. Here are 5 tested strategies our Oxford agency uses every day to save clients hundreds of dollars annually.
+          </p>
+
+          <h2>1. Package Your Auto and Home Under One Underwriter</h2>
+          <p>
+            The single most impactful discount in personal insurance is the <strong>Multi-Policy (Bundle) Discount</strong>. Combining your personal autos, primary residence, or rental property under one carrier consistently triggers <strong>15% to 25% across-the-board rate reductions</strong> on both policies.
+          </p>
+
+          <h2>2. Optimize Your Deductible Thresholds</h2>
+          <p>
+            If you have an emergency savings buffer, increasing your collision and comprehensive auto deductibles from $250 or $500 up to <strong>$1,000</strong> can lower your auto collision premium by 15% to 30%. On your home policy, raising a $1,000 deductible to $2,500 can save $200+ each year.
+          </p>
+
+          <h2>3. Leverage Modern Home Protective Device Credits</h2>
+          <p>
+            Carriers love risk prevention. Make sure your agent is capturing all available credits for:
+          </p>
+          <ul>
+            <li>Smart home water leak detection shutoff valves (e.g., Moen Flo)</li>
+            <li>Monitored central station security systems and smart video doorbells</li>
+            <li>Class 4 impact-resistant shingles or a brand-new roof installation</li>
+            <li>Whole-house surge protectors and deadbolt security hardware</li>
+          </ul>
+
+          <h2>4. Maintain Good Driver & Low Mileage Credits</h2>
+          <p>
+            If you work from home, are retired, or commute less than 7,500 miles annually in Oxford, inform your agent. Telematics programs (such as Progressive Snapshot or Safeco RightTrack) reward safe Mississippi drivers with 10% to 30% renewal discounts.
+          </p>
+
+          <h2>5. Shop Independent, Not Captive</h2>
+          <p>
+            When you call a single-carrier "captive" agent (like State Farm or Allstate), they can only quote you their single company's price. If that carrier has a statewide rate increase, your captive agent cannot help you.
+          </p>
+          <p>
+            As an <strong>independent agency</strong>, Pinion Family Insurance represents 15+ top-rated carriers. When renewal rates fluctuate, we re-shop your policy on your behalf without you ever having to switch agents.
+          </p>
+
+          <div class="guide-cta-box">
+            <h3>Find Out How Much You Could Save Today</h3>
+            <p>Our team will review your current policies line by line and find every uncaptured discount.</p>
+            <div class="cta-actions">
+              <a href="/contact" class="btn btn-primary">Request Free Rate Comparison</a>
+              <a href="tel:+16626383777" class="btn btn-outline-dark">Call (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-widget">
+            <h4>Estimated Savings</h4>
+            <ul class="summary-list">
+              <li><strong>Bundle Auto + Home:</strong> 15% - 25%</li>
+              <li><strong>$1,000 Deductible:</strong> 10% - 20%</li>
+              <li><strong>Smart Water Sensors:</strong> 5% - 10%</li>
+              <li><strong>Safe Driver / Low Miles:</strong> Up to 30%</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget agent-widget">
+            <img src="/images/PFI-logo-small.webp" alt="Pinion Family Insurance" width="60" height="60" />
+            <h5>Pinion Family Insurance</h5>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <a href="tel:+16626383777" class="phone-sidebar">(662) 638-3777</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .article-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover { color: var(--white); }
+
+  .article-badge {
+    display: inline-block;
+    background: rgba(235, 29, 36, 0.2);
+    color: var(--brand-red-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .article-hero h1 {
+    color: var(--white);
+    font-size: 2.3rem;
+    line-height: 1.25;
+    max-width: 850px;
+    margin-bottom: var(--space-md);
+  }
+
+  .article-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--gray-400);
+    font-size: 0.9rem;
+  }
+
+  .article-container {
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .lead-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--gray-800);
+    margin-bottom: var(--space-2xl);
+    font-weight: 500;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+    color: var(--gray-900);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .article-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .article-content ul {
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-xl);
+  }
+
+  .article-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-xs);
+  }
+
+  .guide-cta-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    margin-top: var(--space-3xl);
+    text-align: center;
+  }
+
+  .guide-cta-box h3 {
+    margin-bottom: var(--space-xs);
+    color: var(--gray-900);
+  }
+
+  .guide-cta-box p {
+    max-width: 540px;
+    margin: 0 auto var(--space-lg);
+    font-size: 0.98rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-widget h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .summary-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: var(--space-xs);
+  }
+
+  .agent-widget {
+    text-align: center;
+  }
+
+  .agent-widget img {
+    margin-bottom: var(--space-sm);
+    border-radius: 8px;
+  }
+
+  .agent-widget h5 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .agent-widget p {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-bottom: var(--space-md);
+  }
+
+  .phone-sidebar {
+    display: inline-block;
+    font-weight: 800;
+    color: var(--brand-red);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

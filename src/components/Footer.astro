@@ -41,16 +41,17 @@ const currentYear = new Date().getFullYear();
           </ul>
         </div>
 
-        <!-- Company & Resources -->
+        <!-- Resources & Service Areas -->
         <div class="footer-column">
-          <h4>Quick Links</h4>
+          <h4>Guides & Areas</h4>
           <ul>
+            <li><a href="/resources">Insurance Resource Center</a></li>
+            <li><a href="/service-areas/water-valley-ms">Water Valley, MS</a></li>
+            <li><a href="/service-areas/batesville-ms">Batesville, MS</a></li>
+            <li><a href="/service-areas/holly-springs-ms">Holly Springs, MS</a></li>
+            <li><a href="/service-areas/pontotoc-ms">Pontotoc, MS</a></li>
             <li><a href="/about">About Our Agency</a></li>
-            <li><a href="/faq">Frequently Asked Questions</a></li>
-            <li><a href="/contact">Get a Free Quote</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms">Terms of Service</a></li>
-            <li><a href="/llm.txt" target="_blank">LLM Context</a></li>
+            <li><a href="/faq">FAQs</a></li>
           </ul>
         </div>
 
@@ -85,7 +86,11 @@ const currentYear = new Date().getFullYear();
   <div class="footer-bottom">
     <div class="container">
       <p>&copy; {currentYear} Pinion Family Insurance. All rights reserved.</p>
-      <p class="footer-legal">Licensed independent insurance agency serving Oxford and the State of Mississippi.</p>
+      <p class="footer-legal">
+        <a href="/privacy-policy" style="color: inherit; text-decoration: underline;">Privacy Policy</a> · 
+        <a href="/terms" style="color: inherit; text-decoration: underline;">Terms of Service</a> · 
+        <a href="/llm.txt" style="color: inherit; text-decoration: underline;">AI Context</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -104,7 +109,7 @@ const currentYear = new Date().getFullYear();
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+    grid-template-columns: 1.4fr 1fr 1.1fr 1.3fr;
     gap: var(--space-3xl);
   }
 

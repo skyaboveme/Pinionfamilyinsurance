@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Oxford MS Home Insurance Guide: Storms, Roofs & Replacement Cost",
+  "description": "Understanding homeowners insurance in Oxford, MS. Learn about wind and hail deductibles, replacement cost vs actual cash value, water backup endorsements, and local weather considerations.",
+  "author": {
+    "@type": "Person",
+    "name": "Melanee Pinion"
+  },
+  "publisher": {
+    "@type": "InsuranceAgency",
+    "name": "Pinion Family Insurance",
+    "url": "https://pinionfamilyinsurance.com"
+  },
+  "datePublished": "2026-02-10",
+  "dateModified": "2026-10-01"
+};
+---
+
+<BaseLayout
+  title="Oxford MS Home Insurance Guide: Storms, Roofs & Replacement Cost | Pinion Family Insurance"
+  description="Expert home insurance guidance for homeowners in Oxford & Lafayette County MS. Learn about wind/hail deductibles, roof coverage, and water backup protection."
+  schema={articleSchema}
+>
+  <Header />
+
+  <article class="article-detail-page">
+    <header class="article-hero">
+      <div class="container">
+        <div class="article-hero-content">
+          <a href="/resources" class="back-link">← Back to Resource Center</a>
+          <span class="article-badge">Home Insurance Guide</span>
+          <h1>Oxford MS Home Insurance Guide: Storms, Roofs & Replacement Cost</h1>
+          <div class="article-meta-bar">
+            <span>By <strong>Melanee Pinion</strong></span>
+            <span>·</span>
+            <span>Independent Agent, Oxford MS</span>
+            <span>·</span>
+            <span>7 min read</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-container">
+      <div class="article-layout">
+        <div class="article-content">
+          <p class="lead-text">
+            Buying a home in Oxford, Mississippi — whether near the historic Square, in Grand Oaks, or out in rural Lafayette County — is one of the biggest investments of your life. But North Mississippi’s unique weather patterns mean standard cookie-cutter home policies often leave surprising gaps when severe storm season arrives.
+          </p>
+
+          <h2>1. Replacement Cost vs. Market Value (Why They Differ)</h2>
+          <p>
+            Homeowners are often surprised when their insurance dwelling coverage (Coverage A) is higher or lower than their county tax appraisal or current real estate market value:
+          </p>
+          <ul>
+            <li><strong>Market Value:</strong> What someone will pay to buy your house and land today.</li>
+            <li><strong>Replacement Cost:</strong> The exact cost of labor, framing lumber, roofing materials, plumbing, and contractors required to completely rebuild your house from the slab up after a catastrophic total fire or tornado.</li>
+          </ul>
+          <p>
+            With modern construction inflation, rebuilding in Oxford can cost $175 to $250+ per square foot. We make sure your policy includes <strong>Extended Replacement Cost (125% - 150%)</strong> so inflation doesn't cap your payout.
+          </p>
+
+          <h2>2. Wind & Hail Deductibles in North Mississippi</h2>
+          <p>
+            Because Mississippi regularly experiences intense spring thunderstorms, straight-line winds, and hail, many national carriers insert <strong>percentage-based wind/hail deductibles</strong> (e.g., 1% or 2% of your total dwelling coverage).
+          </p>
+          <div class="callout-box warning-box">
+            <h4>💡 Example of a Percentage Deductible</h4>
+            <p>
+              If your home is insured for $400,000 and you have a 2% wind/hail deductible, you must pay <strong>$8,000 out of pocket</strong> before the insurance company pays a dime on a storm-damaged roof. At Pinion Family Insurance, we compare carriers to help you secure manageable flat-dollar deductibles ($1,000 or $2,500) whenever possible.
+            </p>
+          </div>
+
+          <h2>3. The Essential "Water Backup" Endorsement</h2>
+          <p>
+            A standard homeowners policy strictly excludes damage from backed-up drains, failed sump pumps, or overflowing municipal sewer lines. Yet in Oxford’s hilly terrain and heavy downpours, water backup claims are among the most common interior disasters.
+          </p>
+          <p>
+            Adding a <strong>Water Backup & Sump Overflow Endorsement</strong> ($10,000 to $25,000 in coverage) costs around <strong>$35 to $60 per year</strong> and covers ruined flooring, drywall, and furniture when stormwater backs up into your home.
+          </p>
+
+          <h2>4. Flood Insurance vs. Water Damage</h2>
+          <p>
+            Remember: <em>No standard homeowners policy covers rising floodwaters</em> from overflowing creeks, rivers, or surface runoff. If your property is near low-lying drainage basins in Lafayette County, we can write a standalone National Flood Insurance Program (NFIP) or private flood policy to protect your equity.
+          </p>
+
+          <div class="guide-cta-box">
+            <h3>Get a Comprehensive Oxford Home Insurance Review</h3>
+            <p>Let our family-owned agency check your current policy for roof replacement clauses, deductibles, and multi-policy discounts with 15+ top carriers.</p>
+            <div class="cta-actions">
+              <a href="/contact" class="btn btn-primary">Compare Homeowner Rates</a>
+              <a href="tel:+16626383777" class="btn btn-outline-dark">Call (662) 638-3777</a>
+            </div>
+          </div>
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-widget">
+            <h4>Key Checklist</h4>
+            <ul class="summary-list">
+              <li><strong>Dwelling:</strong> Full replacement cost (125%+)</li>
+              <li><strong>Roof:</strong> Replacement Cost Value (RCV)</li>
+              <li><strong>Deductible:</strong> Check wind/hail % vs flat fee</li>
+              <li><strong>Water Backup:</strong> Endorsement included</li>
+              <li><strong>Liability:</strong> $300k - $500k minimum</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget agent-widget">
+            <img src="/images/PFI-logo-small.webp" alt="Pinion Family Insurance" width="60" height="60" />
+            <h5>Pinion Family Insurance</h5>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <a href="tel:+16626383777" class="phone-sidebar">(662) 638-3777</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .article-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    transition: color var(--transition-fast);
+  }
+
+  .back-link:hover { color: var(--white); }
+
+  .article-badge {
+    display: inline-block;
+    background: rgba(235, 29, 36, 0.2);
+    color: var(--brand-red-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .article-hero h1 {
+    color: var(--white);
+    font-size: 2.4rem;
+    line-height: 1.25;
+    max-width: 850px;
+    margin-bottom: var(--space-md);
+  }
+
+  .article-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--gray-400);
+    font-size: 0.9rem;
+  }
+
+  .article-container {
+    padding: var(--space-4xl) 0;
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .lead-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--gray-800);
+    margin-bottom: var(--space-2xl);
+    font-weight: 500;
+  }
+
+  .article-content h2 {
+    font-size: 1.55rem;
+    color: var(--gray-900);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .article-content p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .article-content ul {
+    margin-bottom: var(--space-xl);
+    padding-left: var(--space-xl);
+  }
+
+  .article-content li {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-xs);
+  }
+
+  .callout-box {
+    background: #ecfdf5;
+    border-left: 4px solid #10b981;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .callout-box h4 {
+    color: #065f46;
+    margin-bottom: var(--space-xs);
+    font-size: 1.1rem;
+  }
+
+  .callout-box p {
+    color: #047857;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .guide-cta-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    margin-top: var(--space-3xl);
+    text-align: center;
+  }
+
+  .guide-cta-box h3 {
+    margin-bottom: var(--space-xs);
+    color: var(--gray-900);
+  }
+
+  .guide-cta-box p {
+    max-width: 540px;
+    margin: 0 auto var(--space-lg);
+    font-size: 0.98rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .sidebar-widget {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-widget h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+    color: var(--gray-900);
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .summary-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: var(--space-xs);
+  }
+
+  .agent-widget {
+    text-align: center;
+  }
+
+  .agent-widget img {
+    margin-bottom: var(--space-sm);
+    border-radius: 8px;
+  }
+
+  .agent-widget h5 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+
+  .agent-widget p {
+    font-size: 0.88rem;
+    color: var(--gray-500);
+    margin-bottom: var(--space-md);
+  }
+
+  .phone-sidebar {
+    display: inline-block;
+    font-weight: 800;
+    color: var(--brand-red);
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 900px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

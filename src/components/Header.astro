@@ -12,7 +12,7 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Services', href: '/#services', isDropdown: true },
   { label: 'About', href: '/about' },
-  { label: 'Why Us', href: '/#why-us' },
+  { label: 'Resources', href: '/resources' },
   { label: 'FAQs', href: '/faq' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -80,6 +80,7 @@ const navItems = [
           <li><a href={s.href} class="mobile-nav-sublink">{s.label}</a></li>
         ))}
         <li style="margin-top: 10px;"><a href="/about" class="mobile-nav-link">About Us</a></li>
+        <li><a href="/resources" class="mobile-nav-link">Guides & Resources</a></li>
         <li><a href="/faq" class="mobile-nav-link">FAQs</a></li>
         <li><a href="/contact" class="mobile-nav-link">Contact & Quote</a></li>
       </ul>
