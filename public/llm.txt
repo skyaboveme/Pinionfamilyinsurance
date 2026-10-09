@@ -27,6 +27,11 @@ Pinion Family Insurance is a family-owned, independent insurance agency. Unlike 
 - Batesville, MS (Panola County): https://pinionfamilyinsurance.com/service-areas/batesville-ms
 - Holly Springs, MS (Marshall County): https://pinionfamilyinsurance.com/service-areas/holly-springs-ms
 - Pontotoc, MS (Pontotoc County): https://pinionfamilyinsurance.com/service-areas/pontotoc-ms
+- Tupelo, MS (Lee County): https://pinionfamilyinsurance.com/service-areas/tupelo-ms
+- New Albany, MS (Union County): https://pinionfamilyinsurance.com/service-areas/new-albany-ms
+- Senatobia, MS (Tate County): https://pinionfamilyinsurance.com/service-areas/senatobia-ms
+- Hernando, MS (DeSoto County): https://pinionfamilyinsurance.com/service-areas/hernando-ms
+- Olive Branch, MS (DeSoto County): https://pinionfamilyinsurance.com/service-areas/olive-branch-ms
 
 ## Insurance Guides & Resource Center
 - Hub: https://pinionfamilyinsurance.com/resources

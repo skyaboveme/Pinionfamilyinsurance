@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CarrierStrip from '../../components/CarrierStrip.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "Pinion Family Insurance - Senatobia MS Service Area",
+  "description": "Independent insurance agency providing auto, home, life, and commercial insurance for Senatobia and Tate County, Mississippi residents.",
+  "url": "https://pinionfamilyinsurance.com/service-areas/senatobia-ms",
+  "telephone": "+16626383777",
+  "areaServed": {
+    "@type": "City",
+    "name": "Senatobia",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Mississippi"
+    }
+  }
+};
+---
+
+<BaseLayout
+  title="Insurance Agency Serving Senatobia, MS | Pinion Family Insurance"
+  description="Affordable auto, home, life, and business insurance for Senatobia & Tate County, MS. Independent agency comparing 15+ top carriers. Call (662) 638-3777."
+  canonical="https://pinionfamilyinsurance.com/service-areas/senatobia-ms"
+  schema={localSchema}
+>
+  <Header />
+
+  <!-- Hero -->
+  <section class="area-hero">
+    <div class="container text-center">
+      <span class="hero-eyebrow">Serving Tate County & North Mississippi</span>
+      <h1>Senatobia, MS <span class="highlight">Insurance Agency</span></h1>
+      <p class="hero-subtitle">
+        Independent insurance coverage designed for Senatobia families, college commuters, property owners, and local businesses. We compare 15+ carriers to find your strongest protection at unbeatable rates.
+      </p>
+      <div class="area-hero-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Free Senatobia Quote</a>
+        <a href="tel:+16626383777" class="btn btn-outline btn-lg">(662) 638-3777</a>
+      </div>
+    </div>
+  </section>
+
+  <CarrierStrip />
+
+  <!-- Content Section -->
+  <section class="section">
+    <div class="container">
+      <div class="area-content-grid">
+        <div class="area-main">
+          <h2>Independent Insurance Built for <span class="highlight">Senatobia & Tate County</span></h2>
+          <p>
+            Home to Northwest Mississippi Community College (NWCC) and a vibrant community of families, agricultural producers, and local enterprises, Senatobia combines small-town charm with easy access to the I-55 corridor. Located just 35 minutes northwest of Oxford, Tate County residents deserve insurance tailored to Mississippi lifestyles, not generic one-size-fits-all policies.
+          </p>
+          <p>
+            At Pinion Family Insurance, we partner with premier national carriers—including Progressive, Safeco, Travelers, Nationwide, and Liberty Mutual—to shop your coverage across multiple providers. Whether you need full coverage auto for commuting between Oxford and Senatobia, storm replacement insurance for your home, or business liability protection, our independent team is always in your corner.
+          </p>
+
+          <div class="local-coverage-grid">
+            <div class="cov-item">
+              <span class="cov-icon">🚗</span>
+              <h4>I-55 & Highway 4 Auto Insurance</h4>
+              <p>Reliable car insurance for daily commutes along I-55, MS-4, and rural Tate County roads with collision, roadside assistance, student discounts, and uninsured motorist coverage.</p>
+              <a href="/auto-insurance" class="cov-link">Explore Auto →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🏡</span>
+              <h4>Senatobia Home & Acreage Insurance</h4>
+              <p>Protect your residential home or acreage with comprehensive dwelling coverage, wind & hail storm protection, and outbuilding coverage designed for North Mississippi weather.</p>
+              <a href="/home-insurance" class="cov-link">Explore Home →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🛡️</span>
+              <h4>Family Life Insurance</h4>
+              <p>Term and whole life insurance policies designed to secure your family's financial security, mortgage payments, and children's education in Tate County.</p>
+              <a href="/life-insurance" class="cov-link">Explore Life →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🏢</span>
+              <h4>Commercial, Farm & Trade Contractors</h4>
+              <p>General liability, business property, commercial auto, and workers' compensation for Senatobia merchants, contractors, agribusiness, and service providers.</p>
+              <a href="/commercial-insurance" class="cov-link">Explore Commercial →</a>
+            </div>
+          </div>
+
+          <div class="distance-box">
+            <h3>📍 Conveniently Serving Senatobia Just 35 Minutes Away</h3>
+            <p>Our office is located at <strong>2621A W Oxford Loop in Oxford, MS</strong>. We can quickly review your current policies and provide multiple competitive carrier quotes over the phone or by email.</p>
+          </div>
+        </div>
+
+        <aside class="area-sidebar">
+          <div class="sidebar-card">
+            <h3>Why Senatobia Chooses Pinion</h3>
+            <ul class="check-list">
+              <li>✓ Independent agent comparing 15+ carriers</li>
+              <li>✓ Average bundle savings of 15% - 25%</li>
+              <li>✓ Personal storm & claims advocacy</li>
+              <li>✓ Fast, local customer care from Melanee Pinion</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary btn-block">Request Local Quote</a>
+          </div>
+
+          <div class="sidebar-card contact-card">
+            <h4>Office Address</h4>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <p><strong>Phone:</strong> (662) 638-3777</p>
+            <p><strong>Hours:</strong> Mon - Fri 8am - 5pm</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .area-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .area-hero h1 {
+    color: var(--white);
+    font-size: 2.75rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .area-hero .hero-subtitle {
+    color: var(--gray-300);
+    max-width: 680px;
+    margin: 0 auto var(--space-xl);
+    font-size: 1.1rem;
+  }
+
+  .area-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .area-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-3xl);
+    padding: var(--space-2xl) 0;
+  }
+
+  .area-main h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .area-main p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .local-coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .cov-item {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+  }
+
+  .cov-icon {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xs);
+    display: block;
+  }
+
+  .cov-item h4 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .cov-item p {
+    font-size: 0.92rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-md);
+  }
+
+  .cov-link {
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+
+  .distance-box {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin-top: var(--space-2xl);
+  }
+
+  .distance-box h3 {
+    color: #15803d;
+    margin-bottom: var(--space-xs);
+    font-size: 1.2rem;
+  }
+
+  .distance-box p {
+    color: #166534;
+    margin: 0;
+  }
+
+  .sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .check-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+  }
+
+  .contact-card h4 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-xs);
+  }
+
+  @media (max-width: 900px) {
+    .area-content-grid {
+      grid-template-columns: 1fr;
+    }
+    .local-coverage-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

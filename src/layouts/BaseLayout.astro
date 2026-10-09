@@ -46,18 +46,52 @@ const defaultSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "34.36385690287256",
-    "longitude": "-89.57037476683598"
+    "latitude": "34.363857",
+    "longitude": "-89.570375"
   },
+  "hasMap": "https://maps.google.com/?q=2621A+W+Oxford+Loop,+Oxford,+MS+38655",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://pinionfamilyinsurance.com/about#melanee-pinion",
+    "name": "Melanee Pinion",
+    "jobTitle": "Founder & Principal Agent",
+    "url": "https://pinionfamilyinsurance.com/about",
+    "sameAs": "https://www.linkedin.com/in/melanee-pinion-252a10166/"
+  },
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Melanee Pinion",
+      "jobTitle": "Founder & Principal Agent"
+    }
+  ],
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "00:00",
+      "description": "Closed (Emergency carrier claim phone assistance available 24/7)"
+    }
   ],
   "areaServed": [
-    { "@type": "City", "name": "Oxford", "containedInPlace": { "@type": "State", "name": "Mississippi" } },
-    { "@type": "City", "name": "Water Valley" },
-    { "@type": "City", "name": "Batesville" },
-    { "@type": "City", "name": "Holly Springs" },
-    { "@type": "City", "name": "Pontotoc" }
+    { "@type": "City", "name": "Oxford", "containedInPlace": { "@type": "AdministrativeArea", "name": "Lafayette County" } },
+    { "@type": "City", "name": "Tupelo", "containedInPlace": { "@type": "AdministrativeArea", "name": "Lee County" } },
+    { "@type": "City", "name": "New Albany", "containedInPlace": { "@type": "AdministrativeArea", "name": "Union County" } },
+    { "@type": "City", "name": "Senatobia", "containedInPlace": { "@type": "AdministrativeArea", "name": "Tate County" } },
+    { "@type": "City", "name": "Hernando", "containedInPlace": { "@type": "AdministrativeArea", "name": "DeSoto County" } },
+    { "@type": "City", "name": "Olive Branch", "containedInPlace": { "@type": "AdministrativeArea", "name": "DeSoto County" } },
+    { "@type": "City", "name": "Water Valley", "containedInPlace": { "@type": "AdministrativeArea", "name": "Yalobusha County" } },
+    { "@type": "City", "name": "Batesville", "containedInPlace": { "@type": "AdministrativeArea", "name": "Panola County" } },
+    { "@type": "City", "name": "Holly Springs", "containedInPlace": { "@type": "AdministrativeArea", "name": "Marshall County" } },
+    { "@type": "City", "name": "Pontotoc", "containedInPlace": { "@type": "AdministrativeArea", "name": "Pontotoc County" } },
+    { "@type": "AdministrativeArea", "name": "North Mississippi" }
   ],
   "sameAs": [
     "https://www.facebook.com/pinionfamilyinsurance/",

@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CarrierStrip from '../../components/CarrierStrip.astro';
+import FloatingCTA from '../../components/FloatingCTA.astro';
+import '../../styles/global.css';
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "InsuranceAgency",
+  "name": "Pinion Family Insurance - Olive Branch MS Service Area",
+  "description": "Independent insurance agency providing auto, home, life, and commercial business insurance for Olive Branch and DeSoto County, Mississippi residents.",
+  "url": "https://pinionfamilyinsurance.com/service-areas/olive-branch-ms",
+  "telephone": "+16626383777",
+  "areaServed": {
+    "@type": "City",
+    "name": "Olive Branch",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Mississippi"
+    }
+  }
+};
+---
+
+<BaseLayout
+  title="Insurance Agency Serving Olive Branch, MS | Pinion Family Insurance"
+  description="Affordable auto, home, life, and commercial insurance for Olive Branch & DeSoto County, MS. Independent agency comparing 15+ top carriers. Call (662) 638-3777."
+  canonical="https://pinionfamilyinsurance.com/service-areas/olive-branch-ms"
+  schema={localSchema}
+>
+  <Header />
+
+  <!-- Hero -->
+  <section class="area-hero">
+    <div class="container text-center">
+      <span class="hero-eyebrow">Serving DeSoto County & North Mississippi</span>
+      <h1>Olive Branch, MS <span class="highlight">Insurance Agency</span></h1>
+      <p class="hero-subtitle">
+        Independent insurance solutions built for Olive Branch families, logistics businesses, contractors, and homeowners. We shop 15+ premier carriers to find you superior coverage at competitive rates.
+      </p>
+      <div class="area-hero-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Free Olive Branch Quote</a>
+        <a href="tel:+16626383777" class="btn btn-outline btn-lg">(662) 638-3777</a>
+      </div>
+    </div>
+  </section>
+
+  <CarrierStrip />
+
+  <!-- Content Section -->
+  <section class="section">
+    <div class="container">
+      <div class="area-content-grid">
+        <div class="area-main">
+          <h2>Independent Coverage Built for <span class="highlight">Olive Branch & DeSoto County</span></h2>
+          <p>
+            Recognized as one of the fastest-growing cities in Mississippi, Olive Branch is an energetic hub of family neighborhoods, thriving logistics and distribution centers, local retailers, and excellent public schools. Located in eastern DeSoto County along the I-22 / Highway 78 corridor, residents and business owners need an independent insurance partner who understands both family protection and commercial scale.
+          </p>
+          <p>
+            Pinion Family Insurance partners with premier insurance carriers—including Progressive, Safeco, Travelers, Nationwide, and Liberty Mutual—to shop your coverage across multiple underwriters. Because we work for you rather than a single insurance conglomerate, we provide unbiased comparisons, deep multi-policy discounts, and dedicated local claims advocacy.
+          </p>
+
+          <div class="local-coverage-grid">
+            <div class="cov-item">
+              <span class="cov-icon">🚗</span>
+              <h4>I-22 & Highway 305 Auto Insurance</h4>
+              <p>Tailored car insurance for daily commutes along I-22, MS-305, and Goodman Road with collision, comprehensive, roadside assistance, and uninsured motorist coverage.</p>
+              <a href="/auto-insurance" class="cov-link">Explore Auto →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🏡</span>
+              <h4>Olive Branch Homeowners Insurance</h4>
+              <p>Protect your DeSoto County home with guaranteed replacement cost dwelling coverage, storm & windstorm deductibles, and water backup protection.</p>
+              <a href="/home-insurance" class="cov-link">Explore Home →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🛡️</span>
+              <h4>Family Life Insurance</h4>
+              <p>Custom term and permanent life insurance policies designed to secure mortgages, family income, and long-term financial stability for Olive Branch families.</p>
+              <a href="/life-insurance" class="cov-link">Explore Life →</a>
+            </div>
+
+            <div class="cov-item">
+              <span class="cov-icon">🏢</span>
+              <h4>Commercial, Logistics & Contractors</h4>
+              <p>General liability, commercial property, BOP, commercial auto/fleet, and workers' compensation for Olive Branch logistics, trade contractors, and merchants.</p>
+              <a href="/commercial-insurance" class="cov-link">Explore Commercial →</a>
+            </div>
+          </div>
+
+          <div class="distance-box">
+            <h3>📍 Proudly Serving Olive Branch & North Mississippi</h3>
+            <p>Our office is located at <strong>2621A W Oxford Loop in Oxford, MS</strong>. We handle policy reviews, rate comparisons, and carrier switches seamlessly over phone or email for your convenience.</p>
+          </div>
+        </div>
+
+        <aside class="area-sidebar">
+          <div class="sidebar-card">
+            <h3>Why Olive Branch Chooses Pinion</h3>
+            <ul class="check-list">
+              <li>✓ Independent agent comparing 15+ carriers</li>
+              <li>✓ Average bundle savings of 15% - 25%</li>
+              <li>✓ Direct claim advocacy during severe storm season</li>
+              <li>✓ Dedicated service from licensed MS agent Melanee Pinion</li>
+            </ul>
+            <a href="/contact" class="btn btn-primary btn-block">Request Local Quote</a>
+          </div>
+
+          <div class="sidebar-card contact-card">
+            <h4>Office Address</h4>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <p><strong>Phone:</strong> (662) 638-3777</p>
+            <p><strong>Hours:</strong> Mon - Fri 8am - 5pm</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  @import '../../styles/global.css';
+
+  .area-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+
+  .area-hero h1 {
+    color: var(--white);
+    font-size: 2.75rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .area-hero .hero-subtitle {
+    color: var(--gray-300);
+    max-width: 680px;
+    margin: 0 auto var(--space-xl);
+    font-size: 1.1rem;
+  }
+
+  .area-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .area-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-3xl);
+    padding: var(--space-2xl) 0;
+  }
+
+  .area-main h2 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .area-main p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+
+  .local-coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+
+  .cov-item {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+  }
+
+  .cov-icon {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-xs);
+    display: block;
+  }
+
+  .cov-item h4 {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .cov-item p {
+    font-size: 0.92rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-md);
+  }
+
+  .cov-link {
+    color: var(--brand-red);
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+
+  .distance-box {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin-top: var(--space-2xl);
+  }
+
+  .distance-box h3 {
+    color: #15803d;
+    margin-bottom: var(--space-xs);
+    font-size: 1.2rem;
+  }
+
+  .distance-box p {
+    color: #166534;
+    margin: 0;
+  }
+
+  .sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+
+  .sidebar-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .check-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+  }
+
+  .contact-card h4 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin-bottom: var(--space-xs);
+  }
+
+  @media (max-width: 900px) {
+    .area-content-grid {
+      grid-template-columns: 1fr;
+    }
+    .local-coverage-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
