@@ -1,0 +1,71 @@
+---
+import ProductPageLayout from '../layouts/ProductPageLayout.astro';
+
+const faqs = [
+  {
+    question: "Does homeowners insurance cover flooding in Mississippi?",
+    answer: "No. Standard homeowners and renters policies exclude damage from rising surface water, overflowing rivers and creeks, and flash flooding. To protect your home and belongings from flood, you need a separate flood insurance policy through the National Flood Insurance Program (NFIP) or a private flood carrier."
+  },
+  {
+    question: "Is there a waiting period for flood insurance?",
+    answer: "Yes. NFIP flood policies generally have a 30-day waiting period before coverage takes effect. Exceptions apply in certain cases, such as when flood insurance is purchased in connection with closing on a mortgage loan. Some private flood policies have shorter waiting periods. Don't wait until a storm is in the forecast to buy coverage."
+  },
+  {
+    question: "Do I need flood insurance if I'm not in a high-risk flood zone?",
+    answer: "It's not legally required outside high-risk zones, but it's strongly worth considering. According to FEMA, more than 20% of NFIP flood claims come from properties outside high-risk flood zones. Policies for homes in moderate- to low-risk areas are often much less expensive."
+  },
+  {
+    question: "How much flood coverage can I get?",
+    answer: "NFIP residential policies offer up to $250,000 in building coverage and up to $100,000 in contents coverage. If your home's replacement cost is higher, we can look at private flood or excess flood options that offer higher limits."
+  },
+  {
+    question: "How do I find out what flood zone my home is in?",
+    answer: "You can look up your address on FEMA's Flood Map Service Center (msc.fema.gov), or simply call us. We'll check your flood zone, explain what it means for your premium and lender requirements, and quote NFIP and private flood options side by side."
+  }
+];
+---
+
+<ProductPageLayout
+  slug="flood-insurance"
+  metaTitle="Flood Insurance Oxford MS | NFIP & Private Flood | Pinion Family Insurance"
+  metaDescription="Homeowners insurance doesn't cover flood. Compare NFIP and private flood insurance for Oxford and North Mississippi homes, renters, and businesses. Free flood zone check."
+  keywords="flood insurance Oxford MS, Mississippi flood insurance, NFIP Mississippi, private flood insurance, flood zone Lafayette County, flood insurance North Mississippi"
+  serviceName="Flood Insurance in Oxford, MS"
+  serviceType="Flood Insurance"
+  heroImage="/images/flood-insurance-hero.jpg"
+  heroAlt="Brick home in rural North Mississippi with standing floodwater in the yard after heavy rain"
+  eyebrow="NFIP & Private Flood Protection"
+  h1="Flood Insurance in"
+  h1Highlight="North Mississippi"
+  heroDesc="Your homeowners policy does not cover flood. We compare National Flood Insurance Program (NFIP) and private flood options to protect your home, belongings, and business from rising water."
+  ctaLabel="Get a Free Flood Quote"
+  sectionEyebrow="Protection Your Home Policy Leaves Out"
+  h2="Coverage for Flash Floods, Overflowing Creeks & Heavy Rain"
+  leadText="North Mississippi sees intense spring storms and heavy rainfall that can overwhelm creeks, drainage ditches, and low-lying roads in a matter of hours. Homes near rivers, reservoirs, and bottomland are at risk, but so are properties miles from any mapped flood zone. Flood insurance is the only way to cover that damage."
+  coverageTitle="What Flood Insurance Can Cover:"
+  coverage={[
+    { title: "Building Coverage:", text: "Foundation, walls, electrical and plumbing systems, HVAC equipment, water heaters, built-in appliances, permanently installed carpet, and cabinetry." },
+    { title: "Contents Coverage:", text: "Furniture, clothing, electronics, portable appliances, and other personal belongings damaged by floodwater. Contents coverage is purchased separately from building coverage." },
+    { title: "Renters Flood Coverage:", text: "Renters can buy contents-only flood coverage to protect their belongings, even though the landlord insures the building." },
+    { title: "Commercial Flood Coverage:", text: "Protection for business buildings, inventory, and equipment. Business owners can pair it with commercial property coverage for a more complete plan." },
+    { title: "Private & Excess Flood Options:", text: "Higher limits than NFIP for higher-value homes, plus options that may include features like additional living expenses. Availability varies by property." }
+  ]}
+  tagsTitle="Who Should Consider Flood Insurance:"
+  tags={["Homes in FEMA Flood Zones", "Lake & Riverfront Properties", "Homes With Basements or Crawlspaces", "Renters on Ground Floors", "Mortgage-Required Policies", "Businesses & Rental Owners"]}
+  quoteTitle="Get a Flood Insurance Quote"
+  trustTitle="Flood Help From Your Local Agent"
+  trustPoints={[
+    { icon: "🗺️", label: "Free Flood Zone Check", text: "We look up your FEMA flood zone and explain your options." },
+    { icon: "⚖️", label: "NFIP vs. Private", text: "Side-by-side quotes so you can compare price and coverage." },
+    { icon: "🏦", label: "Lender Requirements", text: "Help meeting mortgage flood insurance requirements at closing." },
+    { icon: "⭐", label: "Local Claims Support", text: "Guidance from our Oxford office when water damage happens." }
+  ]}
+  faqTitle="Flood Insurance FAQs"
+  faqSubtitle="Common questions about flood coverage, flood zones, and waiting periods in Mississippi."
+  faqs={faqs}
+>
+  <div class="info-callout">
+    <h3>⏳ Don't Wait for the Forecast</h3>
+    <p>NFIP flood policies generally have a 30-day waiting period before coverage begins. The best time to buy flood insurance is before storm season, not when heavy rain is on the radar. <a href="/resources/is-flood-insurance-required-in-mississippi">Read our Mississippi flood insurance guide →</a></p>
+  </div>
+</ProductPageLayout>

@@ -1,0 +1,294 @@
+---
+/**
+ * ArticleLayout
+ * Shared template for Resource Center guides (/resources/*).
+ * Mirrors the design of the original guides (e.g. mississippi-auto-insurance-guide.astro).
+ * Article body is passed via the default slot.
+ */
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import '../styles/global.css';
+
+interface Props {
+  slug: string;              // e.g. "sr22-insurance-mississippi"
+  headline: string;
+  metaTitle: string;
+  metaDescription: string;
+  keywords?: string;
+  badge: string;
+  readTime: string;
+  datePublished: string;     // YYYY-MM-DD
+  dateModified?: string;
+  summary: { label: string; value: string }[];
+  ctaTitle: string;
+  ctaText: string;
+  ctaButton: string;
+  ctaHref: string;
+  related?: { label: string; href: string }[];
+}
+
+const p = Astro.props;
+const url = `https://pinionfamilyinsurance.com/resources/${p.slug}`;
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": p.headline,
+    "description": p.metaDescription,
+    "mainEntityOfPage": url,
+    "author": { "@type": "Person", "name": "Melanee Pinion" },
+    "publisher": {
+      "@type": "InsuranceAgency",
+      "@id": "https://pinionfamilyinsurance.com/#organization",
+      "name": "Pinion Family Insurance",
+      "url": "https://pinionfamilyinsurance.com"
+    },
+    "datePublished": p.datePublished,
+    "dateModified": p.dateModified ?? p.datePublished
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://pinionfamilyinsurance.com/resources" },
+      { "@type": "ListItem", "position": 3, "name": p.headline, "item": url }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title={p.metaTitle}
+  description={p.metaDescription}
+  keywords={p.keywords}
+  canonical={url}
+  schema={schema}
+>
+  <Header />
+
+  <article class="article-detail-page">
+    <header class="article-hero">
+      <div class="container">
+        <div class="article-hero-content">
+          <a href="/resources" class="back-link">← Back to Resource Center</a>
+          <span class="article-badge">{p.badge}</span>
+          <h1>{p.headline}</h1>
+          <div class="article-meta-bar">
+            <span>By <strong>Melanee Pinion</strong></span>
+            <span>·</span>
+            <span>Independent Agent, Oxford MS</span>
+            <span>·</span>
+            <span>{p.readTime}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container article-container">
+      <div class="article-layout">
+        <div class="article-content">
+          <slot />
+
+          <div class="guide-cta-box">
+            <h3>{p.ctaTitle}</h3>
+            <p>{p.ctaText}</p>
+            <div class="cta-actions">
+              <a href={p.ctaHref} class="btn btn-primary">{p.ctaButton}</a>
+              <a href="tel:+16626383777" class="btn btn-outline-dark">Call (662) 638-3777</a>
+            </div>
+          </div>
+
+          <p class="disclaimer">
+            This guide is for general educational purposes and isn't legal advice or a guarantee of coverage. Coverage, eligibility, and pricing vary by carrier and policy. Contact us for advice specific to your situation.
+          </p>
+        </div>
+
+        <aside class="article-sidebar">
+          <div class="sidebar-widget">
+            <h2 class="widget-title">Quick Summary</h2>
+            <ul class="summary-list">
+              {p.summary.map(s => <li><strong>{s.label}:</strong> {s.value}</li>)}
+            </ul>
+          </div>
+
+          {p.related && p.related.length > 0 && (
+            <div class="sidebar-widget">
+              <h2 class="widget-title">Related Coverage</h2>
+              <ul class="related-list">
+                {p.related.map(r => <li><a href={r.href}>{r.label} →</a></li>)}
+              </ul>
+            </div>
+          )}
+
+          <div class="sidebar-widget agent-widget">
+            <img src="/images/PFI-logo-small.webp" alt="Pinion Family Insurance" width="60" height="60" />
+            <h3 class="agent-name">Pinion Family Insurance</h3>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <a href="tel:+16626383777" class="phone-sidebar">(662) 638-3777</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .article-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+  .back-link {
+    display: inline-block;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-md);
+    transition: color var(--transition-fast);
+  }
+  .back-link:hover { color: var(--white); }
+  .article-badge {
+    display: inline-block;
+    background: rgba(235, 29, 36, 0.2);
+    color: var(--brand-red-light);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: var(--space-sm);
+  }
+  .article-hero h1 {
+    color: var(--white);
+    font-size: 2.5rem;
+    line-height: 1.25;
+    max-width: 850px;
+    margin-bottom: var(--space-md);
+  }
+  .article-meta-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    color: var(--gray-400);
+    font-size: 0.9rem;
+  }
+  .article-container { padding: var(--space-4xl) 0; }
+  .article-layout { display: grid; grid-template-columns: 2.2fr 1fr; gap: var(--space-3xl); }
+
+  /* Slot content */
+  .article-content :global(.lead-text) {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--gray-800);
+    margin-bottom: var(--space-2xl);
+    font-weight: 500;
+  }
+  .article-content :global(h2) {
+    font-size: 1.6rem;
+    color: var(--gray-900);
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+  }
+  .article-content :global(h3) { font-size: 1.25rem; color: var(--gray-900); margin: var(--space-xl) 0 var(--space-sm); }
+  .article-content :global(p) {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--gray-700);
+    margin-bottom: var(--space-lg);
+  }
+  .article-content :global(ul),
+  .article-content :global(ol) { margin-bottom: var(--space-xl); padding-left: var(--space-xl); }
+  .article-content :global(li) {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--gray-700);
+    margin-bottom: var(--space-xs);
+  }
+  .article-content :global(a:not(.btn)) { color: var(--brand-red); font-weight: 600; text-decoration: underline; }
+  .article-content :global(.callout-box) {
+    background: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+  .article-content :global(.callout-box h3) { color: #92400e; margin: 0 0 var(--space-xs); font-size: 1.1rem; }
+  .article-content :global(.callout-box p) { color: #78350f; margin: 0; font-size: 0.95rem; }
+  .article-content :global(.tip-box) {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+  .article-content :global(.tip-box h3) { color: #15803d; margin: 0 0 var(--space-xs); font-size: 1.1rem; }
+  .article-content :global(.tip-box p) { color: #166534; margin: 0; font-size: 0.95rem; }
+  .article-content :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-lg) 0 var(--space-2xl);
+    font-size: 0.95rem;
+  }
+  .article-content :global(th),
+  .article-content :global(td) {
+    border: 1px solid var(--gray-200);
+    padding: 10px 14px;
+    text-align: left;
+    color: var(--gray-700);
+  }
+  .article-content :global(th) { background: var(--gray-50); color: var(--gray-900); font-weight: 700; }
+
+  .guide-cta-box {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-2xl);
+    margin-top: var(--space-3xl);
+    text-align: center;
+  }
+  .guide-cta-box h3 { margin-bottom: var(--space-xs); color: var(--gray-900); }
+  .guide-cta-box p { max-width: 540px; margin: 0 auto var(--space-lg); font-size: 0.98rem; }
+  .cta-actions { display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
+  .disclaimer { font-size: 0.82rem !important; color: var(--gray-500) !important; margin-top: var(--space-xl); line-height: 1.6 !important; }
+
+  .sidebar-widget {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+  .widget-title { font-size: 1.1rem; margin-bottom: var(--space-md); color: var(--gray-900); }
+  .summary-list, .related-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  .summary-list li {
+    font-size: 0.92rem;
+    color: var(--gray-700);
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: var(--space-xs);
+  }
+  .related-list a { color: var(--brand-red); font-weight: 600; font-size: 0.95rem; }
+  .agent-widget { text-align: center; }
+  .agent-widget img { margin: 0 auto var(--space-sm); border-radius: 8px; }
+  .agent-name { font-size: 1.05rem; margin-bottom: 4px; }
+  .agent-widget p { font-size: 0.88rem; color: var(--gray-500); margin-bottom: var(--space-md); }
+  .phone-sidebar { display: inline-block; font-weight: 800; color: var(--brand-red); font-size: 1.1rem; }
+
+  @media (max-width: 900px) {
+    .article-layout { grid-template-columns: 1fr; }
+    .article-hero h1 { font-size: 2rem; }
+  }
+</style>

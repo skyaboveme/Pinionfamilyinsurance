@@ -9,7 +9,7 @@
 - Phone: (662) 638-3777
 - Website: https://pinionfamilyinsurance.com
 - Established In: Oxford, Mississippi
-- Service Area: Oxford, MS, Lafayette County, and surrounding North Mississippi communities (Water Valley, Batesville, Holly Springs, Pontotoc, New Albany, Tupelo)
+- Service Area: Oxford, MS, Lafayette County, and North Mississippi communities (Water Valley, Batesville, Holly Springs, Pontotoc, New Albany, Tupelo, Southaven, Olive Branch, Hernando, Senatobia, Grenada, Starkville, Corinth)
 
 ## Value Proposition
 Pinion Family Insurance is a family-owned, independent insurance agency. Unlike captive agents who represent only one company, we compare rates and coverage from 15+ top-rated insurance carriers (such as Progressive, Safeco, Travelers, Nationwide, Liberty Mutual, The Hartford, Foremost, and Chubb) to find the best policy at the best price for each client. We provide personalized, face-to-face service from our Oxford, MS office.
@@ -21,8 +21,13 @@ Pinion Family Insurance is a family-owned, independent insurance agency. Unlike 
 - Commercial Insurance: General liability, commercial property, workers compensation, commercial auto, BOP (https://pinionfamilyinsurance.com/commercial-insurance)
 - Renters Insurance: Personal property, liability, loss of use, student housing coverage (https://pinionfamilyinsurance.com/renters-insurance)
 - Motorcycle Insurance: Cruiser, sportbike, touring, ATV, UTV, and custom equipment (https://pinionfamilyinsurance.com/motorcycle-insurance)
+- Flood Insurance: NFIP and private flood, building and contents, renters and commercial flood (https://pinionfamilyinsurance.com/flood-insurance)
+- Umbrella Insurance: Personal excess liability from $1 million over auto, home, and boat policies (https://pinionfamilyinsurance.com/umbrella-insurance)
+- Boat Insurance: Pontoons, bass and fishing boats, ski boats, personal watercraft, trailers, and gear (https://pinionfamilyinsurance.com/boat-insurance)
+- Farm & Ranch Insurance: Farm dwellings, barns, equipment, livestock, hobby farms, and farm liability (https://pinionfamilyinsurance.com/farm-insurance)
 
 ## Service Areas
+- Oxford, MS (Lafayette County, home office): https://pinionfamilyinsurance.com/service-areas/oxford-ms
 - Water Valley, MS (Yalobusha County): https://pinionfamilyinsurance.com/service-areas/water-valley-ms
 - Batesville, MS (Panola County): https://pinionfamilyinsurance.com/service-areas/batesville-ms
 - Holly Springs, MS (Marshall County): https://pinionfamilyinsurance.com/service-areas/holly-springs-ms
@@ -32,6 +37,10 @@ Pinion Family Insurance is a family-owned, independent insurance agency. Unlike 
 - Senatobia, MS (Tate County): https://pinionfamilyinsurance.com/service-areas/senatobia-ms
 - Hernando, MS (DeSoto County): https://pinionfamilyinsurance.com/service-areas/hernando-ms
 - Olive Branch, MS (DeSoto County): https://pinionfamilyinsurance.com/service-areas/olive-branch-ms
+- Southaven, MS (DeSoto County): https://pinionfamilyinsurance.com/service-areas/southaven-ms
+- Grenada, MS (Grenada County): https://pinionfamilyinsurance.com/service-areas/grenada-ms
+- Starkville, MS (Oktibbeha County): https://pinionfamilyinsurance.com/service-areas/starkville-ms
+- Corinth, MS (Alcorn County): https://pinionfamilyinsurance.com/service-areas/corinth-ms
 
 ## Insurance Guides & Resource Center
 - Hub: https://pinionfamilyinsurance.com/resources
@@ -40,6 +49,10 @@ Pinion Family Insurance is a family-owned, independent insurance agency. Unlike 
 - 5 Ways to Lower Mississippi Premiums: https://pinionfamilyinsurance.com/resources/how-to-lower-home-insurance-premium-ms
 - Term vs Whole Life Insurance for MS Families: https://pinionfamilyinsurance.com/resources/term-vs-whole-life-insurance-ms
 - Small Business Commercial Insurance Checklist: https://pinionfamilyinsurance.com/resources/mississippi-commercial-insurance-guide
+- Is Flood Insurance Required in Mississippi?: https://pinionfamilyinsurance.com/resources/is-flood-insurance-required-in-mississippi
+- Wind & Hail Deductibles in Mississippi Explained: https://pinionfamilyinsurance.com/resources/wind-hail-deductibles-mississippi
+- SR-22 Insurance in Mississippi: https://pinionfamilyinsurance.com/resources/sr22-insurance-mississippi
+- Ole Miss Student & Parent Insurance Guide: https://pinionfamilyinsurance.com/resources/ole-miss-student-insurance-guide
 
 ## Key Differentiators
 - Independent agency - not tied to a single carrier

@@ -1,0 +1,66 @@
+---
+import ProductPageLayout from '../layouts/ProductPageLayout.astro';
+
+const faqs = [
+  {
+    question: "Is boat insurance required in Mississippi?",
+    answer: "Mississippi doesn't have a general state law requiring boat insurance, but that doesn't mean you won't need it. Lenders typically require coverage if your boat is financed, and many marinas require proof of liability coverage to rent a slip. Without insurance, you could be personally responsible for injuries or damage you cause on the water."
+  },
+  {
+    question: "Doesn't my homeowners policy cover my boat?",
+    answer: "Usually only in a very limited way. Many homeowners policies offer little or no coverage for boats, and often exclude larger motors, higher-value boats, and liability while you're on the water. A dedicated boat policy provides much broader physical damage and liability protection."
+  },
+  {
+    question: "What types of watercraft do you insure?",
+    answer: "We insure pontoons, bass and fishing boats, ski and wake boats, deck boats, runabouts, jon boats, sailboats, and personal watercraft like Jet Skis and WaveRunners. ATVs, UTVs, and golf carts can be covered through our motorcycle and powersports coverage."
+  },
+  {
+    question: "Does boat insurance cover my trailer and fishing gear?",
+    answer: "Many boat policies can include coverage for your trailer and offer optional coverage for fishing equipment, electronics like fish finders and trolling motors, and personal effects. Limits vary by carrier, so we'll make sure the policy matches your setup."
+  },
+  {
+    question: "Can I save by bundling boat insurance?",
+    answer: "Often, yes. Many carriers offer multi-policy discounts when you bundle boat coverage with your auto or home insurance, plus discounts for completing a boating safety course and for experienced boat owners."
+  }
+];
+---
+
+<ProductPageLayout
+  slug="boat-insurance"
+  metaTitle="Boat Insurance Oxford MS | Pontoon, Bass Boat & Jet Ski | Pinion Family Insurance"
+  metaDescription="Boat, pontoon, and personal watercraft insurance for Sardis, Enid, Grenada, and Pickwick lake owners. Compare boat insurance from top carriers in Oxford, MS."
+  keywords="boat insurance Oxford MS, pontoon insurance Mississippi, bass boat insurance, jet ski insurance Mississippi, Sardis Lake boat insurance, watercraft insurance North Mississippi"
+  serviceName="Boat & Watercraft Insurance in Oxford, MS"
+  serviceType="Boat Insurance"
+  heroImage="/images/boat-insurance-hero.jpg"
+  heroAlt="Pontoon boat and bass boat on a calm North Mississippi lake at sunrise"
+  eyebrow="Boat & Personal Watercraft Coverage"
+  h1="Boat Insurance in"
+  h1Highlight="North Mississippi"
+  heroDesc="From weekends on Sardis Lake to early mornings fishing Enid or Grenada, protect your boat, trailer, and gear, plus your liability on the water."
+  ctaLabel="Get a Free Boat Quote"
+  sectionEyebrow="Coverage for Life on the Lake"
+  h2="Protection for Pontoons, Bass Boats, Ski Boats & PWCs"
+  leadText="North Mississippi is surrounded by some of the best boating and fishing water in the South. Whether you trailer your boat to the ramp or keep it in a slip, a dedicated boat policy protects your investment from accidents, storms, and theft, and protects you if someone gets hurt."
+  coverageTitle="Key Boat Coverage Options:"
+  coverage={[
+    { title: "Physical Damage:", text: "Covers repair or replacement if your boat is damaged in a collision, sinks, or is damaged by fire, storms, or vandalism." },
+    { title: "Theft Protection:", text: "Coverage if your boat, motor, or trailer is stolen from your driveway, storage, or the lake." },
+    { title: "Boating Liability:", text: "Pays for injuries to others or damage to their property, such as another boat or a dock, when you're at fault." },
+    { title: "Uninsured Boater Coverage:", text: "Protection for you and your passengers if you're injured by a boater who has no insurance." },
+    { title: "Trailer, Gear & Towing:", text: "Options to cover your trailer, fishing equipment, electronics, and on-water towing or fuel delivery if you break down." }
+  ]}
+  tagsTitle="Watercraft We Insure:"
+  tags={["Pontoon & Tritoon Boats", "Bass & Fishing Boats", "Ski & Wake Boats", "Deck Boats & Runabouts", "Jon Boats", "Jet Skis & WaveRunners"]}
+  quoteTitle="Get a Boat Insurance Quote"
+  trustTitle="Lake-Ready Local Agency"
+  trustPoints={[
+    { icon: "🎣", label: "Gear Coverage", text: "Options for fishing equipment and onboard electronics." },
+    { icon: "🔍", label: "Compare Carriers", text: "Quotes from Progressive, Foremost, Safeco, and more." },
+    { icon: "💰", label: "Bundle Discounts", text: "Save when you combine boat with auto or home." },
+    { icon: "⭐", label: "Local Support", text: "Direct help from our Oxford office if you have a claim." }
+  ]}
+  faqTitle="Boat Insurance FAQs"
+  faqSubtitle="Common questions about boat, pontoon, and personal watercraft coverage in Mississippi."
+  faqs={faqs}
+/>

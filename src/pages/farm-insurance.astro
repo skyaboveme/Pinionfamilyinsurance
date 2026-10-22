@@ -1,0 +1,66 @@
+---
+import ProductPageLayout from '../layouts/ProductPageLayout.astro';
+
+const faqs = [
+  {
+    question: "What does farm insurance cover?",
+    answer: "A farm and ranch policy typically combines coverage for your farmhouse and personal belongings, farm buildings like barns and equipment sheds, farm equipment and machinery, livestock, stored feed and hay, and farm liability. Policies are customized to match how your operation actually works."
+  },
+  {
+    question: "Can a regular homeowners policy cover my farm?",
+    answer: "Usually not. Homeowners policies are designed for residential use and typically exclude or severely limit coverage for business and farming activities, farm equipment, outbuildings used for agriculture, and livestock. If you're actively farming, raising livestock, or running a hobby farm, you likely need farm-specific coverage."
+  },
+  {
+    question: "Do you insure hobby farms and small acreage?",
+    answer: "Yes. We work with hobby farms, small acreage homesteads, horse properties, and working farms and ranches. Hobby farm policies can be a cost-effective option if farming isn't your primary source of income."
+  },
+  {
+    question: "Is crop insurance included in a farm policy?",
+    answer: "No. Multi-peril crop insurance is a separate, federally supported program. A farm and ranch policy focuses on your property, equipment, livestock, and liability. We're happy to talk through how the pieces fit together for your operation."
+  },
+  {
+    question: "Does farm liability cover people visiting my property?",
+    answer: "Farm liability coverage helps protect you if a visitor, customer, or delivery driver is injured on your property, or if your livestock causes damage, such as cattle getting onto a road. Coverage for farm employees typically requires separate employer's liability or workers compensation coverage."
+  }
+];
+---
+
+<ProductPageLayout
+  slug="farm-insurance"
+  metaTitle="Farm & Ranch Insurance Oxford MS | Hobby Farm Coverage | Pinion Family Insurance"
+  metaDescription="Farm and ranch insurance for North Mississippi: farmhouse, barns, equipment, livestock, and farm liability. Coverage for working farms and hobby farms from Pinion Family Insurance."
+  keywords="farm insurance Oxford MS, ranch insurance Mississippi, hobby farm insurance, farm equipment insurance, livestock insurance Mississippi, farm liability North Mississippi"
+  serviceName="Farm & Ranch Insurance in Oxford, MS"
+  serviceType="Farm Insurance"
+  heroImage="/images/farm-insurance-hero.jpg"
+  heroAlt="North Mississippi family farm with red barn, farmhouse, tractor, hay bales, and grazing cattle"
+  eyebrow="Farm, Ranch & Hobby Farm Coverage"
+  h1="Farm & Ranch Insurance in"
+  h1Highlight="North Mississippi"
+  heroDesc="Protect your home, barns, equipment, and livestock with one policy built for the way you work the land. From working cattle operations to small hobby farms, we'll shop coverage that fits."
+  ctaLabel="Get a Free Farm Quote"
+  sectionEyebrow="Coverage Built for Rural Life"
+  h2="Protection for Your Farmhouse, Barns, Equipment & Livestock"
+  leadText="Farms across Lafayette, Panola, Pontotoc, and the surrounding counties face risks that homeowners policies weren't designed for: severe storms damaging barns, expensive equipment breakdowns, livestock losses, and liability from visitors and roadways. A farm and ranch policy brings it all under one roof."
+  coverageTitle="Key Farm & Ranch Coverage Options:"
+  coverage={[
+    { title: "Farm Dwelling & Personal Property:", text: "Coverage for your farmhouse and belongings, similar to a homeowners policy, from fire, wind, hail, and theft." },
+    { title: "Barns, Outbuildings & Structures:", text: "Protection for barns, equipment sheds, shops, grain bins, fencing, and other farm structures." },
+    { title: "Farm Equipment & Machinery:", text: "Coverage for tractors, implements, hay equipment, and tools, whether in the barn or out in the field." },
+    { title: "Livestock & Stored Products:", text: "Protection for cattle, horses, and other livestock against covered perils, plus stored hay, feed, and supplies." },
+    { title: "Farm Liability:", text: "Protection if someone is injured on your property or your livestock or operations cause damage to others." }
+  ]}
+  tagsTitle="Operations We Cover:"
+  tags={["Cattle & Livestock", "Hay & Row Crop Farms", "Horse Properties", "Hobby Farms", "Timber & Rural Acreage", "Poultry Operations"]}
+  quoteTitle="Get a Farm Insurance Quote"
+  trustTitle="Rural Mississippi Expertise"
+  trustPoints={[
+    { icon: "🚜", label: "Custom Policies", text: "Coverage tailored to your acreage, equipment, and livestock." },
+    { icon: "🔍", label: "Specialty Carriers", text: "Access to carriers that understand farm and ranch risks." },
+    { icon: "🌪️", label: "Storm Support", text: "Guidance through barn and property claims after severe weather." },
+    { icon: "⭐", label: "Local & Personal", text: "Talk to a real person at our Oxford office, not a call center." }
+  ]}
+  faqTitle="Farm Insurance FAQs"
+  faqSubtitle="Common questions about farm, ranch, and hobby farm coverage in Mississippi."
+  faqs={faqs}
+/>

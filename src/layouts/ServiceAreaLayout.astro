@@ -1,0 +1,225 @@
+---
+/**
+ * ServiceAreaLayout
+ * Shared template for hyper-local service area pages (/service-areas/*).
+ * Mirrors the design of the original area pages (e.g. hernando-ms.astro).
+ */
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CarrierStrip from '../components/CarrierStrip.astro';
+import FloatingCTA from '../components/FloatingCTA.astro';
+import '../styles/global.css';
+
+interface CoverageCard { icon: string; title: string; text: string; href: string; linkLabel: string; }
+
+interface Props {
+  slug: string;            // e.g. "southaven-ms"
+  city: string;            // e.g. "Southaven"
+  county: string;          // e.g. "DeSoto County"
+  metaTitle: string;
+  metaDescription: string;
+  keywords?: string;
+  eyebrow: string;
+  heroSubtitle: string;
+  h2Highlight: string;
+  intro: string[];
+  cards: CoverageCard[];
+  localTitle: string;
+  localText: string;
+  whyPoints: string[];
+}
+
+const p = Astro.props;
+const url = `https://pinionfamilyinsurance.com/service-areas/${p.slug}`;
+
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "InsuranceAgency",
+    "name": `Pinion Family Insurance - ${p.city} MS Service Area`,
+    "description": p.metaDescription,
+    "url": url,
+    "telephone": "+16626383777",
+    "parentOrganization": { "@id": "https://pinionfamilyinsurance.com/#organization" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2621A W Oxford Loop",
+      "addressLocality": "Oxford",
+      "addressRegion": "MS",
+      "postalCode": "38655",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": p.city,
+      "containedInPlace": [
+        { "@type": "AdministrativeArea", "name": `${p.county}, Mississippi` },
+        { "@type": "State", "name": "Mississippi" }
+      ]
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinionfamilyinsurance.com/" },
+      { "@type": "ListItem", "position": 2, "name": `${p.city}, MS`, "item": url }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title={p.metaTitle}
+  description={p.metaDescription}
+  keywords={p.keywords}
+  canonical={url}
+  schema={schema}
+>
+  <Header />
+
+  <section class="area-hero">
+    <div class="container text-center">
+      <span class="hero-eyebrow">{p.eyebrow}</span>
+      <h1>{p.city}, MS <span class="highlight">Insurance Agency</span></h1>
+      <p class="hero-subtitle">{p.heroSubtitle}</p>
+      <div class="area-hero-actions">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Free {p.city} Quote</a>
+        <a href="tel:+16626383777" class="btn btn-outline btn-lg">(662) 638-3777</a>
+      </div>
+    </div>
+  </section>
+
+  <CarrierStrip />
+
+  <section class="section">
+    <div class="container">
+      <div class="area-content-grid">
+        <div class="area-main">
+          <h2>Independent Coverage Built for <span class="highlight">{p.h2Highlight}</span></h2>
+          {p.intro.map(para => <p>{para}</p>)}
+
+          <div class="local-coverage-grid">
+            {p.cards.map(c => (
+              <div class="cov-item">
+                <span class="cov-icon">{c.icon}</span>
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+                <a href={c.href} class="cov-link">{c.linkLabel} →</a>
+              </div>
+            ))}
+          </div>
+
+          <div class="distance-box">
+            <h3>📍 {p.localTitle}</h3>
+            <p set:html={p.localText} />
+          </div>
+        </div>
+
+        <aside class="area-sidebar">
+          <div class="sidebar-card">
+            <h3>Why {p.city} Chooses Pinion</h3>
+            <ul class="check-list">
+              {p.whyPoints.map(w => <li>✓ {w}</li>)}
+            </ul>
+            <a href="/contact" class="btn btn-primary btn-block">Request Local Quote</a>
+          </div>
+
+          <div class="sidebar-card contact-card">
+            <h4>Office Address</h4>
+            <p>2621A W Oxford Loop<br/>Oxford, MS 38655</p>
+            <p><strong>Phone:</strong> <a href="tel:+16626383777">(662) 638-3777</a></p>
+            <p><strong>Hours:</strong> Mon - Fri 8am - 5pm</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <FloatingCTA />
+</BaseLayout>
+
+<style>
+  .area-hero {
+    background: linear-gradient(135deg, #0b1320 0%, #172236 100%);
+    padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+    color: var(--white);
+  }
+  .area-hero h1 { color: var(--white); font-size: 2.75rem; margin-bottom: var(--space-sm); }
+  .area-hero .hero-subtitle {
+    color: var(--gray-300);
+    max-width: 680px;
+    margin: 0 auto var(--space-xl);
+    font-size: 1.1rem;
+  }
+  .area-hero-actions { display: flex; justify-content: center; gap: var(--space-md); flex-wrap: wrap; }
+
+  .area-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-3xl);
+    padding: var(--space-2xl) 0;
+  }
+  .area-main h2 { font-size: 1.8rem; margin-bottom: var(--space-md); }
+  .area-main p { font-size: 1.05rem; line-height: 1.7; color: var(--gray-700); margin-bottom: var(--space-lg); }
+
+  .local-coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    margin: var(--space-2xl) 0;
+  }
+  .cov-item {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+  .cov-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(235, 29, 36, 0.3);
+  }
+  .cov-icon { font-size: 1.8rem; margin-bottom: var(--space-xs); display: block; }
+  .cov-item h3 { font-size: 1.15rem; margin-bottom: var(--space-xs); }
+  .cov-item p { font-size: 0.92rem; color: var(--gray-600); margin-bottom: var(--space-md); }
+  .cov-link { color: var(--brand-red); font-weight: 700; font-size: 0.88rem; }
+
+  .distance-box {
+    background: #f0fdf4;
+    border-left: 4px solid #22c55e;
+    border-radius: var(--border-radius-sm);
+    padding: var(--space-xl);
+    margin-top: var(--space-2xl);
+  }
+  .distance-box h3 { color: #15803d; margin-bottom: var(--space-xs); font-size: 1.2rem; }
+  .distance-box p { color: #166534; margin: 0; }
+
+  .sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+  }
+  .sidebar-card h3 { font-size: 1.2rem; margin-bottom: var(--space-md); }
+  .check-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-xl);
+  }
+  .check-list li { font-size: 0.92rem; color: var(--gray-700); }
+  .contact-card h4 { margin-bottom: var(--space-sm); }
+  .contact-card p { font-size: 0.9rem; color: var(--gray-600); margin-bottom: var(--space-xs); }
+
+  @media (max-width: 900px) {
+    .area-content-grid { grid-template-columns: 1fr; }
+    .local-coverage-grid { grid-template-columns: 1fr; }
+  }
+</style>

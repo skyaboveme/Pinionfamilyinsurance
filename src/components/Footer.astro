@@ -38,6 +38,10 @@ const currentYear = new Date().getFullYear();
             <li><a href="/commercial-insurance">Commercial Insurance</a></li>
             <li><a href="/renters-insurance">Renters Insurance</a></li>
             <li><a href="/motorcycle-insurance">Motorcycle & Powersports</a></li>
+            <li><a href="/flood-insurance">Flood Insurance</a></li>
+            <li><a href="/umbrella-insurance">Umbrella Insurance</a></li>
+            <li><a href="/boat-insurance">Boat & Watercraft</a></li>
+            <li><a href="/farm-insurance">Farm & Ranch</a></li>
           </ul>
         </div>
 
@@ -45,15 +49,20 @@ const currentYear = new Date().getFullYear();
         <div class="footer-column">
           <h4>North MS Service Areas</h4>
           <ul class="footer-areas-list">
-            <li><a href="/service-areas/tupelo-ms">Tupelo, MS</a></li>
-            <li><a href="/service-areas/new-albany-ms">New Albany, MS</a></li>
-            <li><a href="/service-areas/batesville-ms">Batesville, MS</a></li>
-            <li><a href="/service-areas/senatobia-ms">Senatobia, MS</a></li>
-            <li><a href="/service-areas/hernando-ms">Hernando, MS</a></li>
-            <li><a href="/service-areas/olive-branch-ms">Olive Branch, MS</a></li>
-            <li><a href="/service-areas/water-valley-ms">Water Valley, MS</a></li>
-            <li><a href="/service-areas/holly-springs-ms">Holly Springs, MS</a></li>
-            <li><a href="/service-areas/pontotoc-ms">Pontotoc, MS</a></li>
+            <li><a href="/service-areas/oxford-ms">Oxford</a></li>
+            <li><a href="/service-areas/tupelo-ms">Tupelo</a></li>
+            <li><a href="/service-areas/southaven-ms">Southaven</a></li>
+            <li><a href="/service-areas/olive-branch-ms">Olive Branch</a></li>
+            <li><a href="/service-areas/hernando-ms">Hernando</a></li>
+            <li><a href="/service-areas/starkville-ms">Starkville</a></li>
+            <li><a href="/service-areas/corinth-ms">Corinth</a></li>
+            <li><a href="/service-areas/grenada-ms">Grenada</a></li>
+            <li><a href="/service-areas/new-albany-ms">New Albany</a></li>
+            <li><a href="/service-areas/batesville-ms">Batesville</a></li>
+            <li><a href="/service-areas/senatobia-ms">Senatobia</a></li>
+            <li><a href="/service-areas/water-valley-ms">Water Valley</a></li>
+            <li><a href="/service-areas/holly-springs-ms">Holly Springs</a></li>
+            <li><a href="/service-areas/pontotoc-ms">Pontotoc</a></li>
           </ul>
         </div>
 
@@ -189,6 +198,12 @@ const currentYear = new Date().getFullYear();
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
+  }
+
+  .footer-column ul.footer-areas-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--space-md);
   }
 
   .footer-column a {

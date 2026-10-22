@@ -1,0 +1,66 @@
+---
+import ProductPageLayout from '../layouts/ProductPageLayout.astro';
+
+const faqs = [
+  {
+    question: "What is umbrella insurance?",
+    answer: "Umbrella insurance is extra liability coverage that kicks in after your auto, home, or boat policy's liability limits are used up. If you're found responsible for a serious accident or injury and the damages exceed your underlying policy, your umbrella policy helps pay the difference, plus legal defense costs."
+  },
+  {
+    question: "How much does umbrella insurance cost?",
+    answer: "Umbrella coverage is one of the most affordable ways to add serious protection. A $1 million personal umbrella policy often costs a few hundred dollars per year, depending on how many homes, vehicles, and drivers you have. We'll quote options from multiple carriers so you can compare."
+  },
+  {
+    question: "Who needs an umbrella policy?",
+    answer: "Anyone with assets or future income to protect should consider one. It's especially important if you own a home, have teen drivers, own a pool, trampoline, or dog, own rental property, have a boat or ATVs, coach youth sports, or have a public profile in the community."
+  },
+  {
+    question: "Do I need certain limits on my auto and home policies first?",
+    answer: "Yes. Most umbrella carriers require minimum underlying liability limits, commonly around $250,000/$500,000 on auto and $300,000 on homeowners. Requirements vary by carrier, and we'll help you align your policies so there are no gaps."
+  },
+  {
+    question: "What does umbrella insurance cover that my other policies don't?",
+    answer: "Beyond higher limits, many umbrella policies extend coverage to certain claims your base policies may not, such as libel, slander, and defamation, and may cover you worldwide. Coverage details vary by carrier, so we'll walk you through exactly what each policy includes."
+  }
+];
+---
+
+<ProductPageLayout
+  slug="umbrella-insurance"
+  metaTitle="Umbrella Insurance Oxford MS | Personal Liability Coverage | Pinion Family Insurance"
+  metaDescription="Protect your savings, home, and future income with $1M+ personal umbrella insurance. Compare umbrella policies from top carriers with Pinion Family Insurance in Oxford, MS."
+  keywords="umbrella insurance Oxford MS, personal umbrella policy Mississippi, excess liability insurance, $1 million umbrella policy, liability insurance North Mississippi"
+  serviceName="Personal Umbrella Insurance in Oxford, MS"
+  serviceType="Umbrella Insurance"
+  heroImage="/images/umbrella-insurance-hero.jpg"
+  heroAlt="Family backyard with pool, trampoline, and covered patio at dusk"
+  eyebrow="Extra Liability Protection"
+  h1="Umbrella Insurance in"
+  h1Highlight="Oxford, MS"
+  heroDesc="One serious accident can exceed your auto or home liability limits. A personal umbrella policy adds $1 million or more in protection for your savings, home, and future income, often for a few hundred dollars a year."
+  ctaLabel="Get a Free Umbrella Quote"
+  sectionEyebrow="Protection Above & Beyond"
+  h2="An Affordable Safety Net for Your Family's Assets"
+  leadText="Medical bills and legal judgments after a serious car accident or injury on your property can climb well past standard policy limits. When that happens, you could be personally responsible for the rest. An umbrella policy sits on top of your auto, home, and boat coverage to close that gap."
+  coverageTitle="What Umbrella Insurance Helps Cover:"
+  coverage={[
+    { title: "Excess Auto Liability:", text: "Additional coverage when injuries or property damage from an at-fault car accident exceed your auto policy limits, including accidents involving teen drivers in your household." },
+    { title: "Excess Home Liability:", text: "Protection for injuries on your property, such as pool accidents, trampoline injuries, dog bites, or guest falls, that go beyond your homeowners liability limit." },
+    { title: "Legal Defense Costs:", text: "Attorney fees and court costs for covered claims, which can be substantial even when you're not found at fault." },
+    { title: "Personal Injury Claims:", text: "Many policies include coverage for claims such as libel, slander, and defamation. Details vary by carrier." },
+    { title: "Watercraft & Rental Property:", text: "Umbrella coverage can extend over boat liability and rental property liability when those policies are scheduled underneath." }
+  ]}
+  tagsTitle="You May Need an Umbrella Policy If You Have:"
+  tags={["Teen or Young Drivers", "A Pool or Trampoline", "Dogs", "Rental Properties", "Boats, ATVs, or UTVs", "Significant Savings or Home Equity"]}
+  quoteTitle="Get an Umbrella Quote"
+  trustTitle="Why Bundle Your Umbrella With Us"
+  trustPoints={[
+    { icon: "🧩", label: "No Coverage Gaps", text: "We align your auto, home, and umbrella limits together." },
+    { icon: "🔍", label: "Multiple Carriers", text: "Compare umbrella options from top-rated companies." },
+    { icon: "💰", label: "Bundle Savings", text: "Umbrella policies often pair with multi-policy discounts." },
+    { icon: "⭐", label: "Annual Reviews", text: "We revisit your limits as your family and assets grow." }
+  ]}
+  faqTitle="Umbrella Insurance FAQs"
+  faqSubtitle="Common questions about personal umbrella liability coverage in Mississippi."
+  faqs={faqs}
+/>
